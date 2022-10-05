@@ -10,6 +10,7 @@
 * Team members should finish work on time.
 * Team members should notify the group when a task is put for review.
 * No ideas are bad ideas! Team members should contribute ideas when discussing next steps and work collaboratively towards solutions if the team hits a creative wall.
+* Team members should be kind and tolerant of everyone's work or criticism, 
 
 #### When In Need of Help
 
