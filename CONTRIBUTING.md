@@ -28,11 +28,16 @@ Further time schedule will be updated in discord channel.
 
 ### Coding Standards
 
-
+* Code formatting should be standardized, and complied with the general instructions provided on each sprint.
+* Code for each task and spike must be peer-reviewed and pass tests before merging into the `main` branch of code. 
+* Before contribution, always remember to pull from the repository before push any changes.
+* A descriptive commit message is highly recommended along with pushing the changes.
+* It is preferred to write small commits instead of big changes.
+* It is encouraged to comment/annotate on the code.
+* Variable names and function names should be descriptive and uniform. 
+* Write automated tests to cover critical integration points and functionality (once we cover this part).
 
 ## Contributing Info
-
-
 
 ## Project Instructions
 
