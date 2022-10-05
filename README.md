@@ -51,6 +51,43 @@ Roles will rotate weekly/per sprint
 
 ### Sprint 4
 
+## GitHub Issue Milestone
+
+### Sprint 0
+
+#### Description
+
+* Sprint 0 aims to complete the initial stage of design, including the app map, wireframes, and prototypes. 
+* Sprint 0 aims to complete the initial project setup, including the sprint planning.
+
+#### Due Date
+
+10/06/2022
+
+### Sprint 1
+
+#### Description
+
+#### Due Date
+
+### Sprint 2
+
+#### Description
+
+#### Due Date
+
+### Sprint 3
+
+#### Description
+
+#### Due Date
+
+### Sprint 4
+
+#### Description
+
+#### Due Date
+
 ## Building and Testing the App Instructions
 
 The instructions for building and testing are pending. This section will be completed once the front-end and back-end part are completed.
