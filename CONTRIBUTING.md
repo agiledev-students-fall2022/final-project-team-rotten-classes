@@ -39,6 +39,21 @@ Further time schedule will be updated in discord channel.
 
 ## Contributing Info
 
+### Adding new features
+
+* If you want to add a new feature and ready to commit, feel free to create a pull request or consult with our team members in the discord channel.
+
+### Resolving Conflicts
+
+* If you discover a conflict/bug in our project, feel free to create a pull request or consult with our team members in the discord channel.
+* For team members, conflicts should be brought up to the team as soon as possible.
+* If the conflict is significant, all team members should collaboratively discuss the problem and decide on the best outcome.
+
+### Sensitive Information
+
+* DO NOT contribute sensitive information such as passwords into the repository. If you are unsure about what information is sensitive, please consult our team members.
+* .gitignore file should be updated accordingly.
+
 ## Project Instructions
 
 ### Setting Up
