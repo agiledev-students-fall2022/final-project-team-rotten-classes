@@ -14,7 +14,9 @@ An application that allows students to rate their class experiences and inform o
 -
 -
 
-## Collaboration
+## Collaboration and Contribution
+
+Please read  our [CONTRIBUTING.md](./CONTRIBUTING.md) document outlining our team norms, git workflow, rules on how and what to contribute, instructions for setting up the local development environment, and steps on how to build and test our app.
 
 ## Building and Testing the App Instructions
 
