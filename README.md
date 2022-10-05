@@ -45,8 +45,6 @@ Roles will rotate weekly/per sprint
 
 ### Sprint 1
 
-### Sprint 0
-
 #### Product Owner
 
 * Sonia Jain
