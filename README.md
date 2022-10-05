@@ -9,19 +9,53 @@ An application that allows students to rate their class experiences and inform o
 
 ## Core Team Members
 
-- - Alaa Al Shaba
-    - [Github](https://github.com/alaaals)
-  - Ashley Luo
-    - [Github](https://github.com/luoashley)
-  - Ronit Singh
-    - [Github](https://github.com/4ur1X)
-  - Sonia Jain
-    - [Github](https://github.com/soniaj245)
+- Alaa Al Shaba
+  - [Github](https://github.com/alaaals)
+- Ashley Luo
+  - [Github](https://github.com/luoashley)
+- Ronit Singh
+  - [Github](https://github.com/4ur1X)
+- Sonia Jain
+  - [Github](https://github.com/soniaj245)
 
 ## Collaboration and Contribution
 
 Please read  our [CONTRIBUTING.md](./CONTRIBUTING.md) document outlining our team norms, git workflow, rules on how and what to contribute, instructions for setting up the local development environment, and steps on how to build and test our app.
 
+## Roles
+
+Roles will rotate weekly/per sprint
+
+### Sprint 0
+
+#### Product Owner
+
+* Sonia Jain
+
+#### Scrum Master
+
+* Ashley Luo
+
+#### Developer
+
+* Alaa Al Shaba
+* Ashley Luo
+* Ronit Singh
+* Sonia Jain
+
+### Sprint 1
+
+### Sprint 2
+
+### Sprint 3
+
+### Sprint 4
+
 ## Building and Testing the App Instructions
+
+The instructions for building and testing are pending. This section will be completed once the front-end and back-end part are completed.
+
+* Front-end: Pending
+* Back-end: Pending
 
 ## Additional Resources
