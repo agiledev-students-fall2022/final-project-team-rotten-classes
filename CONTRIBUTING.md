@@ -3,7 +3,10 @@
 
 ### Team Values
 
-
+* Team members should collaborate and communicate when working.
+* Team members should help each other if one member encounters obstacles.
+* Team members should communicate peacefully if encounter any disagreements.
+* Team members should finish work on time.
 
 ### Daily Standups
 
