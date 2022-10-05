@@ -3,6 +3,8 @@
 
 ## Product Vision
 
+An application that allows students to rate their class experiences and inform other students on what the class is about when the provided course description is not informative enough. This system can potentially solve the issue of students entering a course unaware of its courseload or course dynamics.
+
 ## Description
 
 ## Core Team Members
