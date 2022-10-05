@@ -36,7 +36,7 @@ Roles will rotate weekly/per sprint
 
 * Ashley Luo
 
-#### Developer
+#### Developers
 
 * Alaa Al Shaba
 * Ashley Luo
@@ -44,6 +44,23 @@ Roles will rotate weekly/per sprint
 * Sonia Jain
 
 ### Sprint 1
+
+### Sprint 0
+
+#### Product Owner
+
+* Sonia Jain
+
+#### Scrum Master
+
+* Ashley Luo
+
+#### Developers
+
+* Alaa Al Shaba
+* Ashley Luo
+* Ronit Singh
+* Sonia Jain
 
 ### Sprint 2
 
