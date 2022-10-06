@@ -3,14 +3,17 @@
 
 ## Product Vision Statement
 
-Rotten Classes allows students to rate their class experiences and view the class experiences provided by other students. Rotten Classes is an easy-to-use  to web-application that allows students to discover the courseload and course dynamics of a particular class for when the provided course description is not informative enough. 
+Rotten Classes allows students to rate their own class experiences and view ratings of classes made by other students. Rotten Classes is an easy-to-use web-application that allows students to discover the courseload and course dynamics of a particular class for when the provided course description is not informative enough. 
 
-Students can:
+At first glance, students can:
 * See numeric, visual, and written reviews of a course.
 * Review a course of their own.
 * Search for a course or filter search options to find a course they're interested in. 
+
+As Rotten Classes develops, students can:
 * Bookmark courses that they are interested in.
 * View courses that are loved by other students.
+* Contact support for any problems that may arise when using the application.
 
 ## Core Team Members
 
