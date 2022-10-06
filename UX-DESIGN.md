@@ -4,7 +4,7 @@
 ![](ux-design/AppMap.png)
 
 The main Home Screen of the app contains navigation options to five different screens:
-- Home : has a search bar, displays the highest-rated classes and a direct way to view classes by major.
+- Home : has a search bar, navigation bar at the bottom, displays the highest-rated classes and provides a direct way to view classes by major.
 - Sort / Filter Classes
 - Add Review (pop-up box to add the review / rating)
 - Favorites / Bookmarked Classes : to come back and view the shortlisted classes later
