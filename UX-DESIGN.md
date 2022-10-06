@@ -10,7 +10,6 @@
 The main Home Screen of the app contains navigation options to five different screens:
 - Home : has a search bar, navigation bar at the bottom, displays the highest-rated classes and provides a direct way to view classes by major.
 - Sort / Filter Classes
-- Add Review (pop-up box to add the review / rating)
 - Favorites / Bookmarked Classes : to come back and view the shortlisted classes later
 - Help / Contact Us
 
@@ -38,6 +37,9 @@ Every class has a rating (represented by a percentage).
 <img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Review%2BRating%2BDetail.png" width="800">
 
 #### ADD A REVIEW Screen
+
+Displays a pop-box box when clicked on the '+' button to submit the class review and rating.
+
 <img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Post.png" width="300">
 
 #### FAVORITES / BOOKMARK Screen - Contains list of classes that the user has shortlisted
