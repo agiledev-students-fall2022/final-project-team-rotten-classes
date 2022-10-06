@@ -52,13 +52,16 @@ Users can then add their own review of the course, if they have already taken it
 
 <img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Post.png" width="300">
 
-#### FAVORITES / BOOKMARK Screen - Contains list of classes that the user has shortlisted
+#### FAVORITES / BOOKMARK Screen
 
-It has a swipe functionality to delete the shortlisted class!
+It contains list of classes that the user has shortlisted. It has a swipe functionality to delete the shortlisted class!
 
 <img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Bookmarked.png" width="300">
 
-#### CONTACT UPPERCLASSMEN Screen - Contains students who have taken the particular class previously
+#### CONTACT UPPERCLASSMEN Screen
+
+Tap on the chat icon below the class rating. It contains students who have taken the particular class previously.
+
 <img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/ContactUpperclassmen.png" width="300">
 
 #### CONTACT US Screen
