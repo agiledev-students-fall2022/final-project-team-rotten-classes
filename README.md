@@ -3,9 +3,14 @@
 
 ## Product Vision Statement
 
-An application that allows students to rate their class experiences and inform other students on what the class is about when the provided course description is not informative enough. This system can potentially solve the issue of students entering a course unaware of its courseload or course dynamics.
+Rotten Classes allows students to rate their class experiences and view the class experiences provided by other students. Rotten Classes is an easy-to-use  to web-application that allows students to discover the courseload and course dynamics of a particular class for when the provided course description is not informative enough. 
 
-## Description
+Students can:
+* See numeric, visual, and written reviews of a course.
+* Review a course of their own.
+* Search for a course or filter search options to find a course they're interested in. 
+* Bookmark courses that they are interested in.
+* View courses that are loved by other students.
 
 ## Core Team Members
 
@@ -22,92 +27,9 @@ An application that allows students to rate their class experiences and inform o
 
 Please read  our [CONTRIBUTING.md](./CONTRIBUTING.md) document outlining our team norms, git workflow, rules on how and what to contribute, instructions for setting up the local development environment, and steps on how to build and test our app.
 
-## Roles
-
-Roles will rotate weekly/per sprint
-
-### Sprint 0
-
-#### Product Owner
-
-* Sonia Jain
-
-#### Scrum Master
-
-* Ashley Luo
-
-#### Developers
-
-* Alaa Al Shaba
-* Ashley Luo
-* Ronit Singh
-* Sonia Jain
-
-### Sprint 1
-
-#### Product Owner
-
-* Sonia Jain
-
-#### Scrum Master
-
-* Ashley Luo
-
-#### Developers
-
-* Alaa Al Shaba
-* Ashley Luo
-* Ronit Singh
-* Sonia Jain
-
-### Sprint 2
-
-### Sprint 3
-
-### Sprint 4
-
-## GitHub Issue Milestone
-
-### Sprint 0
-
-#### Description
-
-* Sprint 0 aims to complete the initial stage of design, including the app map, wireframes, and prototypes. 
-* Sprint 0 aims to complete the initial project setup, including the sprint planning.
-
-#### Due Date
-
-10/06/2022
-
-### Sprint 1
-
-#### Description
-
-#### Due Date
-
-### Sprint 2
-
-#### Description
-
-#### Due Date
-
-### Sprint 3
-
-#### Description
-
-#### Due Date
-
-### Sprint 4
-
-#### Description
-
-#### Due Date
-
 ## Building and Testing the App Instructions
 
 The instructions for building and testing are pending. This section will be completed once the front-end and back-end part are completed.
 
 * Front-end: Pending
 * Back-end: Pending
-
-## Additional Resources
