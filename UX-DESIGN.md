@@ -21,8 +21,28 @@ This is the wireframe displaying all the screens (HOME screen at the center).
 ### Wireframe (Individual Screens)
 
 #### HOME Screen
-![](ux-design/Home.png)
-<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Home.png" width="200">
+<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Home.png" width="300">
+
+#### SORT / FILTER Screen
+<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Sort%2BFilter.png" width="300">
+
+#### COURSE Screen - Contains 3 tabs (Review, Rating, Detail)
+<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Review%2BRating%2BDetail.png" width="300">
+
+#### ADD A REVIEW Screen
+<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Post.png" width="300">
+
+#### FAVORITES / BOOKMARK Screen - Contains list of classes that the user has shortlisted
+<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Bookmarked.png" width="300">
+
+#### CONTACT UPPERCLASSMEN Screen - Contains students who have taken the particular class previously
+<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/ContactUpperclassmen.png" width="300">
+
+#### CONTACT US Screen
+<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/ContactUs.png" width="300">
+
+#### THANK YOU Screen - After submitting the contact us form
+<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/ThankYou.png" width="300">
 
 This repository contains instructions and files for two assignments that together comprise the user experience design phase of a web app.
 
