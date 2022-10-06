@@ -22,6 +22,7 @@ This is the wireframe displaying all the screens (HOME screen at the center).
 
 #### HOME Screen
 ![](ux-design/Home.png)
+<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Home.png" width="200">
 
 This repository contains instructions and files for two assignments that together comprise the user experience design phase of a web app.
 
