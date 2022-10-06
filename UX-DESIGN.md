@@ -5,7 +5,7 @@
 [Prototype Link](https://bit.ly/rotten-classes-prototype)
 
 ## App Map
-![](ux-design/AppMap.png)
+![](ux-design/AppMapFinal.png)
 
 The main Home Screen of the app contains navigation options to five different screens:
 - Home : has a search bar, navigation bar at the bottom, displays the highest-rated classes and provides a direct way to view classes by major.
