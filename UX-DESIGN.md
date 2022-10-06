@@ -6,6 +6,8 @@
 
 [Source Files](https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/tree/master/ux-design/prototype)
 
+Note: In the prototype, the app's bottom navigation bar is concealed. Scroll down to see it!
+
 ## App Map
 ![](ux-design/AppMapFinal.png)
 
