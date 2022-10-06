@@ -13,6 +13,9 @@ The main Home Screen of the app contains navigation options to five different sc
 Every course page has a rating, review and detail sections separately with a feature to get the contact details of upperclassmen who have taken the particular class previously.
 
 ## Wireframe
+
+This is the wireframe displaying all the screens.
+
 ![](ux-design/BigWireframe.png)
 
 This repository contains instructions and files for two assignments that together comprise the user experience design phase of a web app.
