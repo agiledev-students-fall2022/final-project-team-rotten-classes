@@ -38,15 +38,16 @@ Every class has a rating (represented by a percentage).
 This screen allows the user to sort/filter classes either by major or level of study (Graduate/Undergraduate).
 
 #### COURSE Screen - Contains 3 tabs (Review, Rating, Detail)
-<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Review%2BRating%2BDetail.png" width="800">
 
 Users in any given course screen can view previous reviews, ratings, as well as more details about the selected course.
 
+<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Review%2BRating%2BDetail.png" width="800">
+
 #### ADD A REVIEW Screen
-<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Post.png" width="300">
 
 Users can then add their own review of the course, if they have already taken it. This can be naviagted to from any course screen.
 
+<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Post.png" width="300">
 
 #### FAVORITES / BOOKMARK Screen - Contains list of classes that the user has shortlisted
 
