@@ -2,10 +2,10 @@
 
 ## Prototype
 
-[Source Files](https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/tree/master/ux-design/prototype)
+[Prototype Link](https://bit.ly/rotten-classes-prototype)
 
 ## App Map
-![](ux-design/AppMapFinal.png)
+![](ux-design/AppMap.png)
 
 The main Home Screen of the app contains navigation options to five different screens:
 - Home : has a search bar, navigation bar at the bottom, displays the highest-rated classes and provides a direct way to view classes by major.
@@ -31,9 +31,10 @@ Every class has a rating (represented by a percentage).
 <img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Home.png" width="300">
 
 #### SORT / FILTER Screen
-<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Sort%2BFilter.png" width="300">
 
 This screen allows the user to sort/filter classes either by major or level of study (Graduate/Undergraduate).
+
+<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Sort%2BFilter.png" width="300">
 
 #### COURSE Screen - Contains 3 tabs (Review, Rating, Detail)
 <img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Review%2BRating%2BDetail.png" width="800">
@@ -41,9 +42,10 @@ This screen allows the user to sort/filter classes either by major or level of s
 Users in any given course screen can view previous reviews, ratings, as well as more details about the selected course.
 
 #### ADD A REVIEW Screen
-<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Post.png" width="300">
 
 Users can then add their own review of the course, if they have already taken it. This can be naviagted to from any course screen.
+
+<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Post.png" width="300">
 
 
 #### FAVORITES / BOOKMARK Screen - Contains list of classes that the user has shortlisted
