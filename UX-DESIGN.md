@@ -21,6 +21,10 @@ This is the wireframe displaying all the screens (HOME screen at the center).
 ### Wireframe (Individual Screens)
 
 #### HOME Screen
+
+This screen has a search bar, navigation bar at the bottom, displays the highest-rated classes and provides a direct way to view classes by major.
+Every class has a rating (represented by a percentage).
+
 <img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Home.png" width="300">
 
 #### SORT / FILTER Screen
