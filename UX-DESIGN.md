@@ -18,6 +18,11 @@ This is the wireframe displaying all the screens (HOME screen at the center).
 
 ![](ux-design/BigWireframe.png)
 
+### Wireframe (Individual Screens)
+
+#### HOME Screen
+![](ux-design/BigWireframe.png)
+
 This repository contains instructions and files for two assignments that together comprise the user experience design phase of a web app.
 
 Replace the contents of this file with the completed assignments, as described in:
