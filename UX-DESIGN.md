@@ -27,7 +27,7 @@ This is the wireframe displaying all the screens (HOME screen at the center).
 <img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Sort%2BFilter.png" width="300">
 
 #### COURSE Screen - Contains 3 tabs (Review, Rating, Detail)
-<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Review%2BRating%2BDetail.png" width="500">
+<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Review%2BRating%2BDetail.png" width="720">
 
 #### ADD A REVIEW Screen
 <img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Post.png" width="300">
