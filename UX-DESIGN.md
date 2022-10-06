@@ -1,7 +1,7 @@
 # User Experience Design
 
 ## App Map
-![App Map](ux-design/AppMap.png)
+![](ux-design/AppMap.png)
 
 This repository contains instructions and files for two assignments that together comprise the user experience design phase of a web app.
 
