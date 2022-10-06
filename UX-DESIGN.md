@@ -43,7 +43,7 @@ Users in any given course screen can view previous reviews, ratings, as well as 
 #### ADD A REVIEW Screen
 <img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Post.png" width="300">
 
-Users can then add their own review of the course, if they have already taken it. This can be naviaagted to from any course screen.
+Users can then add their own review of the course, if they have already taken it. This can be naviagted to from any course screen.
 
 
 #### FAVORITES / BOOKMARK Screen - Contains list of classes that the user has shortlisted
