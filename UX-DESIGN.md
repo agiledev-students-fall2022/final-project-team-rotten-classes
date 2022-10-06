@@ -14,7 +14,7 @@ Every course page has a rating, review and detail sections separately with a fea
 
 ## Wireframe
 
-This is the wireframe displaying all the screens.
+This is the wireframe displaying all the screens (HOME screen at the center).
 
 ![](ux-design/BigWireframe.png)
 
