@@ -2,6 +2,7 @@
 
 ## Prototype
 
+[Prototype Link](https://bit.ly/rotten-classes-prototype)
 [Source Files](https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/tree/master/ux-design/prototype)
 
 ## App Map
