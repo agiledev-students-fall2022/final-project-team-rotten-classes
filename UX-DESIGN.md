@@ -54,10 +54,3 @@ It has a swipe functionality to delete the shortlisted class!
 
 #### THANK YOU Screen - After submitting the contact us form
 <img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/ThankYou.png" width="300">
-
-This repository contains instructions and files for two assignments that together comprise the user experience design phase of a web app.
-
-Replace the contents of this file with the completed assignments, as described in:
-
-- [app map & wireframe instructions](instructions-0a-app-map-wireframes.md).
-- [prototype instructions](instructions-0b-prototyping.md)
