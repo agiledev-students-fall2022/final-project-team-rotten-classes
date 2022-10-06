@@ -10,6 +10,8 @@ The main Home Screen of the app contains navigation options to five different sc
 - Favorites / Bookmarked Classes : to come back and view the shortlisted classes later
 - Help / Contact Us
 
+Every course page has a rating, review and detail sections separately with a feature to get the contact details of upperclassmen who have taken the particular class previously.
+
 This repository contains instructions and files for two assignments that together comprise the user experience design phase of a web app.
 
 Replace the contents of this file with the completed assignments, as described in:
