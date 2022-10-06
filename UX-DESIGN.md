@@ -33,9 +33,10 @@ Every class has a rating (represented by a percentage).
 <img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Home.png" width="300">
 
 #### SORT / FILTER Screen
-<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Sort%2BFilter.png" width="300">
 
 This screen allows the user to sort/filter classes either by major or level of study (Graduate/Undergraduate).
+
+<img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Sort%2BFilter.png" width="300">
 
 #### COURSE Screen - Contains 3 tabs (Review, Rating, Detail)
 
