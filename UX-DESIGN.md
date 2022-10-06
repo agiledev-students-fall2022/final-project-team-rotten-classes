@@ -33,7 +33,9 @@ This is the wireframe displaying all the screens (HOME screen at the center).
 <img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Post.png" width="300">
 
 #### FAVORITES / BOOKMARK Screen - Contains list of classes that the user has shortlisted
+
 It has a swipe functionality to delete the shortlisted class!
+
 <img src="https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes/blob/master/ux-design/Bookmarked.png" width="300">
 
 #### CONTACT UPPERCLASSMEN Screen - Contains students who have taken the particular class previously
