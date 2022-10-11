@@ -3,8 +3,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
+Navigate to the project directory final-project-team-rotten-classes
 
-In the project directory, you can run:
+Then navigate into the front-end directory or the back-end directory.
+
+Once there, run:
+
+### `npm install`
+
+After npm is finished loading, you can run:
 
 ### `npm start`
 
