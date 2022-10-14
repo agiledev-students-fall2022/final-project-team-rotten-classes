@@ -1,15 +1,12 @@
-import './App.css'
-import Header from './Header'
+import './App.css';
+import Home from './Home';
 
-const App = props => {
+function App() {
   return (
-    <div className="App">
-        <Header />
-        <main className="App-main">
-
-        </main>
-    </div>
-  )
+    <>
+      <Home />
+    </>
+  );
 }
 
-export default App
+export default App;
