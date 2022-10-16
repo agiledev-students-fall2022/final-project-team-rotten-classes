@@ -1,5 +1,6 @@
 import './Header.css'
-import logo from './logo.svg'
+import logo from './images/logo2.png'
+import SearchBox from "./components/search-box/search-box.component";
 
 /**
  * A React component that is used for the header displayed at the top of every page of the site.
@@ -9,7 +10,11 @@ import logo from './logo.svg'
 const Header = props => {
   return (
     <header className="Header-header">
-      <h1>WELCOMEEE!</h1>
+      <img src={logo} alt="Our Logo"/>
+        <SearchBox
+            placeholder='Search Your Class'
+            className={'search-box'}
+        />
     </header>
   )
 }
