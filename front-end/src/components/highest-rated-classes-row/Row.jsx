@@ -30,7 +30,7 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
                 <h5 className="title">Machine Learning</h5>
-                <img src={img1} />
+                <img src={img1} alt='machine learning pic'/>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
@@ -41,7 +41,7 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
             <h5 className="title">Offensive Security</h5>
-                <img src={img2} />
+                <img src={img2} alt='offensive security pic'/>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
@@ -52,7 +52,7 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
             <h5 className="title">Algorithms</h5>
-                <img src={img4} />
+                <img src={img4} alt='algorithms pic'/>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
@@ -63,7 +63,7 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
             <h5 className="title">Blockchain Fundamentals</h5>
-                <img src={img3} />
+                <img src={img3} alt='blockchain fundamentals pic'/>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
@@ -74,8 +74,7 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
             <h5 className="title">Ethics and Technology</h5>
-                <img src={img5} />
-                
+                <img src={img5} alt='ethics and technology pic'/>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>

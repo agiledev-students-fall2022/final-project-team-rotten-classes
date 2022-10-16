@@ -33,12 +33,12 @@ const SubjectButtons = () => {
       </div> */}
 
 <Slider {...settings} >
-<button type="button" class="btn btn-primary text-nowrap">Computer Science</button>
-<button type="button" class="btn btn-warning">Biology</button>
-<button type="button" class="btn btn-success text-nowrap">Global Health</button>
-<button type="button" class="btn btn-secondary text-nowrap">Philosophy</button>
-<button type="button" class="btn btn-danger text-nowrap">Mathematics</button>
-<button type="button" class="btn btn-info text-nowrap">Business Studies</button>
+<button type="button" className="btn btn-primary text-nowrap">Computer Science</button>
+<button type="button" className="btn btn-warning">Biology</button>
+<button type="button" className="btn btn-success text-nowrap">Global Health</button>
+<button type="button" className="btn btn-secondary text-nowrap">Philosophy</button>
+<button type="button" className="btn btn-danger text-nowrap">Mathematics</button>
+<button type="button" className="btn btn-info text-nowrap">Business Studies</button>
 
     </Slider>
         </>
