@@ -17,7 +17,6 @@ const useStyles = makeStyles({
   root: {
     width: "100%",
     backgroundColor: "transparent",
-    
     position: "fixed",
     bottom: 0,
     "& .MuiBottomNavigationAction-root": {
@@ -30,15 +29,11 @@ const useStyles = makeStyles({
     "& .Mui-selected": {
       "@media (max-width: 800px)": {
         // color: "red",
-      }
-    }
-  }
-});
+      }}}});
 
 const Navigation = () => {
   const classes = useStyles();
     const [value, setValue] = React.useState(0);
-
     return (
         <div>
             <BrowserRouter>
@@ -55,12 +50,9 @@ const Navigation = () => {
                     <BottomNavigationAction component={Link} to="/add" label="Add" icon={<AddCircleOutlineIcon />} />
                     <BottomNavigationAction component={Link} to="/search" label="Search" icon={<SearchOutlinedIcon />} />
                     <BottomNavigationAction component={Link} to="/contact" label="Contact" icon={<PersonIcon />} />
-
-
                 </BottomNavigation>
             </BrowserRouter>
         </div>
-    )
-}
+    )}
 
 export default Navigation;

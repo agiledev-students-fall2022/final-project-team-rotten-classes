@@ -10,7 +10,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const SubjectButtons = () => {
-
     var settings = {
         dots: false,
         autoplay: false,
@@ -22,7 +21,6 @@ const SubjectButtons = () => {
         adaptiveHeight: true,
         autoplaySpeed: 2000
     };
-      
       return (
         <>
         {/* <div className="subject-buttons">
@@ -44,8 +42,6 @@ const SubjectButtons = () => {
 
     </Slider>
         </>
-  
-      )
-  }
+      )}
   
   export default SubjectButtons;

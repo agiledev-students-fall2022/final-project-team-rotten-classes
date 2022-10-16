@@ -26,12 +26,11 @@ const Row = () => {
         autoplaySpeed: 2000
     };
     return (
-        
         <Slider {...settings} >
         <div className="big">
             <div className="slick-list">
                 <h5 className="title">Machine Learning</h5>
-                <img src={img1}></img>
+                <img src={img1} />
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
@@ -42,8 +41,7 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
             <h5 className="title">Offensive Security</h5>
-                <img src={img2}></img>
-                
+                <img src={img2} />
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
@@ -54,8 +52,7 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
             <h5 className="title">Algorithms</h5>
-                <img src={img4}></img>
-                
+                <img src={img4} />
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
@@ -66,20 +63,18 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
             <h5 className="title">Blockchain Fundamentals</h5>
-                <img src={img3}></img>
-                
+                <img src={img3} />
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
                 <h6 className="prof">Amber Clarke</h6>
             </div>
         </div>
-
 
         <div className="big">
             <div className="slick-list">
             <h5 className="title">Ethics and Technology</h5>
-                <img src={img5}></img>
+                <img src={img5} />
                 
             </div>
             <div className="subheading">
@@ -87,10 +82,8 @@ const Row = () => {
                 <h6 className="prof">Amber Clarke</h6>
             </div>
         </div>
-      
-  
+
     </Slider>
-    )
-}
+    )}
 
 export default Row;
