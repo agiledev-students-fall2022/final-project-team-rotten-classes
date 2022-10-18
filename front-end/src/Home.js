@@ -4,6 +4,7 @@ import Row from './components/highest-rated-classes-row/Row'
 import Navigation from './components/bottom-navigation-bar/Navigation'
 import SubjectButtons from './components/subject-buttons/SubjectButtons'
 import Badge from 'react-bootstrap/Badge';
+import FindClassByMajor from "./components/find-class-by-major/find-class-by-major.component";
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
         <h6 className="head2">MORE</h6>
       </div>
       <Row />
+      <FindClassByMajor />
       <Navigation />
       
     </>
