@@ -1,7 +1,7 @@
 import './Home.css'
 import Slider from './components/slideshow/Slider'
 import Row from './components/highest-rated-classes-row/Row'
-import Navigation from './components/bottom-navigation-bar/Navigation'
+import BottomNavigationBar from "./routes/bottom-navigation-bar/bottom-navigation-bar.component";
 import SubjectButtons from './components/subject-buttons/SubjectButtons'
 import Badge from 'react-bootstrap/Badge';
 import FindClassByMajor from "./components/find-class-by-major/find-class-by-major.component";
@@ -19,7 +19,7 @@ function Home() {
       </div>
       <Row />
       <FindClassByMajor />
-      <Navigation />
+      <BottomNavigationBar />
       
     </>
   );

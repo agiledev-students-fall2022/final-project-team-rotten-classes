@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
-import './Navigation.css';
 // import {Helmet} from "react-helmet";
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -31,7 +30,7 @@ const useStyles = makeStyles({
         // color: "red",
       }}}});
 
-const Navigation = () => {
+const BottomNavigationBar = () => {
   const classes = useStyles();
     const [value, setValue] = React.useState(0);
     return (
@@ -55,4 +54,4 @@ const Navigation = () => {
         </div>
     )}
 
-export default Navigation;
+export default BottomNavigationBar;

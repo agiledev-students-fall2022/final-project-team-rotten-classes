@@ -1,4 +1,4 @@
-.card-container {
+.course-card-container {
   display: flex;
   flex-direction: column;
   background-color: #95dada;
@@ -12,6 +12,6 @@
   transition: transform 0.25s ease-out;
 }
 
-.card-container:hover {
+.course-card-container:hover {
   transform: scale(1.05);
 }

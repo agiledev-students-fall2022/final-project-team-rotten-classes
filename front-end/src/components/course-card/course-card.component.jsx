@@ -1,9 +1,9 @@
-import './card.styles.css';
+import './course-card.styles.css';
 
-const Card = ({course}) => {
+const CourseCard = ({course}) => {
     const {courseID, courseName, courseRate, courseProfessor} = course;
     return (
-        <div className='card-container' key={courseID}>
+        <div className='course-card-container' key={courseID}>
         <img
             alt={`course ${courseName}`}
 
@@ -16,4 +16,4 @@ const Card = ({course}) => {
         </div>
     )};
 
-export default Card;
+export default CourseCard;
