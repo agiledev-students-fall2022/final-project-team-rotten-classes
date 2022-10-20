@@ -8,7 +8,7 @@ const CourseCard = ({course}) => {
             alt={`course ${courseName}`}
 
             //Image Source needs to be filled with mock data
-            src={}
+         
         />
         <h5>{courseName}</h5>
         <h6>{courseRate}</h6>
