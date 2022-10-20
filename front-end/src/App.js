@@ -3,14 +3,14 @@ import './App.css';
 import Home from './routes/home/home.component';
 import Header from './Header';
 import Viewall from './Viewall';
+import BottomNavigationBar from './routes/bottom-navigation-bar/bottom-navigation-bar.component';
 
 
 function App() {
   return (
     <div className="App"> 
 
-   <Header />
-   <Home />
+    <Header />
    
    <Router>
       <Routes>
@@ -19,6 +19,7 @@ function App() {
     
       </Routes>
 
+      <BottomNavigationBar />
     </Router>
 
     </div>
