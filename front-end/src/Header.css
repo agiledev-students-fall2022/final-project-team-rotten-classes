@@ -16,6 +16,7 @@
     width: 18%;
     height: 6%;
     vertical-align: middle;
+    float: left;
   }
 
   .Header-header input{
