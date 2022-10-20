@@ -7,12 +7,13 @@ import SearchBox from "./components/search-box/search-box.component";
  * @param {*} param0 an object holding any props passed to this component from its parent component
  * @returns The contents of this component, in JSX form.
  */
+
 const Header = props => {
   return (
     <header className="Header-header">
       <img src={logo} alt="Our Logo"/>
         <SearchBox
-            placeholder='Search Your Class'
+            placeholder='Search...'
             className={'search-box'}
         />
     </header>
