@@ -41,7 +41,7 @@ const Navigation = () => {
 
     return (
         <div>
-            <BrowserRouter>
+            
                 {/* <NavigatorPane></NavigatorPane> */}
                 <BottomNavigation
                     value={value}
@@ -50,7 +50,7 @@ const Navigation = () => {
                     }}
                     className={classes.root}
                 >
-                    <BottomNavigationAction component={Link} to="/home" label="Home" icon={<HomeIcon />} />
+                    <BottomNavigationAction component={Link} to="/" label="Home" icon={<HomeIcon />} />
                     <BottomNavigationAction component={Link} to="/favorites" label="Favorites" icon={<FavoriteIcon />} />
                     <BottomNavigationAction component={Link} to="/add" label="Add" icon={<AddCircleOutlineIcon />} />
                     <BottomNavigationAction component={Link} to="/search" label="Search" icon={<SearchOutlinedIcon />} />
@@ -58,7 +58,7 @@ const Navigation = () => {
 
 
                 </BottomNavigation>
-            </BrowserRouter>
+            
         </div>
     )
 }

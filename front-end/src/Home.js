@@ -6,6 +6,7 @@ import Row from './components/highest-rated-classes-row/Row'
 import Navigation from './components/bottom-navigation-bar/Navigation'
 import SubjectButtons from './components/subject-buttons/SubjectButtons'
 import Badge from 'react-bootstrap/Badge';
+import { Button } from 'react-bootstrap';
 import { Navigate } from 'react-router-dom';
 
 
@@ -33,10 +34,10 @@ function Home(){
      
       <h6 className="head1">HIGHEST RATED CLASSES 
       
-      <Badge onClick={()=>{setView(true)}}>ALL</Badge>
+      <Badge>ALL</Badge>
        
       </h6> 
-      <h6 className="head2">MORE</h6>
+      <h6 className="head2"><Button onClick={()=>{setView(true)}}>MORE</Button></h6>
       </div>
       <Row />
       <Navigation />

@@ -3,6 +3,7 @@ import './App.css';
 import Home from './Home';
 import Viewall from './Viewall';
 import Header from './Header';
+import Navigation from './components/bottom-navigation-bar/Navigation';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <div className="App"> 
 
    <Header />
+   
    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -17,7 +19,13 @@ function App() {
     
       </Routes>
 
+      <Navigation />
+
     </Router>
+    
+ 
+
+    
    
 
     
