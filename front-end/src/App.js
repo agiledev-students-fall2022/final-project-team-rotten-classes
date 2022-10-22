@@ -3,8 +3,8 @@ import './App.css';
 import Home from './routes/home/home.component';
 import Header from './Header';
 import Viewall from './Viewall';
-import Footer from './Footer';
 import CourseRatings from './CourseRatings';
+import Footer from './Footer';
 import BottomNavigationBar from './routes/bottom-navigation-bar/bottom-navigation-bar.component';
 
 
@@ -18,8 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Viewall" element={<Viewall />} />
-        <Route path="/CourseRatings" element = {<CourseRatings />} />
-    
+        <Route path="/CourseRatings" element={<CourseRatings />} />
       </Routes>
 
       <BottomNavigationBar />

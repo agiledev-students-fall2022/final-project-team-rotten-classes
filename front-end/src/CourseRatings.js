@@ -1,7 +1,8 @@
 import './CourseRatings.css'
 import  React from 'react';
 import { Link } from 'react-router-dom'
-import Row from './components/highest-rated-classes-row/Row'
+import RowForViewall from './components/highest-rated-classes-row/RowForViewAll'
+import { fontSize } from '@mui/system';
 
 /**
  * A React component that represents the Home page of the app.
@@ -13,7 +14,18 @@ function CourseRatings() {
     return (
       <>
 
-        <p>HELLO</p>
+   {/*<Link to="/">Back</Link> */} 
+     {/*<p>Here are all the available classes:</p>*/}
+
+     <br></br>
+
+     <h6 className="head1">HIGHEST RATED CLASSES</h6> 
+
+    
+     <br></br>
+    
+      <RowForViewall />
+
 
       </>
     );
