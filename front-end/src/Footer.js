@@ -10,7 +10,7 @@ import './Footer.css'
  const Footer = props => {
     return (
       <footer className="Footer-footer">
-        &copy;2022. Foo Barstein. All rights reserved.
+        
       </footer>
     )
   }

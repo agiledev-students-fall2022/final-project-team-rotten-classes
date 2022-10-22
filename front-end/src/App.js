@@ -3,6 +3,8 @@ import './App.css';
 import Home from './routes/home/home.component';
 import Header from './Header';
 import Viewall from './Viewall';
+import Footer from './Footer';
+import CourseRatings from './CourseRatings';
 
 
 function App() {
@@ -16,10 +18,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Viewall" element={<Viewall />} />
+        <Route path="/CourseRatings" element = {<CourseRatings />} />
     
       </Routes>
 
     </Router>
+
+    <Footer />
 
     </div>
     

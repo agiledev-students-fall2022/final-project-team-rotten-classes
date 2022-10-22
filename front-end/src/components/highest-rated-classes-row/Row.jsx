@@ -30,7 +30,9 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
                 <h5 className="title">Machine Learning</h5>
-                <img src={img1} alt='machine learning pic'/>
+                <a href="./../../CourseRatings.js">
+                    <img src={img1} alt='machine learning pic'/>
+                </a>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
@@ -41,7 +43,9 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
             <h5 className="title">Offensive Security</h5>
-                <img src={img2} alt='offensive security pic'/>
+                <a href="./../../CourseRatings.js">
+                    <img src={img2} alt='offensive security pic'/>
+                </a>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
@@ -52,7 +56,9 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
             <h5 className="title">Algorithms</h5>
-                <img src={img4} alt='algorithms pic'/>
+                <a href="./../../CourseRatings.js">
+                    <img src={img4} alt='algorithms pic'/>
+                </a>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
@@ -63,7 +69,9 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
             <h5 className="title">Blockchain Fundamentals</h5>
+            <a href="./../../CourseRatings.js">
                 <img src={img3} alt='blockchain fundamentals pic'/>
+            </a>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
@@ -74,7 +82,9 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
             <h5 className="title">Ethics and Technology</h5>
+            <a href="./../../CourseRatings.js">
                 <img src={img5} alt='ethics and technology pic'/>
+            </a>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
