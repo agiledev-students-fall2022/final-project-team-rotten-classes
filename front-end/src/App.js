@@ -5,14 +5,14 @@ import Header from './Header';
 import Viewall from './Viewall';
 import Footer from './Footer';
 import CourseRatings from './CourseRatings';
+import BottomNavigationBar from './routes/bottom-navigation-bar/bottom-navigation-bar.component';
 
 
 function App() {
   return (
     <div className="App"> 
 
-   <Header />
-   <Home />
+    <Header />
    
    <Router>
       <Routes>
@@ -22,6 +22,7 @@ function App() {
     
       </Routes>
 
+      <BottomNavigationBar />
     </Router>
 
     <Footer />
