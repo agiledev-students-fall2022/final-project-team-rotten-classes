@@ -1,4 +1,5 @@
 import React from "react";
+import {BrowserRouter as Router, Link} from 'react-router-dom';
 import { Carousel } from "react-bootstrap";
 import './Slider.css';
 
@@ -11,11 +12,13 @@ const Slider = () => {
         <>
             <Carousel>
       <Carousel.Item interval={2000}>
-        <img
-          className="d-block w-100"
-          src={img1}
-          alt="First slide"
-        />
+        <Link to="CourseRatings">
+          <img
+            className="d-block w-100"
+            src={img1}
+            alt="First slide"
+          />
+          </Link>
         <Carousel.Caption>
         <div className="title">
           <h3>OPERATING SYSTEMS</h3>
@@ -24,11 +27,13 @@ const Slider = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={2000}>
-        <img
-          className="d-block w-100"
-          src={img2}
-          alt="Second slide"
-        />
+        <Link to="CourseRatings">
+          <img
+            className="d-block w-100"
+            src={img2}
+            alt="Second slide"
+          />
+          </Link>
         <Carousel.Caption>
         <div className="title">
           <h3>LIFE IN THE UNIVERSE</h3>
@@ -37,11 +42,13 @@ const Slider = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={2000}>
-        <img
-          className="d-block w-100"
-          src={img3}
-          alt="Third slide"
-        />
+        <Link to="CourseRatings">
+          <img
+            className="d-block w-100"
+            src={img3}
+            alt="Third slide"
+          />
+          </Link>
         <Carousel.Caption>
         <div className="title">
           <h3>AGILE SOFTWARE DEVELOPMENT</h3>
