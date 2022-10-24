@@ -14,11 +14,15 @@ import SearchBox from "./components/search-box/search-box.component";
 const Header = props => {
   return (
     <header className="Header-header">
+
+    <a href="/">
       <img src={logo} alt="Our Logo"/>
         <SearchBox
             placeholder='Search...'
             className={'search-box'}
         />
+
+</a>
 
     </header>
   )
