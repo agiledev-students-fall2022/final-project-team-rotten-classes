@@ -6,6 +6,7 @@ import Viewall from './Viewall';
 import CourseRatings from './CourseRatings';
 import Footer from './Footer';
 import BottomNavigationBar from './routes/bottom-navigation-bar/bottom-navigation-bar.component';
+import AddReview from './AddReview';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Viewall" element={<Viewall />} />
         <Route path="/CourseRatings" element={<CourseRatings />} />
+        <Route path="/AddReview" element={<AddReview />} />
       </Routes>
 
       <BottomNavigationBar />
