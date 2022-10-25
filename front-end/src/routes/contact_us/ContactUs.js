@@ -82,20 +82,20 @@ return (
   <input type="submit" value="Submit" />
 
 </form>
-
+    <div className="contacts">
+        <p>
+            7 NE. Newcastle St.Brooklyn, NY 11211
+        </p>
+        <p>
+            716-948-3100
+        </p>
+        <p>
+            support@classcritic.io
+        </p>
+    </div>
 </div>
 
-<div className="contacts">
-    <p>
-    7 NE. Newcastle St.Brooklyn, NY 11211
-    </p>
-    <p>
-    716-948-3100
-    </p>
-    <p>
-    support@classcritic.io 
-    </p>
-</div>
+
 
 
 
