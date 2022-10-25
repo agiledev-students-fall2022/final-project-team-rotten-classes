@@ -1,0 +1,57 @@
+.inputs{
+
+    color: #250741;
+    
+    
+}
+
+
+
+.head{
+    color:#02B7FE;
+    margin-left: 500px;
+    margin-right: 500px;
+
+    
+}
+
+
+.submit{
+    color: #250741;
+}
+
+.form{
+
+    
+    border:  #E413F4 solid 5px;
+    background-color: #FFFEF4;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding: 10px;
+    width:400px;
+  
+    
+    
+  }
+
+  .whole{
+    background-color: #250741;
+  }
+
+
+  .contacts{
+
+    border:  white solid 5px;
+    background-color: #02B7FE;
+    margin-left: 525px;
+    margin-right: 900px;
+    width:370px;
+    margin-top: 20px;
+    position: relative;
+    
+  }
+
+  
+
+ 
