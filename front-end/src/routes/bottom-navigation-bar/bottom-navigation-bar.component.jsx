@@ -11,13 +11,15 @@ import PersonIcon from '@mui/icons-material/Person';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 // import NavigatorPane from './Components/NavigatorPane';
+import AddReview from "../../AddReview";
 
 const useStyles = makeStyles({
   root: {
     width: "100%",
-    backgroundColor: "transparent",
+    backgroundColor: "black",
     position: "fixed",
     bottom: 0,
+    paddingTop: "10px",
     "& .MuiBottomNavigationAction-root": {
       "@media (max-width: 800px)": {
         minWidth: "auto",
@@ -45,9 +47,8 @@ const BottomNavigationBar = () => {
                     className={classes.root}
                 >
                     <BottomNavigationAction component={Link} to="/" label="Home" icon={<HomeIcon />} />
-                    <BottomNavigationAction component={Link} to="/favorites" label="Favorites" icon={<FavoriteIcon />} />
-                    <BottomNavigationAction component={Link} to="/add" label="Add" icon={<AddCircleOutlineIcon />} />
                     <BottomNavigationAction component={Link} to="/search" label="Search" icon={<SearchOutlinedIcon />} />
+                    <BottomNavigationAction component={Link} to="/AddReview" label="Add" icon={<AddCircleOutlineIcon />} />
                     <BottomNavigationAction component={Link} to="/contact" label="Contact" icon={<PersonIcon />} />
                 </BottomNavigation>
           
