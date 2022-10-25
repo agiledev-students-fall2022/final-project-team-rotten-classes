@@ -7,6 +7,7 @@ import CourseRatings from './CourseRatings';
 import Footer from './Footer';
 import BottomNavigationBar from './routes/bottom-navigation-bar/bottom-navigation-bar.component';
 import AddReview from './AddReview';
+import SearchPage from "./routes/search-page/search-page.component";
 
 
 function App() {
@@ -17,10 +18,11 @@ function App() {
    
    <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Viewall" element={<Viewall />} />
-        <Route path="/CourseRatings" element={<CourseRatings />} />
-        <Route path="/AddReview" element={<AddReview />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/Viewall" element={<Viewall />} />
+          <Route path="/CourseRatings" element={<CourseRatings />} />
+          <Route path="/AddReview" element={<AddReview />} />
+          <Route path="/search" element={<SearchPage />} />
       </Routes>
 
       <BottomNavigationBar />

@@ -16,7 +16,6 @@ function Home() {
     return <Navigate to="/Viewall"/>;
   }
 
-
   return (
     <>
       <Slider />
