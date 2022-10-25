@@ -1,15 +1,19 @@
 import SearchBox from "../../components/search-box/search-box.component";
 import './search-page.styles.scss';
-import { Button } from 'react-bootstrap';
 import React from "react";
-
+import SortBox from "../../components/sort-box/sort-box.component";
+import FilterBox from "../../components/filter-box/filter-box.component";
 
 const searchPage = () => {
     return(
         <div>
-            <span ><Button>FILTER</Button></span>
-            <span ><Button>SORT</Button></span>
-            <SearchBox placeholder='Search...' className={'search-box'}/>
+            <div className='search-container'>
+                <SearchBox placeholder='Search...' className={'search-box'}/>
+                <div className='sort-filter-container'>
+                    <SortBox className={'sort-box'}/>
+                    <FilterBox className={'filter-box'}/>
+                </div>
+            </div>
         </div>
     )
 }
