@@ -5,7 +5,6 @@ import Row from '../../components/highest-rated-classes-row/Row'
 import BottomNavigationBar from "../bottom-navigation-bar/bottom-navigation-bar.component";
 import SubjectButtons from '../../components/subject-buttons/SubjectButtons'
 import Badge from 'react-bootstrap/Badge';
-import FindClassByMajor from "../../components/find-class-by-major/find-class-by-major.component";
 import { Button } from 'react-bootstrap';
 import { Navigate } from 'react-router-dom';
 
@@ -29,7 +28,6 @@ function Home() {
         <h6 className="head2"><Button onClick={()=>{setView(true)}}>MORE</Button></h6>
       </div>
       <Row />
-      <FindClassByMajor />
       <BottomNavigationBar />
     </>
   );
