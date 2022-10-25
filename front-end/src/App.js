@@ -8,7 +8,7 @@ import Footer from './Footer';
 import BottomNavigationBar from './routes/bottom-navigation-bar/bottom-navigation-bar.component';
 import AddReview from './AddReview';
 import SearchPage from "./routes/search-page/search-page.component";
-import ConatctUs from "./routes/contact_us/ContactUs";
+import ContactUs from "./routes/contact_us/ContactUs";
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Viewall" element={<Viewall />} />
           <Route path="/CourseRatings" element={<CourseRatings />} />
-          <Route path="/ContactUs" element={<ContactUs />} />
+          <Route path="/contact" element={<ContactUs />} />
           <Route path="/AddReview" element={<AddReview />} />
           <Route path="/search" element={<SearchPage />} />
       </Routes>
