@@ -6,13 +6,13 @@ import FilterBox from "../../components/filter-box/filter-box.component";
 
 const searchPage = () => {
     return(
-        <div>
-            <div className='search-container'>
+        <div className='search-container'>
+            <div className>
                 <SearchBox placeholder='Search...' className={'search-box'}/>
-                <div className='sort-filter-container'>
+            </div>
+            <div className='sort-filter-container'>
                     <SortBox className={'sort-box'}/>
                     <FilterBox className={'filter-box'}/>
-                </div>
             </div>
         </div>
     )
