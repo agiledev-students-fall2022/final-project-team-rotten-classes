@@ -1,0 +1,65 @@
+/* Course Header Code (Same for details and ratings)*/
+.course-page-header{
+    padding: 3vh;
+}
+
+.course-page-subheader{
+    padding: 3%;
+    padding-left: 11vh;
+    padding-right: 11vh;
+    height: 30vh;
+    margin: 0%;
+}
+
+.course-page-subheader img{
+    float: left;
+    width: 20vh;
+    height: 20vh;
+    margin: 0%;
+}
+
+.course-page-subheader h2{
+    padding-left: 3%;
+    color: white;
+}
+
+.course-page-subheader h3{
+    font-size: 20px;
+    color: white;
+}
+
+.review-rating-button-switch{
+    padding: 3%;
+}
+
+.review-rating-button-switch button{
+    width: 400px;
+    background-color: #F6FF54;
+}
+
+.review-rating-button-switch button:hover{
+    background-color: #b3bb25;
+}
+
+.review-rating-button-switch button:active{
+    background-color: #7D05DF;
+}
+
+/* Course Review Styling Starts Here */
+
+.reviews-for-course-ratings{
+    padding-left: 11vh;
+    padding-right: 11vh;
+    color: white;
+}
+
+.reviews-for-course-ratings h3{
+    font-size: 30px;
+}
+
+.reviews-for-course-ratings p{
+    text-align: left;
+    color:white;
+    font-size: 20px;
+    padding-bottom: 5vh;
+}

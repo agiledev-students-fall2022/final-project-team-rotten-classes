@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {BrowserRouter as Router, Link} from 'react-router-dom';
 import { Card, Carousel } from "react-bootstrap";
 
 import './Row.css';
@@ -30,9 +31,9 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
                 <h5 className="title">Machine Learning</h5>
-                <a href="./../../CourseRatings.js">
+                <Link to="CourseReviews">
                     <img src={img1} alt='machine learning pic'/>
-                </a>
+                </Link>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
@@ -42,10 +43,10 @@ const Row = () => {
 
         <div className="big">
             <div className="slick-list">
-            <h5 className="title">Offensive Security</h5>
-                <a href="./../../CourseRatings.js">
-                    <img src={img2} alt='offensive security pic'/>
-                </a>
+                <h5 className="title">Offensive Security</h5>
+                <Link to="CourseReviews">
+                        <img src={img2} alt='offensive security pic'/>
+                </Link>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
@@ -55,10 +56,10 @@ const Row = () => {
 
         <div className="big">
             <div className="slick-list">
-            <h5 className="title">Algorithms</h5>
-                <a href="./../../CourseRatings.js">
-                    <img src={img4} alt='algorithms pic'/>
-                </a>
+                <h5 className="title">Algorithms</h5>
+                <Link to="CourseReviews">
+                        <img src={img4} alt='algorithms pic'/>
+                </Link>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
@@ -68,10 +69,10 @@ const Row = () => {
 
         <div className="big">
             <div className="slick-list">
-            <h5 className="title">Blockchain Fundamentals</h5>
-            <a href="./../../CourseRatings.js">
-                <img src={img3} alt='blockchain fundamentals pic'/>
-            </a>
+                <h5 className="title">Blockchain Fundamentals</h5>
+                <Link to="CourseReviews">
+                    <img src={img3} alt='blockchain fundamentals pic'/>
+                </Link>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
@@ -81,10 +82,10 @@ const Row = () => {
 
         <div className="big">
             <div className="slick-list">
-            <h5 className="title">Ethics and Technology</h5>
-            <a href="./../../CourseRatings.js">
-                <img src={img5} alt='ethics and technology pic'/>
-            </a>
+                <h5 className="title">Ethics and Technology</h5>
+                <Link to="CourseReviews">
+                    <img src={img5} alt='ethics and technology pic'/>
+                </Link>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
