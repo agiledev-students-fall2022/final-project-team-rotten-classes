@@ -1,0 +1,33 @@
+.inputs{
+    color: #250741;
+}
+.head{
+    color:#02B7FE;
+}
+.submit{
+    color: #250741;
+}
+.form{
+    border:  #E413F4 solid 5px;
+    background-color: #FFFEF4;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    width:400px;
+  }
+
+  .whole{
+    background-color: #250741;
+      display: flex;
+      flex-direction: column;
+  }
+
+  .contacts{
+    border: white solid 5px;
+    background-color: #02B7FE;
+    width:370px;
+  }
+
+  
+
+ 
