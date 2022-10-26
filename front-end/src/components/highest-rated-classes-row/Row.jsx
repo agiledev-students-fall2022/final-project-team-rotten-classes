@@ -31,7 +31,7 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
                 <h5 className="title">Machine Learning</h5>
-                <Link to="CourseRatings">
+                <Link to="CourseReviews">
                     <img src={img1} alt='machine learning pic'/>
                 </Link>
             </div>
@@ -44,7 +44,7 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
                 <h5 className="title">Offensive Security</h5>
-                <Link to="CourseRatings">
+                <Link to="CourseReviews">
                         <img src={img2} alt='offensive security pic'/>
                 </Link>
             </div>
@@ -57,7 +57,7 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
                 <h5 className="title">Algorithms</h5>
-                <Link to="CourseRatings">
+                <Link to="CourseReviews">
                         <img src={img4} alt='algorithms pic'/>
                 </Link>
             </div>
@@ -70,7 +70,7 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
                 <h5 className="title">Blockchain Fundamentals</h5>
-                <Link to="CourseRatings">
+                <Link to="CourseReviews">
                     <img src={img3} alt='blockchain fundamentals pic'/>
                 </Link>
             </div>
@@ -83,7 +83,7 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
                 <h5 className="title">Ethics and Technology</h5>
-                <Link to="CourseRatings">
+                <Link to="CourseReviews">
                     <img src={img5} alt='ethics and technology pic'/>
                 </Link>
             </div>

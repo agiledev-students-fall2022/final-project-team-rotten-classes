@@ -1,4 +1,4 @@
-import './CourseRatings.css'
+import './CourseDetails.css'
 import  React from 'react';
 import RowForViewall from './components/highest-rated-classes-row/RowForViewAll'
 import { fontSize } from '@mui/system';
@@ -13,7 +13,7 @@ import {BrowserRouter as Router, Link} from 'react-router-dom';
  * @returns The contents of this component, in JSX form.
  */
 
-function CourseRatings() {
+function CourseDetails() {
   const [goToView, setView] = React.useState(false);
 
   if(goToView){
@@ -39,4 +39,4 @@ function CourseRatings() {
     );
   }
   
-  export default CourseRatings;
+  export default CourseDetails;
