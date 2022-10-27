@@ -34,5 +34,13 @@ Please read  our [CONTRIBUTING.md](./CONTRIBUTING.md) document outlining our tea
 
 The instructions for building and testing are pending. This section will be completed once the front-end and back-end part are completed.
 
-* Front-end: Pending
+* Front-end: 
+    - In order to run this application, please clone the project repository onto your local machine using `git clone`.
+          - `git clone https://github.com/some-username/my-app.git`
+          - This will create a new directory on your local machine where all the files for this application will be stored.
+    - After you have cloned the repository, navigate to that directory using terminal.
+    - Navigate to the **front-end** file.
+    - Instal npm using command `npm install`.
+    - Run npm using `npm start`.
+    - You should then be navigated to a browser where you could view our applicaion.
 * Back-end: Pending
