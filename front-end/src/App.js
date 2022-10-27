@@ -9,6 +9,8 @@ import CourseDetails from './CourseDetails';
 import Footer from './Footer';
 import BottomNavigationBar from './routes/bottom-navigation-bar/bottom-navigation-bar.component';
 import AddReview from './AddReview';
+import SearchPage from "./routes/search-page/search-page.component";
+import ContactUs from "./routes/contact_us/ContactUs";
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
         <Route path="/CourseReviews" element={<CourseReviews />} />
         <Route path="/CourseDetails" element={<CourseDetails />} />
         <Route path="/AddReview" element={<AddReview />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/search" element={<SearchPage />} />
       </Routes>
 
       <BottomNavigationBar />
