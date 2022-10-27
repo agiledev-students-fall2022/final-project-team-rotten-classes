@@ -15,7 +15,7 @@ const Slider = () => {
         <Link to="CourseRatings">
           <img
             className="d-block w-100"
-            src={img1}
+            src="https://source.unsplash.com/random"
             alt="First slide"
           />
           </Link>
@@ -30,7 +30,7 @@ const Slider = () => {
         <Link to="CourseRatings">
           <img
             className="d-block w-100"
-            src={img2}
+            src="https://source.unsplash.com/random"
             alt="Second slide"
           />
           </Link>
@@ -45,7 +45,7 @@ const Slider = () => {
         <Link to="CourseRatings">
           <img
             className="d-block w-100"
-            src={img3}
+            src="https://source.unsplash.com/random"
             alt="Third slide"
           />
           </Link>

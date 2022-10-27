@@ -23,7 +23,7 @@ function CourseDetails() {
       <>
       <div className = "course-page-header">
         <div className = "course-page-subheader">
-          <img src={img1} alt='machine learning pic'/>
+          <img src="https://source.unsplash.com/random" alt='machine learning pic'/>
           <h2>Course Name</h2>
           <h3>Professor Name</h3>
           <Badge onClick={()=>{setView(true)}}>Highest Rated Course</Badge>
