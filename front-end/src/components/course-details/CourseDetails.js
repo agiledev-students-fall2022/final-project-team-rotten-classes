@@ -1,8 +1,8 @@
 import './CourseDetails.css'
 import  React from 'react';
-import RowForViewall from './components/highest-rated-classes-row/RowForViewAll'
+import RowForViewall from '../highest-rated-classes-row/RowForViewAll'
 import { fontSize } from '@mui/system';
-import img1 from './images/ml.jpeg'
+import img1 from '../../images/ml.jpeg'
 import Badge from 'react-bootstrap/Badge';
 import { Navigate } from 'react-router-dom';
 import {BrowserRouter as Router, Link} from 'react-router-dom';

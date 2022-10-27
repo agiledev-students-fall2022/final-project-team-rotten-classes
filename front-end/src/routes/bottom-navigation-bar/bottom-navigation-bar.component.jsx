@@ -11,7 +11,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 // import NavigatorPane from './Components/NavigatorPane';
-import AddReview from "../../AddReview";
+import AddReview from "../add-review/AddReview";
 
 const useStyles = makeStyles({
   root: {
