@@ -11,17 +11,20 @@ import BottomNavigationBar from './routes/bottom-navigation-bar/bottom-navigatio
 import AddReview from './AddReview';
 import SearchPage from "./routes/search-page/search-page.component";
 import ContactUs from "./routes/contact_us/ContactUs";
+import Login from './Login';
+
 
 
 function App() {
+  
   return (
     <div className="App"> 
 
     <Header />
-   
    <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/Home" element={<Home />} />
         <Route path="/Viewall" element={<Viewall />} />
         <Route path="/CourseRatings" element={<CourseRatings />} />
         <Route path="/CourseReviews" element={<CourseReviews />} />

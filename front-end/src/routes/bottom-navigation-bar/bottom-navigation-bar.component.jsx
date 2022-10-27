@@ -45,7 +45,7 @@ const BottomNavigationBar = () => {
                 }}
                 className={classes.root}
             >
-                <BottomNavigationAction component={Link} to="/" label="Home" icon={<HomeIcon />} />
+                <BottomNavigationAction component={Link} to="/Home" label="Home" icon={<HomeIcon />} />
                 <BottomNavigationAction component={Link} to="/search" label="Search" icon={<SearchOutlinedIcon />} />
                 <BottomNavigationAction component={Link} to="/AddReview" label="Add" icon={<AddCircleOutlineIcon />} />
                 <BottomNavigationAction component={Link} to="/contact" label="Contact" icon={<PersonIcon />} />
