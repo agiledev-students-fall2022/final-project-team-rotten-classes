@@ -1,26 +1,33 @@
 /* Course Header Code (Same for details and ratings)*/
+
+#content{
+    overflow:auto;
+    
+}
 .course-page-header{
     padding: 3vh;
 }
 
 .course-page-subheader{
-    padding: 3%;
-    padding-left: 11vh;
+    padding: 2%;
+    justify-content: center;
     padding-right: 11vh;
-    height: 30vh;
+    height: 25vh;
     margin: 0%;
+    border: solid white;
 }
 
 .course-page-subheader img{
     float: left;
     width: 20vh;
     height: 20vh;
-    margin: 0%;
+
 }
 
 .course-page-subheader h2{
     padding-left: 3%;
     color: white;
+
 }
 
 .course-page-subheader h3{
@@ -33,7 +40,7 @@
 }
 
 .review-rating-button-switch button{
-    width: 400px;
+    width: 200px;
     background-color: #F6FF54;
 }
 
@@ -50,16 +57,64 @@
 .reviews-for-course-ratings{
     padding-left: 11vh;
     padding-right: 11vh;
-    color: white;
+    color: black;
 }
 
 .reviews-for-course-ratings h3{
     font-size: 30px;
+
 }
 
 .reviews-for-course-ratings p{
     text-align: left;
-    color:white;
+    color:black;
     font-size: 20px;
     padding-bottom: 5vh;
 }
+
+.rev1{
+    border: solid white;
+    width: 600px;
+    display:flexbox;
+    margin-left:-100px;
+    flex-direction: column;
+    justify-content: center;
+    background-color: antiquewhite;
+
+
+    
+}
+
+.rev2{
+  
+    border: solid white;
+    width: 600px;
+    display:flexbox;
+    margin-left:-100px;
+    flex-direction: column;
+    justify-content: center;
+    background-color: antiquewhite;
+    
+}
+
+.rev3{
+    border: solid white;
+    display: flexbox;
+    width: 600px;
+    flex-direction: column;
+    justify-content: center;
+    margin-left:-100px;
+    background-color: antiquewhite;
+}
+
+
+
+
+    /**
+{<!   border: solid white;
+    width: 600px;
+    display: flexbox;
+    margin-left:-100px;
+    background-color: antiquewhite;>!}
+ */
+
