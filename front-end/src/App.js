@@ -12,8 +12,8 @@ import AddReview from './AddReview';
 import SearchPage from "./routes/search-page/search-page.component";
 import ContactUs from "./routes/contact_us/ContactUs";
 
-
 function App() {
+
   return (
     <div className="App"> 
 

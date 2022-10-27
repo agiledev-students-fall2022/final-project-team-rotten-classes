@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import {BrowserRouter as Router, Link} from 'react-router-dom';
 import { Card, Carousel } from "react-bootstrap";
+import axios from 'axios';
 
 import './Row.css';
 
@@ -15,6 +16,7 @@ import img4 from './../../images/algo.jpg'
 import img5 from './../../images/et.jpg'
 
 const Row = () => {
+    
     var settings = {
         dots: false,
         autoplay: false,

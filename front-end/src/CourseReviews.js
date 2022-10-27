@@ -1,11 +1,13 @@
 import './CourseReviews.css'
-import  React from 'react';
+import React, { useState, useEffect } from 'react';
 import RowForViewall from './components/highest-rated-classes-row/RowForViewAll'
 import { fontSize } from '@mui/system';
 import img1 from './images/ml.jpeg'
 import Badge from 'react-bootstrap/Badge';
 import { Navigate } from 'react-router-dom';
 import {BrowserRouter as Router, Link} from 'react-router-dom';
+import axios from 'axios';
+
 
 /**
  * A React component that represents the Home page of the app.
@@ -13,7 +15,76 @@ import {BrowserRouter as Router, Link} from 'react-router-dom';
  * @returns The contents of this component, in JSX form.
  */
 
+ export const Stocks = () => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    getData();
+  }, []);
+  const getData = () => {
+    axios
+      .get('https://api.mockaroo.com/api/types?key=1647e290')
+      .then((res) => {
+        console.log(res);
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  useEffect(()=>{getData()
+  
+  },[])
+
+    
+  const [goToView, setView] = React.useState(false);
+
+  if(goToView){
+    return <Navigate to="/Viewall"/>;
+  }
+
+  return (
+    <>
+        <div className="stock-container">
+        {data.map((data, id) => {
+          return (
+            <div id={id}>
+              {data.subject +
+                " , " +
+                data.class_name +
+                " ,"}
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
+};
+
+
 function CourseReviews() {
+
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    getData();
+  }, []);
+  const getData = () => {
+    axios
+      .get('https://api.mockaroo.com/api/types?key=1647e290')
+      .then((res) => {
+        console.log(res);
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  useEffect(()=>{getData()
+  
+  },[])
+
+    
   const [goToView, setView] = React.useState(false);
 
   if(goToView){
@@ -21,6 +92,7 @@ function CourseReviews() {
   }
     return (
       <>
+
       <div className = "course-page-header">
         <div className = "course-page-subheader">
           <img src="https://source.unsplash.com/random" alt='machine learning pic'/>
@@ -37,6 +109,7 @@ function CourseReviews() {
 
       <div className = "reviews-for-course-ratings">
         <div className="rev1">
+
           <h3>Lauren Ipsum</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>

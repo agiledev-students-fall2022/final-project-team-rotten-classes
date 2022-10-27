@@ -8,19 +8,13 @@ import SubjectButtons from './components/subject-buttons/SubjectButtons'
 import Badge from 'react-bootstrap/Badge';
 import { Navigate } from 'react-router-dom';
 
-
-
 function Home(){
 
   const [goToView, setView] = React.useState(false);
 
- 
-
   if(goToView){
     return <Navigate to="/Viewall"/>;
   }
-
-  
 
   return (
     <>
@@ -40,9 +34,6 @@ function Home(){
       </div>
       <Row />
       <Navigation />
-    
-
-   
      
     </>
   );
