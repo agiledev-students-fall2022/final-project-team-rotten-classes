@@ -5,7 +5,7 @@
     color:#02B7FE;
 }
 .submit{
-    color: #250741;
+    color: #E413F4;
 }
 .form{
     border:  #E413F4 solid 5px;
@@ -18,7 +18,7 @@
 
   .whole{
     background-color: #250741;
-      display: flex;
+    display: flex;
       flex-direction: column;
   }
 
