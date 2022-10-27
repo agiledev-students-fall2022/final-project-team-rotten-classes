@@ -2,7 +2,7 @@
 
 #content{
     overflow:auto;
-    background-color: white;
+    flex-direction: column;
     
 }
 .course-page-header{
@@ -10,18 +10,21 @@
 }
 
 .course-page-subheader{
+    border-radius: 5px;
     padding: 2%;
     justify-content: center;
     padding-right: 11vh;
     height: 25vh;
     margin: 0%;
-    border: solid white;
+    background-color: #2cb9ec;
+    flex-direction: column;
 }
 
 .course-page-subheader img{
     float: left;
     width: 20vh;
     height: 20vh;
+    border-radius: 50%;
 
 }
 
@@ -43,6 +46,7 @@
 .review-rating-button-switch button{
     width: 200px;
     background-color: #F6FF54;
+    border-radius: 5px;
 }
 
 .review-rating-button-switch button:hover{
@@ -56,9 +60,16 @@
 /* Course Review Styling Starts Here */
 
 .reviews-for-course-ratings{
+    background-color: #7c569b;
+    border-radius: 5px;
     padding-left: 11vh;
     padding-right: 11vh;
     color: black;
+    flex-direction: column;
+}
+
+.reviews-for-course-ratings h2{
+    color: white;
 }
 
 .reviews-for-course-ratings h3{

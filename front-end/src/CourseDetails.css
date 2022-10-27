@@ -1,0 +1,7 @@
+.course-rating-display{
+    flex-direction: column;
+}
+
+.course-rating-display h2{
+    color: white;
+}

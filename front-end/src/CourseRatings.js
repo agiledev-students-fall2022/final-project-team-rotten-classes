@@ -6,6 +6,7 @@ import img1 from './images/ml.jpeg'
 import Badge from 'react-bootstrap/Badge';
 import { Navigate } from 'react-router-dom';
 import {BrowserRouter as Router, Link} from 'react-router-dom';
+import mock from './MOCK_DATA.json';
 
 /**
  * A React component that represents the Home page of the app.
@@ -24,8 +25,8 @@ function CourseRatings() {
       <div className = "course-page-header">
         <div className = "course-page-subheader">
           <img src="https://source.unsplash.com/random" alt='machine learning pic'/>
-          <h2>Course Name</h2>
-          <h3>Professor Name</h3>
+          <h2>{mock[0].class_name}</h2>
+          <h3>Professor {mock[0].professor}</h3>
           <Badge onClick={()=>{setView(true)}}>Highest Rated Course</Badge>
           <Badge onClick={()=>{setView(true)}}>Computer Science</Badge>
         </div>
@@ -35,6 +36,16 @@ function CourseRatings() {
           <Link to = "/CourseDetails"><button>Details</button></Link>
         </div>
       </div>
+
+      <div className = "course-ratings-page">
+        <h1>Under Construction!</h1>
+        <h3>Needs data visualizations we don't yet have the tools for! It'll be here soon!</h3>
+
+        <h2>Rating Distribution</h2>
+        <h2>Would Take It Again:</h2>
+
+      </div>
+      
       </>
     );
   }

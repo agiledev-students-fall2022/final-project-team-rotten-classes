@@ -7,6 +7,7 @@ import Badge from 'react-bootstrap/Badge';
 import { Navigate } from 'react-router-dom';
 import {BrowserRouter as Router, Link} from 'react-router-dom';
 import axios from 'axios';
+import mock from './MOCK_DATA.json';
 
 
 /**
@@ -15,75 +16,7 @@ import axios from 'axios';
  * @returns The contents of this component, in JSX form.
  */
 
- export const Stocks = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    getData();
-  }, []);
-  const getData = () => {
-    axios
-      .get('https://api.mockaroo.com/api/types?key=1647e290')
-      .then((res) => {
-        console.log(res);
-        setData(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-
-  useEffect(()=>{getData()
-  
-  },[])
-
-    
-  const [goToView, setView] = React.useState(false);
-
-  if(goToView){
-    return <Navigate to="/Viewall"/>;
-  }
-
-  return (
-    <>
-        <div className="stock-container">
-        {data.map((data, id) => {
-          return (
-            <div id={id}>
-              {data.subject +
-                " , " +
-                data.class_name +
-                " ,"}
-            </div>
-          );
-        })}
-      </div>
-    </>
-  );
-};
-
-
 function CourseReviews() {
-
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    getData();
-  }, []);
-  const getData = () => {
-    axios
-      .get('https://api.mockaroo.com/api/types?key=1647e290')
-      .then((res) => {
-        console.log(res);
-        setData(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-
-  useEffect(()=>{getData()
-  
-  },[])
-
     
   const [goToView, setView] = React.useState(false);
 
@@ -92,12 +25,11 @@ function CourseReviews() {
   }
     return (
       <>
-
       <div className = "course-page-header">
         <div className = "course-page-subheader">
           <img src="https://source.unsplash.com/random" alt='machine learning pic'/>
-          <h2>Course Name</h2>
-          <h3>Professor Name</h3>
+          <h2>{mock[0].class_name}</h2>
+          <h3>Professor {mock[0].professor}</h3>
           <Badge onClick={()=>{setView(true)}}>Highest Rated Course</Badge>
           <Badge onClick={()=>{setView(true)}}>Computer Science</Badge>
         </div>
@@ -108,22 +40,19 @@ function CourseReviews() {
         </div>
 
       <div className = "reviews-for-course-ratings">
-        <div className="rev1">
+        <p>
 
-          <h3>Lauren Ipsum</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <br></br>
-        <div className="rev2">
-          <h3>Carl Ipsum</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <br></br>
-        <div className="rev3">
-          <h3>Frank Ipsum</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <br></br>
+          {mock && mock.map(({first_name, review, id}) =>(
+            <div key = {id} className = "course-reviews-display">
+              <br></br>
+              Name: {first_name}
+              <br></br>
+              Review: {review}
+              <br></br>
+              <br></br>
+            </div>
+          ))}
+        </p>
         </div>
       </div>
       </>

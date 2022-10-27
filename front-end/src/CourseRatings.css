@@ -1,0 +1,19 @@
+.course-ratings-page{
+    color: white;
+    padding: 3%;
+    padding-bottom: 3%;
+    flex-direction: column;
+}
+
+.course-ratings-page h1{
+    color: yellow;
+}
+
+.course-ratings-page h3{
+    padding-bottom: 3%;
+    color: yellow;
+}
+
+.course-ratings-page h2{
+    color: white;
+}
