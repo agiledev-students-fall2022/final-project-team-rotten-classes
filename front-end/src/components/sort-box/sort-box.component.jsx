@@ -1,4 +1,4 @@
-import './sort-box.styles.scss'
+import './sort-box.styles.css'
 
 const SortBox = () => {
     return (

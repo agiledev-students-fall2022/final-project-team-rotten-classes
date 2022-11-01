@@ -1,13 +1,14 @@
-.sort-box {
+.filter-box {
   -webkit-appearance: none;
-  border: 1px solid white;
+  border: 2px solid #61dafb;
   border-radius: 20px;
   align-items: center;
   display: flex;
   flex-direction: column;
+  margin: 10px;
 }
 
-.sort-text-span{
+.filter-text-span{
   color: white;
   font-size: 20px;
 }

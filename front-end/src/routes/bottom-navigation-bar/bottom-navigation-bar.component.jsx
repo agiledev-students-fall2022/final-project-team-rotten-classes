@@ -11,7 +11,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 // import NavigatorPane from './Components/NavigatorPane';
-import AddReview from "../../AddReview";
+import AddReview from "../add-review/AddReview";
 
 const useStyles = makeStyles({
   root: {
@@ -45,7 +45,7 @@ const BottomNavigationBar = () => {
                 }}
                 className={classes.root}
             >
-                <BottomNavigationAction component={Link} to="/" label="Home" icon={<HomeIcon />} />
+                <BottomNavigationAction component={Link} to="/Home" label="Home" icon={<HomeIcon />} />
                 <BottomNavigationAction component={Link} to="/search" label="Search" icon={<SearchOutlinedIcon />} />
                 <BottomNavigationAction component={Link} to="/AddReview" label="Add" icon={<AddCircleOutlineIcon />} />
                 <BottomNavigationAction component={Link} to="/contact" label="Contact" icon={<PersonIcon />} />

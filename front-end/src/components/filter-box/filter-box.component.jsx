@@ -1,4 +1,4 @@
-import './filter-box.styles.scss'
+import './filter-box.styles.css'
 
 const FilterBox = () => {
     return (

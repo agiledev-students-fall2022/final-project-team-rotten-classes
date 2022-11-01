@@ -40,7 +40,7 @@ The instructions for building and testing are pending. This section will be comp
     - This will create a new directory on your local machine where all the files for this application will be stored.
     - After you have cloned the repository, navigate to that directory using terminal.
     - Navigate to the **front-end** file.
-    - Instal npm using command `npm install`.
+    - Install npm using command `npm install`.
     - Run npm using `npm start`.
     - You should then be navigated to a browser where you could view our applicaion.
 * Back-end: Pending

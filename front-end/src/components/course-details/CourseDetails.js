@@ -1,4 +1,4 @@
-import './CourseRatings.css'
+import './CourseDetails.css'
 import  React from 'react';
 import RowForViewall from './components/highest-rated-classes-row/RowForViewAll'
 import { fontSize } from '@mui/system';
@@ -14,7 +14,7 @@ import mock from './MOCK_DATA.json';
  * @returns The contents of this component, in JSX form.
  */
 
-function CourseRatings() {
+function CourseDetails() {
   const [goToView, setView] = React.useState(false);
 
   if(goToView){
@@ -35,19 +35,18 @@ function CourseRatings() {
           <Link to = "/CourseRatings"><button>Ratings</button></Link>
           <Link to = "/CourseDetails"><button>Details</button></Link>
         </div>
+
+        <div className = "course-rating-display">
+          <h2>Overall Rating</h2>
+          <p>{mock[0].rating1}</p>
+          <h2>Difficulty</h2>
+          <p>{mock[0].rating2}</p>
+          <h2>Level of Workload</h2>
+          <p>{mock[0].workload}</p>
+        </div>
       </div>
-
-      <div className = "course-ratings-page">
-        <h1>Under Construction!</h1>
-        <h3>Needs data visualizations we don't yet have the tools for! It'll be here soon!</h3>
-
-        <h2>Rating Distribution</h2>
-        <h2>Would Take It Again:</h2>
-
-      </div>
-      
       </>
     );
   }
   
-  export default CourseRatings;
+  export default CourseDetails;
