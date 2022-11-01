@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import {BrowserRouter as Router, Link} from 'react-router-dom';
 import { Card, Carousel } from "react-bootstrap";
+import axios from 'axios';
 
 import './Row.css';
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import mock from './../../MOCK_DATA.json';
+
 
 import img1 from './../../images/ml.jpeg'
 import img2 from './../../images/hack.jpg'
@@ -15,6 +18,7 @@ import img4 from './../../images/algo.jpg'
 import img5 from './../../images/et.jpg'
 
 const Row = () => {
+    
     var settings = {
         dots: false,
         autoplay: false,
@@ -30,66 +34,66 @@ const Row = () => {
         <Slider {...settings} >
         <div className="big">
             <div className="slick-list">
-                <h5 className="title">Machine Learning</h5>
+                <h5 className="title">{mock[0].class_name}</h5>
                 <Link to="CourseReviews">
-                    <img src={img1} alt='machine learning pic'/>
+                    <img src = "https://source.unsplash.com/random"/>
                 </Link>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
-                <h6 className="prof">Amber Clarke</h6>
+                <h6 className="prof">{mock[0].professor}</h6>
             </div>
         </div>
 
         <div className="big">
             <div className="slick-list">
-                <h5 className="title">Offensive Security</h5>
+                <h5 className="title">{mock[1].class_name}</h5>
                 <Link to="CourseReviews">
-                        <img src={img2} alt='offensive security pic'/>
+                    <img src = "https://source.unsplash.com/random"/>
                 </Link>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
-                <h6 className="prof">Amber Clarke</h6>
+                <h6 className="prof">{mock[1].professor}</h6>
             </div>
         </div>
 
         <div className="big">
             <div className="slick-list">
-                <h5 className="title">Algorithms</h5>
+                <h5 className="title">{mock[2].class_name}</h5>
                 <Link to="CourseReviews">
-                        <img src={img4} alt='algorithms pic'/>
+                    <img src = "https://source.unsplash.com/random"/>
                 </Link>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
-                <h6 className="prof">Amber Clarke</h6>
+                <h6 className="prof">{mock[2].professor}</h6>
             </div>
         </div>
 
         <div className="big">
             <div className="slick-list">
-                <h5 className="title">Blockchain Fundamentals</h5>
+                <h5 className="title">{mock[3].class_name}</h5>
                 <Link to="CourseReviews">
-                    <img src={img3} alt='blockchain fundamentals pic'/>
+                    <img src = "https://source.unsplash.com/random"/>
                 </Link>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
-                <h6 className="prof">Amber Clarke</h6>
+                <h6 className="prof">{mock[3].professor}</h6>
             </div>
         </div>
 
         <div className="big">
             <div className="slick-list">
-                <h5 className="title">Ethics and Technology</h5>
+                <h5 className="title">{mock[4].class_name}</h5>
                 <Link to="CourseReviews">
-                    <img src={img5} alt='ethics and technology pic'/>
+                    <img src = "https://source.unsplash.com/random"/>
                 </Link>
             </div>
             <div className="subheading">
                 <h6 className="rate">100%</h6>
-                <h6 className="prof">Amber Clarke</h6>
+                <h6 className="prof">{mock[4].professor}</h6>
             </div>
         </div>
 
