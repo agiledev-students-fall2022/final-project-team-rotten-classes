@@ -13,7 +13,7 @@ const Slider = () => {
         <>
             <Carousel>
       <Carousel.Item interval={2000}>
-        <Link to="CourseRatings">
+        <Link to="./../CourseReviews">
           <img
             className="d-block w-100"
             src="https://source.unsplash.com/random"
@@ -28,7 +28,7 @@ const Slider = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={2000}>
-        <Link to="CourseRatings">
+        <Link to="./../CourseReviews">
           <img
             className="d-block w-100"
             src="https://source.unsplash.com/random"
@@ -43,7 +43,7 @@ const Slider = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={2000}>
-        <Link to="CourseRatings">
+        <Link to="./../CourseReviews">
           <img
             className="d-block w-100"
             src="https://source.unsplash.com/random"

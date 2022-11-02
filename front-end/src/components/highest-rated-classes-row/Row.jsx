@@ -35,7 +35,7 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
                 <h5 className="title">{mock[0].class_name}</h5>
-                <Link to="CourseReviews">
+                <Link to="./../CourseReviews">
                     <img src = "https://source.unsplash.com/random"/>
                 </Link>
             </div>
@@ -48,7 +48,7 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
                 <h5 className="title">{mock[1].class_name}</h5>
-                <Link to="CourseReviews">
+                <Link to="./../CourseReviews">
                     <img src = "https://source.unsplash.com/random"/>
                 </Link>
             </div>
@@ -61,7 +61,7 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
                 <h5 className="title">{mock[2].class_name}</h5>
-                <Link to="CourseReviews">
+                <Link to="./../CourseReviews">
                     <img src = "https://source.unsplash.com/random"/>
                 </Link>
             </div>
@@ -74,7 +74,7 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
                 <h5 className="title">{mock[3].class_name}</h5>
-                <Link to="CourseReviews">
+                <Link to="./../CourseReviews">
                     <img src = "https://source.unsplash.com/random"/>
                 </Link>
             </div>
@@ -87,7 +87,7 @@ const Row = () => {
         <div className="big">
             <div className="slick-list">
                 <h5 className="title">{mock[4].class_name}</h5>
-                <Link to="CourseReviews">
+                <Link to="./../CourseReviews">
                     <img src = "https://source.unsplash.com/random"/>
                 </Link>
             </div>
