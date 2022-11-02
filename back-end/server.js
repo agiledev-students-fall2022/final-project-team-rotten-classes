@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-
+const expree = require("express")
+const app = require("./app")
 const server = require("./app") // load up the web server
 
 const port = 3000 // the port to listen to for incoming requests
@@ -17,3 +18,8 @@ const close = () => {
 module.exports = {
     close: close,
 }
+
+// testing the server
+app.get("/api", (req, res) => {
+    res.json({ "users": ["Data", "Data", "Data", "Data"] })
+})
