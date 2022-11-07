@@ -49,8 +49,7 @@ The instructions for building and testing are pending. This section will be comp
     - This will create a new directory on your local machine where all the files for this application will be stored.
     - After you have cloned the repository, navigate to that directory using terminal.
     - Navigate to the **back-end** file using `cd back-end`.
-    - Run this command `npm init # enter server.js as the entry point, when asked.`
-    - Now you can install express using `npm install express --save`.
-    - Use `node server.js` to run the express app.
-    - This will open up the app in a browser automatically for you to view.
+    - Now you can install express using `npm install express --save` and nodemon using `npm i nodemon --save-dev`.
+    - Use `npm run dev` to run the express app.
+    - Now go to the browser and run `localhost:5000`.
           
