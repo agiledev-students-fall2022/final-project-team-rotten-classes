@@ -12,6 +12,7 @@ import AddReview from './routes/add-review/AddReview';
 import SearchPage from "./routes/search-page/search-page.component";
 import ContactUs from "./routes/contact-us/ContactUs";
 import Login from './Login';
+import Profile from './routes/profile-page/profile';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="/AddReview" element={<AddReview />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/search" element={<SearchPage />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
 
       <BottomNavigationBar />

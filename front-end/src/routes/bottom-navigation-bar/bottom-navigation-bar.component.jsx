@@ -10,6 +10,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import PersonIcon from '@mui/icons-material/Person';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 // import NavigatorPane from './Components/NavigatorPane';
 import AddReview from "../add-review/AddReview";
 
@@ -48,7 +49,8 @@ const BottomNavigationBar = () => {
                 <BottomNavigationAction component={Link} to="/Home" label="Home" icon={<HomeIcon />} />
                 <BottomNavigationAction component={Link} to="/search" label="Search" icon={<SearchOutlinedIcon />} />
                 <BottomNavigationAction component={Link} to="/AddReview" label="Add" icon={<AddCircleOutlineIcon />} />
-                <BottomNavigationAction component={Link} to="/contact" label="Contact" icon={<PersonIcon />} />
+                <BottomNavigationAction component={Link} to="/contact" label="Contact" icon={<HelpOutlineIcon />} />
+                <BottomNavigationAction component={Link} to="/profile" label="Profile" icon={<PersonIcon />} />
             </BottomNavigation>
         </div>
     )}
