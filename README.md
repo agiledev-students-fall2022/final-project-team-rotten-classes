@@ -43,4 +43,14 @@ The instructions for building and testing are pending. This section will be comp
     - Install npm using command `npm install`.
     - Run npm using `npm start`.
     - You should then be navigated to a browser where you could view our applicaion.
-* Back-end: Pending
+* Back-end:
+    - In order to run this application, please clone the project repository onto your local machine using `git clone`.
+      - `git clone https://github.com/some-username/my-app.git`
+    - This will create a new directory on your local machine where all the files for this application will be stored.
+    - After you have cloned the repository, navigate to that directory using terminal.
+    - Navigate to the **back-end** file using `cd back-end`.
+    - Run this command `npm init # enter server.js as the entry point, when asked.`
+    - Now you can install express using `npm install express --save`.
+    - Use `npm start` to run the express app.
+    - This will open up the app in a browser automatically for you to view.
+          
