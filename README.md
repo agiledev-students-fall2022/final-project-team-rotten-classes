@@ -51,6 +51,6 @@ The instructions for building and testing are pending. This section will be comp
     - Navigate to the **back-end** file using `cd back-end`.
     - Run this command `npm init # enter server.js as the entry point, when asked.`
     - Now you can install express using `npm install express --save`.
-    - Use `npm start` to run the express app. If it doesn't work, then use `node app.js`.
+    - Use `node server.js` to run the express app.
     - This will open up the app in a browser automatically for you to view.
           
