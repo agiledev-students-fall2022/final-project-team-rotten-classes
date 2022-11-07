@@ -1,4 +1,4 @@
-.filter-box {
+.search-prof-course-box {
   -webkit-appearance: none;
   border: 2px solid #61dafb;
   border-radius: 20px;
@@ -8,7 +8,7 @@
   margin: 5px;
 }
 
-.filter-text-span{
+.search-prof-course-text-span{
   color: white;
   font-size: 20px;
 }
