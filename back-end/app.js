@@ -3,11 +3,12 @@ const express = require("express") // CommonJS import style!
 const app = express() // instantiate an Express object
 const bodyParser = require('body-parser');
 const {courseRoutes} = require("./routes/courseRoutes");
+
 const course_data=require("./json_data/Course_Data.json")
 const course_review=require("./json_data/Course_Review.json")
 const cors = require('cors');
 app.use(cors());
- 
+
 
 // import some useful middleware
 const multer = require("multer") // middleware to handle HTTP POST requests with file uploads
@@ -16,10 +17,17 @@ require("dotenv").config({ silent: true }) // load environmental variables from 
 const morgan = require("morgan") // middleware for nice logging of incoming HTTP requests
 
 
+// use the morgan middleware to log all incoming http requests
+app.use(morgan("dev")) // morgan has a few logging default styles - dev is a nice concise color-coded style
+app.use(bodyParser.json())
+// app.use('/api/course', courseRoutes => {})
+
+
 app.use((req, res, next) => {
     console.log(req.body);
     next();
 })
+
 
 
 
@@ -110,3 +118,4 @@ app.get('/CourseReviews', function(req,res){
  
  // export the express app we created to make it available to other modules
  module.exports = app;
+

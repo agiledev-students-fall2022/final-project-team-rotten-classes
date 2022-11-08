@@ -2,7 +2,6 @@ import SearchBox from "../../components/search-box/search-box.component";
 import './search-page.styles.css';
 import React from "react";
 import SortBox from "../../components/sort-box/sort-box.component";
-import FilterBox from "../../components/filter-box/filter-box.component";
 import CourseCardList from "../../components/course-card-list/course-card-list.component";
 
 import {useState, useEffect} from "react";
@@ -39,7 +38,6 @@ const SearchPage = () => {
             </div>
             <div className='sort-filter-container'>
                     <SortBox className={'sort-box'}/>
-                    <FilterBox className={'filter-box'}/>
             </div>
             <CourseCardList courses={filteredCourses}/>
         </div>
