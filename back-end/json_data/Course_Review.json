@@ -1,0 +1,192 @@
+[
+ {
+  "course_id": "CSCI-UA 480",
+  "course_tags": "Computer Science",
+  "class_reviews": [
+  	{
+  		"reviewer_name": "Sonia Jain",
+  		"review": "Great class! Love it! Learning so much:)",
+  		"rating": 5,
+  		"would_take_again": "Y",
+  		"workload": 3,
+  		"difficulty": 3
+  	},
+  	{
+  		"reviewer_name": "Ronit Singh",
+  		"review": "Wonderful class! Helped a lot!",
+  		"rating": 5,
+  		"would_take_again": "Y",
+  		"workload": 2,
+  		"difficulty": 4
+  	},
+  	{
+  		"reviewer_name": "Alaa Al Shaba",
+  		"review": "Super fun and informative class!",
+  		"rating": 4,
+  		"would_take_again": "Y",
+  		"workload": 4,
+  		"difficulty": 2
+  	},
+  	{
+  		"reviewer_name": "Ashley Luo",
+  		"review": "Loved this class!",
+  		"rating": 5,
+  		"would_take_again": "Y",
+  		"workload": 3,
+  		"difficulty": 4
+  	}
+  ]
+ },
+  {
+  "course_id": "BIOL-UA 3",
+  "course_tags": "Biology",
+  "class_reviews": [
+  	{
+  		"reviewer_name": "Sonia Jain",
+  		"review": "Very difficult class, but very informative.",
+  		"rating": 3,
+  		"would_take_again": "N",
+  		"workload": 4,
+  		"difficulty": 4
+  	},
+  	{
+  		"reviewer_name": "Ronit Singh",
+  		"review": "Wonderful class! Helped a lot!",
+  		"rating": 4,
+  		"would_take_again": "Y",
+  		"workload": 3,
+  		"difficulty": 3
+  	},
+  	{
+  		"reviewer_name": "Alaa Al Shaba",
+  		"review": "Not too hard, but boring.",
+  		"rating": 2,
+  		"would_take_again": "N",
+  		"workload": 2,
+  		"difficulty": 2
+  	},
+  	{
+  		"reviewer_name": "Ashley Luo",
+  		"review": "Loved this class!",
+  		"rating": 5,
+  		"would_take_again": "Y",
+  		"workload": 4,
+  		"difficulty": 3
+  	}
+  ]
+ },
+  {
+  "course_id": "GERM-UA 1",
+  "course_tags": "German",
+  "class_reviews": [
+  	{
+  		"reviewer_name": "Sonia Jain",
+  		"review": "Great class! Love it! Learning so much:)",
+  		"rating": 2,
+  		"would_take_again": "N",
+  		"workload": 3,
+  		"difficulty": 1
+  	},
+  	{
+  		"reviewer_name": "Ronit Singh",
+  		"review": "Wonderful class! Helped a lot!",
+  		"rating": 4,
+  		"would_take_again": "Y",
+  		"workload": 2,
+  		"difficulty": 3
+  	},
+  	{
+  		"reviewer_name": "Alaa Al Shaba",
+  		"review": "Super fun and informative class!",
+  		"rating": 3,
+  		"would_take_again": "N",
+  		"workload": 3,
+  		"difficulty": 4
+  	},
+  	{
+  		"reviewer_name": "Ashley Luo",
+  		"review": "Loved this class!",
+  		"rating": 5,
+  		"would_take_again": "Y",
+  		"workload": 3,
+  		"difficulty": 2
+  	}
+  ]
+ },
+  {
+  "course_id": "PHIL-UA 2",
+  "course_tags": "Philosophy",
+  "class_reviews": [
+  	{
+  		"reviewer_name": "Sonia Jain",
+  		"review": "Great class! Love it! Learning so much:)",
+  		"rating": 5,
+  		"would_take_again": "Y",
+  		"workload": 3,
+  		"difficulty": 2
+  	},
+  	{
+  		"reviewer_name": "Ronit Singh",
+  		"review": "Wonderful class! Helped a lot!",
+  		"rating": 5,
+  		"would_take_again": "Y",
+  		"workload": 2,
+  		"difficulty": 3
+  	},
+  	{
+  		"reviewer_name": "Alaa Al Shaba",
+  		"review": "Super fun and informative class!",
+  		"rating": 4,
+  		"would_take_again": "N",
+  		"workload": 4,
+  		"difficulty": 2
+  	},
+  	{
+  		"reviewer_name": "Ashley Luo",
+  		"review": "Loved this class!",
+  		"rating": 5,
+  		"would_take_again": "N",
+  		"workload": 3,
+  		"difficulty": 3
+  	}
+  ]
+ },
+  {
+  "course_id": "MATH-UA 9",
+  "course_tags": "Math",
+  "class_reviews": [
+  	{
+  		"reviewer_name": "Sonia Jain",
+  		"review": "Great class! Love it! Learning so much:)",
+  		"rating": 2,
+  		"would_take_again": "N",
+  		"workload": 4,
+  		"difficulty": 3
+  	},
+  	{
+  		"reviewer_name": "Ronit Singh",
+  		"review": "Wonderful class! Helped a lot!",
+  		"rating": 5,
+  		"would_take_again": "Y",
+  		"workload": 2,
+  		"difficulty": 3
+  	},
+  	{
+  		"reviewer_name": "Alaa Al Shaba",
+  		"review": "Super fun and informative class!",
+  		"rating": 3,
+  		"would_take_again": "N",
+  		"workload": 5,
+  		"difficulty": 5
+  	},
+  	{
+  		"reviewer_name": "Ashley Luo",
+  		"review": "Loved this class!",
+  		"rating": 5,
+  		"would_take_again": "Y",
+  		"workload": 3,
+  		"difficulty": 3
+  	}
+  ]
+ }
+]
