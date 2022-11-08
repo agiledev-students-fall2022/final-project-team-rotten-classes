@@ -7,6 +7,7 @@ const server = require("./app")
 const port = 4000
 
 // call a function to start listening to the port
+
 const listener = server.listen(port, function () {
     console.log(`Server running on port: ${port}`)
 })
@@ -20,3 +21,6 @@ const close = () => {
 module.exports = {
     close: close,
 }
+
+
+
