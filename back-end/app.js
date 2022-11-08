@@ -16,6 +16,11 @@ const axios = require("axios") // middleware for making requests to APIs
 require("dotenv").config({ silent: true }) // load environmental variables from a hidden file named .env
 const morgan = require("morgan") // middleware for nice logging of incoming HTTP requests
 
+const users = require("./USERS_MOCK_DATA")
+app.get('/', (req, res) => res.send('Hello from Classcritic!'))
+app.get('/api/users', (req, res) => {
+    res.json(users);
+});
 
 // use the morgan middleware to log all incoming http requests
 app.use(morgan("dev")) // morgan has a few logging default styles - dev is a nice concise color-coded style
