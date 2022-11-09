@@ -49,7 +49,7 @@ The instructions for building and testing are pending. This section will be comp
     - This will create a new directory on your local machine where all the files for this application will be stored.
     - After you have cloned the repository, navigate to that directory using terminal.
     - Navigate to the **back-end** file using `cd back-end`.
-    - Now you can install express using `npm install express --save` and nodemon using `npm i nodemon --save-dev`.
+    - Now you can install express using `npm install express --save` and nodemon using `npm i nodemon --save-dev` and multer using `npm install multer`.
     - Use `npm run dev` to run the express app.
-    - Now go to the browser and run `localhost:5000`.
+    - Now go to the browser and run `localhost:4000`.
           
