@@ -1,5 +1,5 @@
-import React from "react";
 import {BrowserRouter as Router, Link} from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
 import { Carousel } from "react-bootstrap";
 import './Slider.css';
 import mock from './../../MOCK_DATA.json';
@@ -9,57 +9,103 @@ import img2 from './../../images/2.png'
 import img3 from './../../images/3.png'
 
 const Slider = () => {
+    const[data, setData] = useState([])
+
+    useEffect(() => {
+      fetch("/CourseNames").then(
+        response => response.json()
+      ).then(
+        data => {
+          setData(data)
+        }
+      )
+    }, [])
+
     return (
         <>
             <Carousel>
-      <Carousel.Item interval={2000}>
-        <Link to="./../CourseReviews">
-          <img
-            className="d-block w-100"
-            src="https://source.unsplash.com/random"
-            alt="First slide"
-          />
-          </Link>
-        <Carousel.Caption>
-        <div className="title">
-          <h3>{mock[0].class_name}</h3>
-          <p>{mock[0].professor}</p>
-        </div>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item interval={2000}>
-        <Link to="./../CourseReviews">
-          <img
-            className="d-block w-100"
-            src="https://source.unsplash.com/random"
-            alt="Second slide"
-          />
-          </Link>
-        <Carousel.Caption>
-        <div className="title">
-          <h3>{mock[1].class_name}</h3>
-          <p>{mock[1].professor}</p>
-        </div>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item interval={2000}>
-        <Link to="./../CourseReviews">
-          <img
-            className="d-block w-100"
-            src="https://source.unsplash.com/random"
-            alt="Third slide"
-          />
-          </Link>
-        <Carousel.Caption>
-        <div className="title">
-          <h3>{mock[2].class_name}</h3>
-          <p>
-          {mock[2].professor}
-          </p>
-        </div>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+            <Carousel.Item interval={2000}>
+              <Link to="./../CourseReviews">
+                <img
+                  className="d-block w-100"
+                  src="https://source.unsplash.com/random"
+                  alt="First slide"
+                />
+                </Link>
+              <Carousel.Caption>
+              <div className="title">
+                {(typeof data.class_names === 'undefined') ? (
+                  <p>Loading</p>
+                ): (
+                    data.class_names?.slice(0,1).map((class_name, index)=> (
+                    <h3 key={index}>{class_name[0]}</h3>
+                  ))
+                )}
+                {(typeof data.class_names === 'undefined') ? (
+                  <p>Loading</p>
+                ): (
+                    data.class_names?.slice(0,1).map((class_name, index)=> (
+                    <p key={index}>{class_name[1]}</p>
+                  ))
+                )}
+              </div>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item interval={2000}>
+              <Link to="./../CourseReviews">
+                <img
+                  className="d-block w-100"
+                  src="https://source.unsplash.com/random"
+                  alt="Second slide"
+                />
+                </Link>
+              <Carousel.Caption>
+              <div className="title">
+              {(typeof data.class_names === 'undefined') ? (
+                  <p>Loading</p>
+                ): (
+                    data.class_names?.slice(1,2).map((class_name, index)=> (
+                    <h3 key={index}>{class_name[0]}</h3>
+                  ))
+                )}
+                {(typeof data.class_names === 'undefined') ? (
+                  <p>Loading</p>
+                ): (
+                    data.class_names?.slice(1,2).map((class_name, index)=> (
+                    <p key={index}>{class_name[1]}</p>
+                  ))
+                )}
+              </div>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item interval={2000}>
+              <Link to="./../CourseReviews">
+                <img
+                  className="d-block w-100"
+                  src="https://source.unsplash.com/random"
+                  alt="Third slide"
+                />
+                </Link>
+              <Carousel.Caption>
+              <div className="title">
+                {(typeof data.class_names === 'undefined') ? (
+                    <p>Loading</p>
+                  ): (
+                      data.class_names?.slice(2,3).map((class_name, index)=> (
+                      <h3 key={index}>{class_name[0]}</h3>
+                    ))
+                )}
+                {(typeof data.class_names === 'undefined') ? (
+                  <p>Loading</p>
+                ): (
+                    data.class_names?.slice(2,3).map((class_name, index)=> (
+                    <p key={index}>{class_name[1]}</p>
+                  ))
+                )}
+              </div>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
         </>
     )}
 

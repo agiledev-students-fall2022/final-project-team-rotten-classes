@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 
+const express = require("express") // CommonJS import style!
+const app = express() // instantiate an Express object
+const course_review=require("./json_data/Course_Review.json")
+
+
 // import the express app
 const server = require("./app")
 
@@ -21,6 +26,5 @@ const close = () => {
 module.exports = {
     close: close,
 }
-
 
 

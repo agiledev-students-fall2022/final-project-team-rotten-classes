@@ -28,13 +28,7 @@ app.use((req, res, next) => {
     next();
 })
 
-
-
-
-
-
-
-app.get('/CourseRatings', function(req,res){
+app.get('/CourseRating', function(req,res){
 
 
     //get prof and class name
@@ -115,7 +109,37 @@ app.get('/CourseReviews', function(req,res){
 
 
  })
- 
+
+ app.get("/CourseData", function(req, res){
+    res.send({
+        course_data
+    })
+
+    res.json(body)
+ })
+
+ app.get('/CourseNames', function(req,res){
+
+
+    //get class name
+    let class_names=[];
+
+    for(let i =0; i<course_review.length;i++){
+        class_names[i] = [
+            course_review[i].course_name,
+            course_review[i].course_tags
+        ]
+    }
+
+    const body= {
+        class_names
+    }
+
+    res.send({
+        class_names:class_names
+    })
+
+})
+
  // export the express app we created to make it available to other modules
  module.exports = app;
-
