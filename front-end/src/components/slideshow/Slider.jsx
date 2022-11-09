@@ -23,88 +23,28 @@ const Slider = () => {
 
     return (
         <>
-            <Carousel>
-            <Carousel.Item interval={2000}>
-              <Link to="./../CourseReviews">
-                <img
-                  className="d-block w-100"
-                  src="https://source.unsplash.com/random"
-                  alt="First slide"
-                />
-                </Link>
-              <Carousel.Caption>
-              <div className="title">
-                {(typeof data.class_names === 'undefined') ? (
+        <Carousel>
+               {(typeof data.class_names === 'undefined') ? (
                   <p>Loading</p>
                 ): (
-                    data.class_names?.slice(0,1).map((class_name, index)=> (
-                    <h3 key={index}>{class_name[0]}</h3>
+                    data.class_names?.slice(0,3).map((class_name, index)=> (
+                      <Carousel.Item interval={2000}>
+                      <Link to="./../CourseReviews">
+                        <img
+                          className="d-block w-100"
+                          src="https://source.unsplash.com/random"
+                          alt="First slide"
+                        />
+                        </Link>
+                      <Carousel.Caption>
+                      <div className="title">
+                        <h3 key={index}>{class_name[0]}</h3>
+                        <p key={index}>{class_name[1]}</p>
+                      </div>
+                      </Carousel.Caption>
+                    </Carousel.Item>
                   ))
                 )}
-                {(typeof data.class_names === 'undefined') ? (
-                  <p>Loading</p>
-                ): (
-                    data.class_names?.slice(0,1).map((class_name, index)=> (
-                    <p key={index}>{class_name[1]}</p>
-                  ))
-                )}
-              </div>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item interval={2000}>
-              <Link to="./../CourseReviews">
-                <img
-                  className="d-block w-100"
-                  src="https://source.unsplash.com/random"
-                  alt="Second slide"
-                />
-                </Link>
-              <Carousel.Caption>
-              <div className="title">
-              {(typeof data.class_names === 'undefined') ? (
-                  <p>Loading</p>
-                ): (
-                    data.class_names?.slice(1,2).map((class_name, index)=> (
-                    <h3 key={index}>{class_name[0]}</h3>
-                  ))
-                )}
-                {(typeof data.class_names === 'undefined') ? (
-                  <p>Loading</p>
-                ): (
-                    data.class_names?.slice(1,2).map((class_name, index)=> (
-                    <p key={index}>{class_name[1]}</p>
-                  ))
-                )}
-              </div>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item interval={2000}>
-              <Link to="./../CourseReviews">
-                <img
-                  className="d-block w-100"
-                  src="https://source.unsplash.com/random"
-                  alt="Third slide"
-                />
-                </Link>
-              <Carousel.Caption>
-              <div className="title">
-                {(typeof data.class_names === 'undefined') ? (
-                    <p>Loading</p>
-                  ): (
-                      data.class_names?.slice(2,3).map((class_name, index)=> (
-                      <h3 key={index}>{class_name[0]}</h3>
-                    ))
-                )}
-                {(typeof data.class_names === 'undefined') ? (
-                  <p>Loading</p>
-                ): (
-                    data.class_names?.slice(2,3).map((class_name, index)=> (
-                    <p key={index}>{class_name[1]}</p>
-                  ))
-                )}
-              </div>
-              </Carousel.Caption>
-            </Carousel.Item>
           </Carousel>
         </>
     )}
