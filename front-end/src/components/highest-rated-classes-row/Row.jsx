@@ -18,6 +18,17 @@ import img4 from './../../images/algo.jpg'
 import img5 from './../../images/et.jpg'
 
 const Row = () => {
+    const[data, setData] = useState([])
+
+    useEffect(() => {
+      fetch("/CourseHighestRatedClasses").then(
+        response => response.json()
+      ).then(
+        data => {
+          setData(data)
+        }
+      )
+    }, [])
     
     var settings = {
         dots: false,
@@ -32,6 +43,24 @@ const Row = () => {
     };
     return (
         <Slider {...settings} >
+            {(typeof data.class_info === 'undefined') ? (
+                  <p>Loading</p>
+                ): (
+                    data.class_info?.map((info, index)=> (
+                    <div className="big">
+                        <div className="slick-list">
+                            <h5 className="title">{info[0]}</h5>
+                            <Link to="./../CourseReviews">
+                                <img src = "https://source.unsplash.com/random"/>
+                            </Link>
+                        </div>
+                        <div className="subheading">
+                            <h6 className="rate">{info[2]}%</h6>
+                            <h6 className="prof">{info[1]}</h6>
+                        </div>
+                    </div>
+                  ))
+                )}
         <div className="big">
             <div className="slick-list">
                 <h5 className="title">{mock[0].class_name}</h5>

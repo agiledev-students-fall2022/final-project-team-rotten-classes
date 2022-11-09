@@ -135,7 +135,7 @@ app.get('/CourseReviews', function(req,res){
     res.json(body)
  })
 
- app.get('/CourseNames', function(req,res){
+ app.get('/CourseSlider', function(req,res){
 
 
     //get class name
@@ -144,16 +144,36 @@ app.get('/CourseReviews', function(req,res){
     for(let i =0; i<course_review.length;i++){
         class_names[i] = [
             course_review[i].course_name,
-            course_review[i].course_tags
+            course_review[i].course_subject
         ]
-    }
-
-    const body= {
-        class_names
     }
 
     res.send({
         class_names:class_names
+    })
+
+})
+
+app.get('/CourseHighestRatedClasses', function(req, res){
+    
+    let class_info = [];
+
+    let rating = 100;
+
+    for(let i =0; i<course_review.length;i++){
+        if(course_review[i].course_tags != ""){
+            class_info[i] = [
+                course_review[i].course_name,
+                course_review[i].course_subject,
+                rating
+            ]
+        }else{
+            continue;
+        }
+    }
+
+    res.send({
+        class_info:class_info
     })
 
 })

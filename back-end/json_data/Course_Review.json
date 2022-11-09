@@ -2,7 +2,8 @@
  {
   "course_name": "Agile Software Development and DevOps",
   "course_id": "CSCI-UA 480-069",
-  "course_tags": "Computer Science",
+  "course_subject": "Computer Science",
+  "course_tags": "Highest Rated",
   "class_reviews": [
   	{
   		"reviewer_name": "Sonia Jain",
@@ -41,7 +42,8 @@
   {
   "course_name": "Introduction to Biology",
   "course_id": "BIOL-UA 3",
-  "course_tags": "Biology",
+  "course_subject": "Biology",
+  "course_tags": "Highest Rated",
   "class_reviews": [
   	{
   		"reviewer_name": "Sonia Jain",
@@ -80,7 +82,8 @@
   {
   "course_name": "Introduction to German",
   "course_id": "GERM-UA 1",
-  "course_tags": "German",
+  "course_subject": "German",
+  "course_tags": "Highest Rated",
   "class_reviews": [
   	{
   		"reviewer_name": "Sonia Jain",
@@ -119,7 +122,8 @@
   {
   "course_name": "Introduction to Philosophy",
   "course_id": "PHIL-UA 2",
-  "course_tags": "Philosophy",
+  "course_subject": "Philosophy",
+  "course_tags": "Highest Rated",
   "class_reviews": [
   	{
   		"reviewer_name": "Sonia Jain",
@@ -158,7 +162,8 @@
   {
   "course_name": "Algebra 101",
   "course_id": "MATH-UA 9",
-  "course_tags": "Math",
+  "course_subject": "Math",
+  "course_tags": "Highest Rated",
   "class_reviews": [
   	{
   		"reviewer_name": "Sonia Jain",

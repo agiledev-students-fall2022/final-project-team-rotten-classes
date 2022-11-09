@@ -12,7 +12,7 @@ const Slider = () => {
     const[data, setData] = useState([])
 
     useEffect(() => {
-      fetch("/CourseNames").then(
+      fetch("/CourseSlider").then(
         response => response.json()
       ).then(
         data => {
