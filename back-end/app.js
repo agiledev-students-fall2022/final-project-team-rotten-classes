@@ -42,7 +42,7 @@ app.use(bodyParser.json())
 
 app.get("/CourseRating", (req, res, next) => {
     axios
-        .get("https://my.api.mockaroo.com/CourseRating.json?key=90ef8730")
+        .get("https://my.api.mockaroo.com/CourseRating.json?key=f65a0910")
         .then(apiResponse => res.json(apiResponse.data))
         .catch(err => next(err))
 })
@@ -82,10 +82,8 @@ app.get("/CourseData", (req, res, next) => {
 })
 
 app.get('/CourseHighestRatedClasses', function(req, res){
-    
     let class_info = [];
     let rating = 100;
-
     for(let i =0; i<course_review.length;i++){
         if(course_review[i].course_tags != ""){
             class_info[i] = [
@@ -99,11 +97,9 @@ app.get('/CourseHighestRatedClasses', function(req, res){
             continue;
         }
     }
-
     res.send({
         class_info:class_info
     })
-
 })
 
 app.get('/CourseReviewDetailHeader', function(req, res){
