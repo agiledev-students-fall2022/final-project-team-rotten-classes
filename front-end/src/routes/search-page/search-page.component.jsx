@@ -8,6 +8,7 @@ import {useState, useEffect} from "react";
 
 const SearchPage = () => {
     const {courseDataProcessed} = useContext(CourseDataContext)
+    console.log(courseDataProcessed)
 
     const [searchField, setSearchField] = useState(''); //[value, setValue]
     const [searchOption, setSearchOption] = useState("course_name"); //[value, setValue]
