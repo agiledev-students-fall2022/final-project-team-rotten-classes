@@ -5,7 +5,7 @@ const CourseCardList = ({courses}) => (
     <div className='course-card-list'>
         {courses.map(course =>{
             return (
-                <CourseCard course={course}/>
+                <CourseCard course={course} key={course["key"]}/>
             )})}
     </div>
     );
