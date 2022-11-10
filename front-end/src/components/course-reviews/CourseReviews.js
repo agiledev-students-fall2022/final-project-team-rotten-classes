@@ -8,6 +8,7 @@ import { Navigate } from 'react-router-dom';
 import {BrowserRouter as Router, Link} from 'react-router-dom';
 import axios from 'axios';
 import mock from '../../MOCK_DATA.json'
+import CourseReviewDetailHeader from '../course-headers/CourseReviewDetailHeader.js'
 
 
 /**
@@ -17,29 +18,44 @@ import mock from '../../MOCK_DATA.json'
  */
 
 function CourseReviews() {
+  const[data, setData] = useState([])
+
+  useEffect(() => {
+    fetch("/CourseReviews").then(
+      response => response.json()
+    ).then(
+      data => {
+        setData(data)
+      }
+    )
+  }, [])
     
   const [goToView, setView] = React.useState(false);
 
   if(goToView){
     return <Navigate to="/Viewall"/>;
   }
+
+  
     return (
       <>
-      <div className = "course-page-header">
-        <div className = "course-page-subheader">
-          <img src="https://source.unsplash.com/random" alt='machine learning pic'/>
-          <h2>{mock[0].class_name}</h2>
-          <h3>Professor {mock[0].professor}</h3>
-          <Badge onClick={()=>{setView(true)}}>Highest Rated Course</Badge>
-          <Badge onClick={()=>{setView(true)}}>Computer Science</Badge>
-        </div>
-        <div className = "review-rating-button-switch">
-          <Link to = "/CourseReviews"><button>Reviews</button></Link>
-          <Link to = "/CourseRatings"><button>Ratings</button></Link>
-          <Link to = "/CourseDetails"><button>Details</button></Link>
-        </div>
+      <br></br>
+      <CourseReviewDetailHeader />
 
       <div className = "reviews-for-course-ratings">
+      {(typeof data.course_review === 'undefined') ? (
+                  <p>Loading</p>
+                ): (
+                    data.course_review?.slice(0,1).map((info, key)=> (
+                      <div className = "reviews-for-course-ratings">
+                        <img src="https://source.unsplash.com/random" alt='machine learning pic'/>
+                        <h2 key={key}>{info[0]}</h2>
+                        <h3>Professors: {info[3]}</h3>
+                        <Badge onClick={()=>{setView(true)}}>{info[1]}</Badge>
+                        <Badge onClick={()=>{setView(true)}}>{info[2]}</Badge>
+                     </div>
+                ))
+            )}
         <p>
 
           {mock && mock.map(({first_name, review, id}) =>(
@@ -54,7 +70,6 @@ function CourseReviews() {
           ))}
         </p>
         </div>
-      </div>
       </>
     );
   }

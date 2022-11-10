@@ -1,9 +1,11 @@
 [
  {
+  "key": 1,
   "course_name": "Agile Software Development and DevOps",
   "course_id": "CSCI-UA 480-069",
   "course_subject": "Computer Science",
   "course_tags": "Highest Rated",
+  "professors": "Foo Barnsetin",
   "class_reviews": [
   	{
   		"reviewer_name": "Sonia Jain",
@@ -40,6 +42,7 @@
   ]
  },
   {
+  "key": 2,
   "course_name": "Introduction to Biology",
   "course_id": "BIOL-UA 3",
   "course_subject": "Biology",
@@ -80,6 +83,7 @@
   ]
  },
   {
+	"key": 3,
   "course_name": "Introduction to German",
   "course_id": "GERM-UA 1",
   "course_subject": "German",
@@ -120,6 +124,7 @@
   ]
  },
   {
+	"key": 4,
   "course_name": "Introduction to Philosophy",
   "course_id": "PHIL-UA 2",
   "course_subject": "Philosophy",
@@ -160,6 +165,7 @@
   ]
  },
   {
+	"key": 5,
   "course_name": "Algebra 101",
   "course_id": "MATH-UA 9",
   "course_subject": "Math",

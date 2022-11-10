@@ -7,6 +7,7 @@ import Badge from 'react-bootstrap/Badge';
 import { Navigate } from 'react-router-dom';
 import {BrowserRouter as Router, Link} from 'react-router-dom';
 import mock from '../../MOCK_DATA.json'
+import CourseReviewDetailHeader from '../course-headers/CourseReviewDetailHeader.js'
 
 /**
  * A React component that represents the Home page of the app.
@@ -22,20 +23,8 @@ function CourseRatings() {
   }
     return (
       <>
-      <div className = "course-page-header">
-        <div className = "course-page-subheader">
-          <img src="https://source.unsplash.com/random" alt='machine learning pic'/>
-          <h2>{mock[0].class_name}</h2>
-          <h3>Professor {mock[0].professor}</h3>
-          <Badge onClick={()=>{setView(true)}}>Highest Rated Course</Badge>
-          <Badge onClick={()=>{setView(true)}}>Computer Science</Badge>
-        </div>
-        <div className = "review-rating-button-switch">
-          <Link to = "/CourseReviews"><button>Reviews</button></Link>
-          <Link to = "/CourseRatings"><button>Ratings</button></Link>
-          <Link to = "/CourseDetails"><button>Details</button></Link>
-        </div>
-      </div>
+       <br></br>
+      <CourseReviewDetailHeader />
 
       <div className = "course-ratings-page">
         <h1>Under Construction!</h1>

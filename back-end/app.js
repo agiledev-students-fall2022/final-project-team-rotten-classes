@@ -144,7 +144,8 @@ app.get('/CourseReviews', function(req,res){
     for(let i =0; i<course_review.length;i++){
         class_names[i] = [
             course_review[i].course_name,
-            course_review[i].course_subject
+            course_review[i].course_subject,
+            course_review[i].course_id
         ]
     }
 
@@ -177,6 +178,76 @@ app.get('/CourseHighestRatedClasses', function(req, res){
     })
 
 })
+
+app.get('/CourseReviewDetailHeader', function(req, res){
+    
+    let class_info = [];
+
+    let rating = 100;
+
+    for(let i =0; i<course_review.length;i++){
+        if(course_review[i].course_tags != ""){
+            class_info[i] = [
+                course_review[i].course_name,
+                course_review[i].course_subject,
+                course_review[i].course_tags,
+                course_review[i].professors
+            ]
+        }else{
+            continue;
+        }
+    }
+
+    res.send({
+        class_info:class_info
+    })
+
+})
+
+app.get('/CourseReview2', function(req, res){
+    
+    let class_info = [];
+    let class_info2 = [];
+
+    let rating = 100;
+
+    for(let i =0; i<course_review.length;i++){
+        for(let j =0; j < course_review[i].class_reviews.length; j++){
+            class_info[i] = [
+                course_review[i].course_name,
+                course_review[i].class_reviews.name
+            ]
+        }
+    }
+
+    res.send({
+        class_info:class_info
+    })
+
+})
+
+app.get('/CourseReviews/:course_id:', function(req, res){
+    
+    let class_info = [];
+    let class_info2 = [];
+
+    let rating = 100;
+
+    for(let i =0; i<course_review.length;i++){
+        for(let j =0; j < course_review[i].class_reviews.length; j++){
+            class_info[i] = [
+                course_review[i].course_name,
+                course_review[i].class_reviews.name
+            ]
+        }
+    }
+
+    res.send({
+        class_info:class_info
+    })
+
+})
+
 
  // export the express app we created to make it available to other modules
  module.exports = app;

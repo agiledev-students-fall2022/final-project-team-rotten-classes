@@ -9,54 +9,6 @@
     padding: 3vh;
 }
 
-.course-page-subheader{
-    border-radius: 5px;
-    padding: 2%;
-    justify-content: center;
-    padding-right: 11vh;
-    height: 25vh;
-    margin: 0%;
-    background-color: #2cb9ec;
-    flex-direction: column;
-}
-
-.course-page-subheader img{
-    float: left;
-    width: 20vh;
-    height: 20vh;
-    border-radius: 50%;
-
-}
-
-.course-page-subheader h2{
-    padding-left: 3%;
-    color: white;
-
-}
-
-.course-page-subheader h3{
-    font-size: 20px;
-    color: white;
-}
-
-.review-rating-button-switch{
-    padding: 3%;
-}
-
-.review-rating-button-switch button{
-    width: 200px;
-    background-color: #F6FF54;
-    border-radius: 5px;
-}
-
-.review-rating-button-switch button:hover{
-    background-color: #b3bb25;
-}
-
-.review-rating-button-switch button:active{
-    background-color: #7D05DF;
-}
-
 /* Course Review Styling Starts Here */
 
 .reviews-for-course-ratings{
