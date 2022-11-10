@@ -2,7 +2,7 @@
   .Header-header {
     /* background-color: #250741; */
     flex-direction: column;
-    min-height: 20vh;
+    min-height: 10vh;
     font-size: calc(10px + 1vmin);
     color: white;
     background-color: #250741;
@@ -14,17 +14,8 @@
   }  
 
   .Header-header img {
-    padding: 5%;
-    padding-left: 5%;
-    width: 18%;
-    height: 6%;
+    padding: 1rem;
+    max-width: 150px;
+    max-height: 150px;
     vertical-align: middle;
-    float: left;
-  }
-
-  .Header-header input{
-    border-radius: 20px;
-    margin: 5%;
-    float: right;
-    width: 30vh;
   }
