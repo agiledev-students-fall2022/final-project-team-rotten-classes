@@ -6,12 +6,6 @@ import './RowView.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import img1 from './../../images/ml.jpeg'
-import img2 from './../../images/hack.jpg'
-import img3 from './../../images/blockchain.jpg'
-import img4 from './../../images/algo.jpg'
-import img5 from './../../images/et.jpg'
-
 const RowForViewall = () => {
 
     const[data, setData] = useState([])
