@@ -126,5 +126,14 @@ describe('GET /image', ()=>{
 
 })
 
-
- 
+describe('GET /Users', ()=>{
+   it('should get data for users', (done)=>{
+       chai.request(server)
+        .get('/Users')
+        .end((err,res)=>{
+           res.should.have.status(200);
+           expect(res.body).to.be.a('object');
+        });
+        done();
+   });
+})
