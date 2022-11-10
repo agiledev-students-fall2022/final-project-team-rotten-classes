@@ -47,6 +47,22 @@ app.use((req, res, next) => {
     next();
 })
 
+app.get('/CourseRating', function(req,res){
+    //get prof and class name
+    /*let profs = [];
+    let class_names=[];
+    for(let i =0; i<mock_data.length;i++){
+        profs+=mock_data[i].professor;
+        class_names+=mock_data[i].class_name;
+    }*/
+    res.send({
+       // professors:profs,
+        //class_names:class_names
+        course_review
+    })
+
+})
+
  app.get("/CourseData", function(req, res){
     res.send({
         course_data

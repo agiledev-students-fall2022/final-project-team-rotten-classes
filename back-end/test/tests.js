@@ -31,8 +31,9 @@ describe('GET /CourseSlider', ()=>{
        chai.request(server)
         .get('/CourseSlider')
         .end((err,res)=>{
-           res.should.have.status(200);
-           expect(res.body).to.be.a('integer');
+             res.should.have.status(200) // use should to make BDD-style assertions
+         res.body.should.be.a("array") // our route sends back an object
+         res.body.should.have.property("success", true)
         });
 
         done();
@@ -43,7 +44,7 @@ describe('GET /CourseSlider', ()=>{
 describe('GET /CourseHighestRatedClasses', ()=>{
    it('should check the type of object', (done)=>{
        chai.request(server)
-        .get('/CourseSlider')
+        .get('/CourseHighestRatedClasses')
         .end((err,res)=>{
            res.should.have.status(200);
            expect(res.body).to.be.a('integer');
@@ -54,15 +55,13 @@ describe('GET /CourseHighestRatedClasses', ()=>{
 
 })
 
- describe('GET /ClassReviews', ()=>{
-   it('should get the reviews under the course_data JSON file', (done)=>{
+describe('GET /CourseReviewDetailHeader', ()=>{
+   it('should check the type of object', (done)=>{
        chai.request(server)
-        .get('/ClassReviews')
-        .end((err, res) => {
-         res.should.have.status(200) // use should to make BDD-style assertions
-         res.body.should.be.a("array") // our route sends back an object
-         res.body.should.have.property("success", true) // a way to check the exact value of a property of the response object
-          // resolve the Promise that these tests create so mocha can move on
+        .get('/CourseReviewDetailHeader')
+        .end((err,res)=>{
+           res.should.have.status(200);
+           expect(res.body).to.be.a('integer');
         });
 
         done();
@@ -102,4 +101,22 @@ describe('GET /image', ()=>{
    });
 
 })
+
+ describe('GET /ClassReviews', ()=>{
+   it('should get the reviews under the course_data JSON file', (done)=>{
+       chai.request(server)
+        .get('/ClassReviews')
+        .end((err, res) => {
+         res.should.have.status(200) // use should to make BDD-style assertions
+         res.body.should.be.a("array") // our route sends back an object
+         res.body.should.have.property("success", true) // a way to check the exact value of a property of the response object
+          // resolve the Promise that these tests create so mocha can move on
+        });
+
+        done();
+   });
+
+})
+
+
  
