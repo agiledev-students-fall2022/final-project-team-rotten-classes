@@ -47,11 +47,18 @@ app.get("/CourseRating", (req, res, next) => {
         .catch(err => next(err))
 })
 
- app.get("/CourseData", function(req, res){
-    res.send({
-        course_data
-    })
- })
+app.get("/CourseData", (req, res, next) => {
+    axios
+        .get("https://my.api.mockaroo.com/CourseData.json?key=90ef8730")
+        .then(apiResponse => res.json(apiResponse.data))
+        .catch(err => next(err))
+})
+
+ // app.get("/CourseData", function(req, res){
+ //    res.send({
+ //        course_data
+ //    })
+ // })
 
  app.get('/CourseSlider', function(req,res){
     //get class name
