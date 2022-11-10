@@ -1,22 +1,24 @@
 .course-card-container {
+  border: 5px solid #fff;
   display: flex;
   flex-direction: column;
-  background-color: #95dada;
-  border: 5px solid #02B7FE;
   border-radius: 5px;
-  padding: 25px;
+  padding: 1rem;
+  margin: auto;
+  max-width: 300px;
+  max-height: 300px;
   cursor: pointer;
   -moz-osx-font-smoothing: grayscale;
   backface-visibility: hidden;
   transform: translateZ(0);
   transition: transform 0.25s ease-out;
   box-sizing: border-box;
-
 }
 
 .course-card-container:hover {
   transform: scale(1.05);
 }
+
 
 
 
