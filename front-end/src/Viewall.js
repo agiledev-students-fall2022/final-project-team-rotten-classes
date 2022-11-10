@@ -1,7 +1,7 @@
 import './Viewall.css'
 import  React from 'react';
 import { Link } from 'react-router-dom'
-import RowForViewall from './components/highest-rated-classes-row/RowForViewAll'
+import RowForViewAll from './components/highest-rated-classes-row/RowForViewAll'
 import { fontSize } from '@mui/system';
 
 
@@ -25,7 +25,7 @@ function Viewall() {
     
      <br></br>
     
-      <RowForViewall />
+      <RowForViewAll />
 
 
       </>
