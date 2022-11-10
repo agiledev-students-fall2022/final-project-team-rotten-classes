@@ -47,63 +47,6 @@ app.use((req, res, next) => {
     next();
 })
 
-app.get('/CourseRating', function(req,res){
-
-
-    //get prof and class name
-    /*let profs = [];
-    let class_names=[];
-
-    for(let i =0; i<mock_data.length;i++){
-        profs+=mock_data[i].professor;
-        class_names+=mock_data[i].class_name;
-    }*/
-    res.send({
-       // professors:profs,
-        //class_names:class_names
-        course_review
-
-    })
- 
-  // send the response as JSON text to the client
-
-})
-
- app.get('/CourseDetails', function(req, res){
-   /* let ratings=[];
-    let ratings1=[];
-    let ratings2=[];
-    let workload=[];
-    //for loop for all elements
-    
-    for(let i=0;i<mock_data.length;i++){
-        
-        ratings+=[mock_data[i].rating1,mock_data[i].rating2,mock_data[i].workload+" "]
-        
-        ratings1+=[mock_data[i].rating1]+","
-        ratings2+=[mock_data[i].rating2]+","
-        workload+=[mock_data[i].workload]+","
-
-    }*/
-   
-    res.send({
-
-        //ratings:ratings
-        //ratings1:ratings1,
-        //ratings2:ratings2,
-        //workload:workload
-        course_data
-       
-
-
-    });
-
-
- })
-
-
-
-
  app.get("/CourseData", function(req, res){
     res.send({
         course_data
@@ -112,8 +55,6 @@ app.get('/CourseRating', function(req,res){
  })
 
  app.get('/CourseSlider', function(req,res){
-
-
     //get class name
     let class_names=[];
 
@@ -184,28 +125,6 @@ app.get('/CourseReviewDetailHeader', function(req, res){
 
 })
 
-app.get('/CourseReview2', function(req, res){
-    
-    let class_info = [];
-    let class_info2 = [];
-
-    let rating = 100;
-
-    for(let i =0; i<course_review.length;i++){
-        for(let j =0; j < course_review[i].class_reviews.length; j++){
-            class_info[i] = [
-                course_review[i].course_name,
-                course_review[i].class_reviews.name
-            ]
-        }
-    }
-
-    res.send({
-        class_info:class_info
-    })
-
-})
-
 
 app.get('/images', function(req,res){
 
@@ -247,25 +166,28 @@ app.get('/viewall', function(req,res){
 app.get('/CourseReviews', function(req,res){
     let class_reviews = [];
 
- 
+    let counter = 0;
+    let course_name_counter = 0;
+    let rating_calc = 0;
+    let retake_calc = 0;
+    let difficult_calc = 0;
 
-    for(let i =0; i<course_review.length;i++){
-        if(course_review[i].course_tags != ""){
+    for(let i = 0; i<course_data.length;i++){
             class_reviews[i] = [
-                course_review[i].class_reviews
-            ]
-        }else{
-            continue;
-
-        }
+                course_data[i].reviewer_name,
+                course_data[i].review,
+                course_data[i].rating,
+                course_data[i].would_take_again,
+                course_data[i].difficulty
+            ]   
     }
 
     res.send({
         class_reviews:class_reviews
     })
 
-
 })
+
 
  // export the express app we created to make it available to other modules
  module.exports = app;
