@@ -66,34 +66,8 @@ app.get('/CourseRating', function(req,res){
     })
  
   // send the response as JSON text to the client
-  res.json(body)
 
 })
-
-
-
-
-app.get('/CourseReviews', function(req,res){
-    /*let reviews_data=[];
-    let name_data=[];
-    //for loop for all elements
-        for(let i=0;i<course_review.length;i++){
-
-        reviews_data+=[course_review[i].class_reviews[i].review];
-        //reviews_data+=" "+mock_data[i].first_name+": "+mock_data[i].review
-        name_data+=[" "+course_review[i].class_reviews[i].reviewer_name]
-
-        }*/
-    res.send({
-    //names:name_data,
-    //reviews:reviews_data
-    course_review
-    });
-    
-    // send the response as JSON text to the client
-    res.json(body)
- 
- })
 
  app.get('/CourseDetails', function(req, res){
    /* let ratings=[];
@@ -124,8 +98,6 @@ app.get('/CourseReviews', function(req,res){
 
     });
 
-    res.json(body)
-
 
  })
 
@@ -133,8 +105,6 @@ app.get('/CourseReviews', function(req,res){
     res.send({
         course_data
     })
-
-    res.json(body)
  })
 
  app.get('/CourseSlider', function(req,res){
@@ -148,7 +118,8 @@ app.get('/CourseReviews', function(req,res){
             course_review[i].course_name,
             course_review[i].course_subject,
             course_review[i].course_images,
-            course_review[i].course_id
+            course_review[i].course_id,
+            course_review[i].key
         ]
     }
 
@@ -171,6 +142,7 @@ app.get('/CourseHighestRatedClasses', function(req, res){
                 course_review[i].course_name,
                 course_review[i].course_subject,
                 course_review[i].course_images,
+                course_review[i].course_id,
                 rating
             ]
         }else{
@@ -257,6 +229,7 @@ app.get('/viewall', function(req,res){
                 course_review[i].course_name,
                 course_review[i].course_subject,
                 course_review[i].course_images,
+                course_review[1].course_id
             ]
         }else{
             continue;
@@ -266,6 +239,29 @@ app.get('/viewall', function(req,res){
 
     res.send({
         class_info:class_info
+    })
+
+
+})
+
+app.get('/CourseReviews', function(req,res){
+    let class_reviews = [];
+
+ 
+
+    for(let i =0; i<course_review.length;i++){
+        if(course_review[i].course_tags != ""){
+            class_reviews[i] = [
+                course_review[i].class_reviews
+            ]
+        }else{
+            continue;
+
+        }
+    }
+
+    res.send({
+        class_reviews:class_reviews
     })
 
 
