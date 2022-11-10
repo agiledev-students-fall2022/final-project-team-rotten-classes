@@ -51,19 +51,6 @@ describe('GET /CourseSlider', ()=>{
 
 })
 
-describe('GET /CourseHighestRatedClasses', ()=>{
-   it('should get data necessary for highest rated classes', (done)=>{
-       chai.request(server)
-        .get('/CourseHighestRatedClasses')
-        .end((err,res)=>{
-           res.should.have.status(200);
-           expect(res.body).to.be.a('object');
-        });
-
-        done();
-   });
-
-})
 
 describe('GET /CourseReviewDetailHeader', ()=>{
    it('should get data necessary for course review header', (done)=>{
