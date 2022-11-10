@@ -2,15 +2,13 @@
 const express = require("express") // CommonJS import style!
 const app = express() // instantiate an Express object
 const bodyParser = require('body-parser');
-const {courseRoutes} = require("./routes/courseRoutes");
 const slider_img=require("./list.json");
-
 
 const course_data=require("./json_data/Course_Data.json")
 const course_review=require("./json_data/Course_Review.json")
+
 const cors = require('cors');
 app.use(cors());
-
 
 // import some useful middleware
 const multer = require("multer") // middleware to handle HTTP POST requests with file uploads
@@ -42,33 +40,17 @@ app.use(morgan("dev")) // morgan has a few logging default styles - dev is a nic
 app.use(bodyParser.json())
 // app.use('/api/course', courseRoutes => {})
 
-
-app.use((req, res, next) => {
-    console.log(req.body);
-    next();
-})
-
-app.get('/CourseRating', function(req,res){
-    //get prof and class name
-    /*let profs = [];
-    let class_names=[];
-    for(let i =0; i<mock_data.length;i++){
-        profs+=mock_data[i].professor;
-        class_names+=mock_data[i].class_name;
-    }*/
-    res.send({
-       // professors:profs,
-        //class_names:class_names
-        course_review
-    })
-
+app.get("/CourseRating", (req, res, next) => {
+    axios
+        .get("https://my.api.mockaroo.com/CourseRating.json?key=90ef8730")
+        .then(apiResponse => res.json(apiResponse.data))
+        .catch(err => next(err))
 })
 
  app.get("/CourseData", function(req, res){
     res.send({
         course_data
     })
-
  })
 
  app.get('/CourseSlider', function(req,res){
