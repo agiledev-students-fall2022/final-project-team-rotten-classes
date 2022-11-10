@@ -3,6 +3,8 @@ const express = require("express") // CommonJS import style!
 const app = express() // instantiate an Express object
 const bodyParser = require('body-parser');
 const {courseRoutes} = require("./routes/courseRoutes");
+const slider_img=require("./list.json");
+const imgs=require("./MOCK_IMGS.json");
 
 const course_data=require("./json_data/Course_Data.json")
 const course_review=require("./json_data/Course_Review.json")
@@ -145,12 +147,14 @@ app.get('/CourseReviews', function(req,res){
         class_names[i] = [
             course_review[i].course_name,
             course_review[i].course_subject,
+            course_review[i].course_images,
             course_review[i].course_id
         ]
     }
 
     res.send({
         class_names:class_names
+       
     })
 
 })
@@ -166,6 +170,7 @@ app.get('/CourseHighestRatedClasses', function(req, res){
             class_info[i] = [
                 course_review[i].course_name,
                 course_review[i].course_subject,
+                course_review[i].course_images,
                 rating
             ]
         }else{
@@ -226,19 +231,36 @@ app.get('/CourseReview2', function(req, res){
 
 })
 
-app.get('/CourseReviews/:course_id:', function(req, res){
-    
-    let class_info = [];
-    let class_info2 = [];
 
-    let rating = 100;
+app.get('/images', function(req,res){
+
+    let images=[];
+
+    for(let i=0;i<slider_img.length;i++){
+        images[i]=[slider_img[i].download_url];
+    }
+
+    res.send({
+        images:images
+    })
+})
+
+app.get('/viewall', function(req,res){
+
+    let class_info = [];
+
+ 
 
     for(let i =0; i<course_review.length;i++){
-        for(let j =0; j < course_review[i].class_reviews.length; j++){
+        if(course_review[i].course_tags != ""){
             class_info[i] = [
                 course_review[i].course_name,
-                course_review[i].class_reviews.name
+                course_review[i].course_subject,
+                course_review[i].course_images,
             ]
+        }else{
+            continue;
+
         }
     }
 
@@ -246,8 +268,8 @@ app.get('/CourseReviews/:course_id:', function(req, res){
         class_info:class_info
     })
 
-})
 
+})
 
  // export the express app we created to make it available to other modules
  module.exports = app;
