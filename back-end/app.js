@@ -4,7 +4,7 @@ const app = express() // instantiate an Express object
 const bodyParser = require('body-parser');
 const {courseRoutes} = require("./routes/courseRoutes");
 const slider_img=require("./list.json");
-const imgs=require("./MOCK_IMGS.json");
+
 
 const course_data=require("./json_data/Course_Data.json")
 const course_review=require("./json_data/Course_Review.json")
@@ -101,10 +101,14 @@ app.get('/CourseRating', function(req,res){
 
  })
 
+
+
+
  app.get("/CourseData", function(req, res){
     res.send({
         course_data
     })
+
  })
 
  app.get('/CourseSlider', function(req,res){
@@ -133,7 +137,6 @@ app.get('/CourseRating', function(req,res){
 app.get('/CourseHighestRatedClasses', function(req, res){
     
     let class_info = [];
-
     let rating = 100;
 
     for(let i =0; i<course_review.length;i++){
@@ -220,9 +223,6 @@ app.get('/images', function(req,res){
 app.get('/viewall', function(req,res){
 
     let class_info = [];
-
- 
-
     for(let i =0; i<course_review.length;i++){
         if(course_review[i].course_tags != ""){
             class_info[i] = [
