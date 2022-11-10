@@ -15,11 +15,6 @@ const SearchPage = () => {
   const {courseDataProcessed} = useContext(CourseDataContext)
   console.log(courseDataProcessed);
 
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then((response) => response.json())
-      .then((users) => setCourse(users));
-  }, []);
 
   useEffect(() => {
     const newFilteredCourses = course.filter((course) => {
