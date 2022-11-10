@@ -89,16 +89,12 @@ app.get('/CourseReviewDetailHeader', function(req, res){
     let rating = 100;
 
     for(let i =0; i<course_review.length;i++){
-        if(course_review[i].course_tags != ""){
             class_info[i] = [
                 course_review[i].course_name,
                 course_review[i].course_subject,
                 course_review[i].course_tags,
                 course_review[i].professors
             ]
-        }else{
-            continue;
-        }
     }
 
     res.send({
@@ -125,17 +121,12 @@ app.get('/viewall', function(req,res){
 
     let class_info = [];
     for(let i =0; i<course_review.length;i++){
-        if(course_review[i].course_tags != ""){
             class_info[i] = [
                 course_review[i].course_name,
                 course_review[i].course_subject,
                 course_review[i].course_images,
                 course_review[1].course_id
             ]
-        }else{
-            continue;
-
-        }
     }
 
     res.send({
@@ -145,14 +136,51 @@ app.get('/viewall', function(req,res){
 
 })
 
+app.get('/CourseData2', function(req,res){
+    let class_data = [];
+
+    for(let i = 0; i<course_data.length;i++){
+            class_data[i] = [
+                course_review[i].course_name,
+                course_review[i].course_id,
+                course_review[i].course_subject,
+                course_review[i].course_tags,
+                course_review[i].professors,
+                course_review[i].course_images,
+            ]   
+    }
+
+    res.send({
+        class_data:class_data
+    })
+
+})
+
+app.get('/CourseHighestRatedClasses', function(req, res){
+    let class_info = [];
+    let rating = 100;
+    for(let i =0; i<course_review.length;i++){
+        if(course_review[i].course_tags != ""){
+            class_info[i] = [
+                course_review[i].course_name,
+                course_review[i].course_subject,
+                course_review[i].course_images,
+                course_review[i].course_id,
+                rating
+            ]
+        }else{
+            continue;
+        }
+    }
+    res.send({
+        class_info:class_info
+    })
+})
+
+
+
 app.get('/CourseReviews', function(req,res){
     let class_reviews = [];
-
-    let counter = 0;
-    let course_name_counter = 0;
-    let rating_calc = 0;
-    let retake_calc = 0;
-    let difficult_calc = 0;
 
     for(let i = 0; i<course_data.length;i++){
             class_reviews[i] = [
