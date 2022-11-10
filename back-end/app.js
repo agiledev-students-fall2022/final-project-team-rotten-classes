@@ -23,7 +23,7 @@ app.get('/', (req, res) => res.send('Hello from Classcritic!'))
 app.get('/profile', (req, res) => res.send('Hello from Classcritic Profile!'))
 
 // user data to display on profile screen (front-end)
-app.get('/api/users', (req, res) => {
+app.get('/Users', (req, res) => {
     res.json({
         id: 1,
         dp: "https://pbs.twimg.com/profile_images/1520724563876888577/qkJG25yC_400x400.jpg",
@@ -33,7 +33,8 @@ app.get('/api/users', (req, res) => {
         school: "College of Arts & Science",
         major: "Computer Science",
         bio: "I am an NYU student and a good data and software researcher. I believe in the great power of technology."
-    });
+    }
+    );
 });
 
 // use the morgan middleware to log all incoming http requests
