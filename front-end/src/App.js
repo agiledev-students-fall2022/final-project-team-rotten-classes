@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import Home from './routes/home/home.component';
 import Header from './Header';
@@ -16,6 +17,18 @@ import Profile from './routes/profile-page/profile';
 
 
 function App() {
+  const[data, setData] = useState([])
+
+  useEffect(() => {
+    fetch("/CourseSlider").then(
+      response => response.json()
+    ).then(
+      data => {
+        setData(data)
+      }
+    )
+  }, [])
+
   return (
     <div className="App"> 
 
@@ -28,6 +41,7 @@ function App() {
         <Route path="/CourseRatings" element={<CourseRatings />} />
         <Route path="/CourseReviews" element={<CourseReviews />} />
         <Route path="/CourseDetails" element={<CourseDetails />} />
+
         <Route path="/AddReview" element={<AddReview />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/search" element={<SearchPage />} />

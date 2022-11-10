@@ -36,7 +36,7 @@ const RowForViewall = () => {
               <div className="big">
                   <div className="slick-list">
                       <h5 className="title">{info[0]}</h5>
-                      <Link to="./../CourseReviews">
+                      <Link to={'./../CourseReviews?Course=' + info[3]}>
                           <img src = {info[2]}/>
                       </Link>
                   </div>

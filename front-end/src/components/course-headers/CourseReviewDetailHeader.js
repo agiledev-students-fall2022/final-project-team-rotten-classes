@@ -4,11 +4,17 @@ import RowForViewall from "../highest-rated-classes-row/RowForViewAll";
 import { fontSize } from '@mui/system';
 import img1 from '../../images/ml.jpeg'
 import Badge from 'react-bootstrap/Badge';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import {BrowserRouter as Router, Link} from 'react-router-dom';
 import mock from '../../MOCK_DATA.json'
+import { valHooks } from 'jquery';
 
 function CourseReviewDetailHeader() {
+  const queryString = require('query-string');
+  const location = useLocation();
+  const parsed = queryString.parse(location.search)
+  console.log(parsed)
+
   const[data, setData] = useState([])
 
   useEffect(() => {
@@ -32,7 +38,7 @@ function CourseReviewDetailHeader() {
            {(typeof data.class_info === 'undefined') ? (
                   <p>Loading</p>
                 ): (
-                    data.class_info?.slice(0,1).map((info, index)=> (
+                    data.class_info?.slice(0, 1).map((info, key=parsed)=> (
                       <div className = "course-page-subheader-data">
                         <img src="https://source.unsplash.com/random" alt='machine learning pic'/>
                         <h2>{info[0]}</h2>

@@ -4,11 +4,12 @@ import RowForViewall from "../highest-rated-classes-row/RowForViewAll";
 import { fontSize } from '@mui/system';
 import img1 from '../../images/ml.jpeg'
 import Badge from 'react-bootstrap/Badge';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import {BrowserRouter as Router, Link} from 'react-router-dom';
 import axios from 'axios';
 import mock from '../../MOCK_DATA.json'
 import CourseReviewDetailHeader from '../course-headers/CourseReviewDetailHeader.js'
+import queryString from 'query-string';
 
 
 /**
@@ -18,6 +19,12 @@ import CourseReviewDetailHeader from '../course-headers/CourseReviewDetailHeader
  */
 
 function CourseReviews() {
+
+  const queryString = require('query-string');
+  const location = useLocation();
+
+  const parsed = queryString.parse(location.search)
+  console.log(parsed.key);
   const[data, setData] = useState([])
 
   useEffect(() => {
@@ -39,6 +46,7 @@ function CourseReviews() {
   
     return (
       <>
+
       <br></br>
       <CourseReviewDetailHeader />
 
@@ -46,7 +54,7 @@ function CourseReviews() {
       {(typeof data.course_review === 'undefined') ? (
                   <p>Loading</p>
                 ): (
-                    data.course_review?.slice(0,1).map((info, key)=> (
+                    Object.keys.slice(0,1).map((info, key)=> (
                       <div className = "reviews-for-course-ratings">
                         <img src="https://source.unsplash.com/random" alt='machine learning pic'/>
                         <h2 key={key}>{info[0]}</h2>
