@@ -1,4 +1,4 @@
-const chai = require('chai')
+const chai = require('chai');
 const {expect, should} = require('chai');
 const {describe, it, after} = require('mocha');
 const chaiHttp = require('chai-http');
@@ -7,35 +7,34 @@ const assert = require("assert");
 const server = require('../app.js');
 
 chai.use(chaiHttp);
-// chai.use(should);
 chai.should();
 
 //start unit test for getting course data
-describe('GET CourseRating', ()=>{
-   it('should get all data for course ratings', (done)=>{
-       chai.request(server)
-        .get('/CourseRating')
-        .end((err,res)=>{
-           res.should.have.status(200);
-           expect(res.body).to.be.a('object');
-      });
-        done();
-   });
-})
+// describe('GET CourseRating', ()=>{
+//    it('should get all data for course ratings', (done)=>{
+//        chai.request(server)
+//         .get('/CourseRating')
+//         .end((err,res)=>{
+//            res.should.have.status(200);
+//            expect(res.body).to.be.a('object');
+//       });
+//         done();
+//    });
+// })
 
-describe('GET CourseData', ()=>{
-   it('should get all class data', (done)=>{
-       chai.request(server)
-        .get('/CourseData')
-        .end((err,res)=>{
-           res.should.have.status(200);
-           expect(res.body).to.be.a('object');
-      });
+// describe('GET CourseData', ()=>{
+//    it('should get all class data', (done)=>{
+//        chai.request(server)
+//         .get('/CourseData')
+//         .end((err,res)=>{
+//            res.should.have.status(200);
+//            expect(res.body).to.be.a('object');
+//       });
 
-        done();
-   });
+//         done();
+//    });
 
-})
+// })
 
 describe('GET /CourseSlider', ()=>{
    it('should get data necessary for slider mechanism', (done)=>{
@@ -66,24 +65,6 @@ describe('GET /CourseReviewDetailHeader', ()=>{
 
 })
 
-//negative unit test
-describe('GET /viewall', ()=>{
-   it('should check the type of object', (done)=>{
-       chai.request(server)
-        .get('/viewall')
-        .end((err,res)=>{
-           res.should.have.status(200);
-           expect(res.body).to.be.a('integer');
-  
-               
-       
-
-        });
-
-        done();
-   });
-
-})
 
 describe('GET /image', ()=>{
    it('should get data for images used', (done)=>{
@@ -113,7 +94,7 @@ describe('GET /image', ()=>{
 
 })
 
-describe('GET /Users', ()=>{
+ describe('GET /Users', ()=>{
    it('should get data for users', (done)=>{
        chai.request(server)
         .get('/Users')
@@ -123,4 +104,19 @@ describe('GET /Users', ()=>{
         });
         done();
    });
+})
+
+// //negative unit test
+  describe('GET /viewall', ()=>{
+    it('should check the type of object', (done)=>{
+        chai.request(server)
+         .get('/viewall')
+        .end((err,res)=>{
+           res.should.have.status(200);
+           expect(res.body).to.be.a('integer');
+        });
+
+        done();
+   });
+
 })
