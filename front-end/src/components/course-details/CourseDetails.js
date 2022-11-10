@@ -1,6 +1,6 @@
 import './CourseDetails.css'
 import  React from 'react';
-import RowForViewall from "../highest-rated-classes-row/RowForViewAll";
+import RowForViewAll from "../highest-rated-classes-row/RowForViewAll";
 import { fontSize } from '@mui/system';
 import img1 from '../../images/ml.jpeg'
 import Badge from 'react-bootstrap/Badge';

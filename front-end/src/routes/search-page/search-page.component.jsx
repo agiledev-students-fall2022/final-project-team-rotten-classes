@@ -15,7 +15,6 @@ const SearchPage = () => {
     const [sortby, setSortBy] = useState();
     const [sortedCourses, setSortedCourses] = useState(courseDataProcessed);
 
-
     useEffect(() => {
         let displayedCourse;
         if (searchOption === "course-name") {

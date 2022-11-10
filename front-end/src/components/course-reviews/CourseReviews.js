@@ -1,5 +1,8 @@
 import './CourseReviews.css'
 import React, { useState, useEffect } from 'react';
+import RowForViewAll from "../highest-rated-classes-row/RowForViewAll";
+import { fontSize } from '@mui/system';
+import img1 from '../../images/ml.jpeg'
 import Badge from 'react-bootstrap/Badge';
 import { Navigate, useLocation } from 'react-router-dom';
 import mock from '../../MOCK_DATA.json'
@@ -12,35 +15,44 @@ import CourseReviewDetailHeader from '../course-headers/CourseReviewDetailHeader
  */
 
 function CourseReviews() {
+    const queryString = require('query-string');
+    const location = useLocation();
 
-  const queryString = require('query-string');
-  const location = useLocation();
+    const parsed = queryString.parse(location.search)
+    console.log(parsed.key);
+    const[data, setData] = useState([])
 
-  const parsed = queryString.parse(location.search)
-  console.log(parsed.key);
-  
-  const[data, setData] = useState([])
+    useEffect(() => {
+        fetch("/CourseReviews").then(
+            response => response.json()
+        ).then(
+            data => {
+                setData(data)
+            }
+        )
+    }, [])
 
-  useEffect(() => {
-    fetch("/CourseReviews").then(
-      response => response.json()
-    ).then(
-      data => {
-        setData(data)
-      }
-    )
-  }, [])
-    
-  const [goToView, setView] = React.useState(false);
+    // Try modify this instead of the above useEffect
 
-  if(goToView){
-    return <Navigate to="/Viewall"/>;
-  }
+    // useEffect(() => {
+    //   const fetchCourseReviews = async () => {
+    //     const response = await axios.get("http://localhost:4000/CourseData");
+    //     setData(response.data);
+    //     console.log(response.data)
+    //   };
+    //   fetchCourseReviews();
+    // }, []);
+
+    const [goToView, setView] = React.useState(false);
+
+    if(goToView){
+        return <Navigate to="/Viewall"/>;
+    }
     return (
-      <>
+        <>
 
-      <br></br>
-      <CourseReviewDetailHeader />
+            <br></br>
+            <CourseReviewDetailHeader />
 
       <div className = "reviews-for-course-ratings">
       {(typeof data.class_reviews === 'undefined') ? (
@@ -56,6 +68,6 @@ function CourseReviews() {
         </div>
       </>
     );
-  }
-  
-  export default CourseReviews;
+}
+
+export default CourseReviews;

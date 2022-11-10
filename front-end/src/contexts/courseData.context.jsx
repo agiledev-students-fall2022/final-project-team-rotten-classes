@@ -37,7 +37,8 @@ export const CourseDataProvider = ({children}) => {
   useEffect(() => {
     const fetchCourses = async () => {
       const response = await axios.get("http://localhost:4000/CourseRating");
-      setCourseData(response.data["course_review"]);
+      setCourseData(response.data);
+      console.log(response)
     };
     fetchCourses();
   }, []);

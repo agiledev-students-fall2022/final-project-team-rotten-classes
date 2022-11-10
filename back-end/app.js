@@ -2,15 +2,13 @@
 const express = require("express") // CommonJS import style!
 const app = express() // instantiate an Express object
 const bodyParser = require('body-parser');
-const {courseRoutes} = require("./routes/courseRoutes");
 const slider_img=require("./list.json");
-
 
 const course_data=require("./json_data/Course_Data.json")
 const course_review=require("./json_data/Course_Review.json")
+
 const cors = require('cors');
 app.use(cors());
-
 
 // import some useful middleware
 const multer = require("multer") // middleware to handle HTTP POST requests with file uploads
@@ -23,7 +21,7 @@ app.get('/', (req, res) => res.send('Hello from Classcritic!'))
 app.get('/profile', (req, res) => res.send('Hello from Classcritic Profile!'))
 
 // user data to display on profile screen (front-end)
-app.get('/api/users', (req, res) => {
+app.get('/Users', (req, res) => {
     res.json({
         id: 1,
         dp: "https://pbs.twimg.com/profile_images/1520724563876888577/qkJG25yC_400x400.jpg",
@@ -33,7 +31,8 @@ app.get('/api/users', (req, res) => {
         school: "College of Arts & Science",
         major: "Computer Science",
         bio: "I am an NYU student and a good data and software researcher. I believe in the great power of technology."
-    });
+    }
+    );
 });
 
 // use the morgan middleware to log all incoming http requests
@@ -41,34 +40,25 @@ app.use(morgan("dev")) // morgan has a few logging default styles - dev is a nic
 app.use(bodyParser.json())
 // app.use('/api/course', courseRoutes => {})
 
-
-app.use((req, res, next) => {
-    console.log(req.body);
-    next();
+app.get("/CourseRating", (req, res, next) => {
+    axios
+        .get("https://my.api.mockaroo.com/CourseRating.json?key=f65a0910")
+        .then(apiResponse => res.json(apiResponse.data))
+        .catch(err => next(err))
 })
 
-app.get('/CourseRating', function(req,res){
-    //get prof and class name
-    /*let profs = [];
-    let class_names=[];
-    for(let i =0; i<mock_data.length;i++){
-        profs+=mock_data[i].professor;
-        class_names+=mock_data[i].class_name;
-    }*/
-    res.send({
-       // professors:profs,
-        //class_names:class_names
-        course_review
-    })
-
+app.get("/CourseData", (req, res, next) => {
+    axios
+        .get("https://my.api.mockaroo.com/CourseData.json?key=90ef8730")
+        .then(apiResponse => res.json(apiResponse.data))
+        .catch(err => next(err))
 })
 
- app.get("/CourseData", function(req, res){
-    res.send({
-        course_data
-    })
-
- })
+ // app.get("/CourseData", function(req, res){
+ //    res.send({
+ //        course_data
+ //    })
+ // })
 
  app.get('/CourseSlider', function(req,res){
     //get class name
@@ -91,30 +81,6 @@ app.get('/CourseRating', function(req,res){
 
 })
 
-app.get('/CourseHighestRatedClasses', function(req, res){
-    
-    let class_info = [];
-    let rating = 100;
-
-    for(let i =0; i<course_review.length;i++){
-        if(course_review[i].course_tags != ""){
-            class_info[i] = [
-                course_review[i].course_name,
-                course_review[i].course_subject,
-                course_review[i].course_images,
-                course_review[i].course_id,
-                rating
-            ]
-        }else{
-            continue;
-        }
-    }
-
-    res.send({
-        class_info:class_info
-    })
-
-})
 
 app.get('/CourseReviewDetailHeader', function(req, res){
     
@@ -189,6 +155,28 @@ app.get('/CourseData2', function(req,res){
     })
 
 })
+
+app.get('/CourseHighestRatedClasses', function(req, res){
+    let class_info = [];
+    let rating = 100;
+    for(let i =0; i<course_review.length;i++){
+        if(course_review[i].course_tags != ""){
+            class_info[i] = [
+                course_review[i].course_name,
+                course_review[i].course_subject,
+                course_review[i].course_images,
+                course_review[i].course_id,
+                rating
+            ]
+        }else{
+            continue;
+        }
+    }
+    res.send({
+        class_info:class_info
+    })
+})
+
 
 
 app.get('/CourseReviews', function(req,res){

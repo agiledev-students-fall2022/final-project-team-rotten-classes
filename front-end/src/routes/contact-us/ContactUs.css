@@ -1,33 +1,32 @@
-.inputs{
-    color: #250741;
-}
 .head{
     color:#02B7FE;
 }
-.submit{
-    color: #E413F4;
-}
-.form{
-    border:  #E413F4 solid 5px;
-    background-color: #FFFEF4;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-    width:400px;
-  }
-
-  .whole{
-    background-color: #250741;
+.whole{
     display: flex;
-      flex-direction: column;
-  }
-
-  .contacts{
-    border: white solid 5px;
+    flex-direction: column;
+    align-items: center;
+}
+.contacts{
     background-color: #02B7FE;
-    width:370px;
-  }
+    width:400px;
+}
 
-  
+.feedback-input-textarea{
+    color:white;
+    font-weight:500;
+    font-size: 18px;
+    border-radius: 5px;
+    line-height: 22px;
+    background-color: transparent;
+    border:2px solid #61dafb;
+    transition: all 0.3s;
+    padding: 13px;
+    margin-bottom: 15px;
+    width:100%;
+    box-sizing: border-box;
+    outline:0;
+}
 
- 
+
+
+

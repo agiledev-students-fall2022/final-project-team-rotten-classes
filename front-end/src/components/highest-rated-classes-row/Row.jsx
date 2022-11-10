@@ -1,46 +1,43 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {BrowserRouter as Router, Link} from 'react-router-dom';
-import { Card, Carousel } from "react-bootstrap";
 import axios from 'axios';
-
 import './Row.css';
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import CourseCardListRow from "../ course-card-list-row/course-card-list-row.component";
+import {CourseDataContext} from "../../contexts/courseData.context";
 import mock from './../../MOCK_DATA.json';
 
 
-import img1 from './../../images/ml.jpeg'
-import img2 from './../../images/hack.jpg'
-import img3 from './../../images/blockchain.jpg'
-import img4 from './../../images/algo.jpg'
-import img5 from './../../images/et.jpg'
-
 const Row = () => {
-    const[data, setData] = useState([])
+    const {courseDataProcessed} = useContext(CourseDataContext)
 
-    useEffect(() => {
-      fetch("/CourseHighestRatedClasses").then(
-        response => response.json()
-      ).then(
-        data => {
-          setData(data)
-        }
-      )
-    }, [])
+     const[data, setData] = useState([])
     
-    var settings = {
+     useEffect(() => {
+       fetch("/CourseHighestRatedClasses").then(
+         response => response.json()
+       ).then(
+         data => {
+           setData(data)
+         }
+       )
+     }, [])
+
+    const settings = {
         dots: false,
         autoplay: false,
         infinite: false,
         speed: 1000,
         slidesToShow: 3,
-        slidesToScroll: 1,
+        slidesToScroll: 3,
         arrows: false,
         adaptiveHeight: true,
         autoplaySpeed: 2000
     };
+
+
     return (
         <Slider {...settings} >
             {(typeof data.class_info === 'undefined') ? (
