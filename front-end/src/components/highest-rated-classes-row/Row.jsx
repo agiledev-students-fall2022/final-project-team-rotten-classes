@@ -1,21 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import {BrowserRouter as Router, Link} from 'react-router-dom';
-import { Card, Carousel } from "react-bootstrap";
 import axios from 'axios';
-
 import './Row.css';
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import mock from './../../MOCK_DATA.json';
 
-
-import img1 from './../../images/ml.jpeg'
-import img2 from './../../images/hack.jpg'
-import img3 from './../../images/blockchain.jpg'
-import img4 from './../../images/algo.jpg'
-import img5 from './../../images/et.jpg'
 
 const Row = () => {
     const[data, setData] = useState([])
@@ -29,7 +20,7 @@ const Row = () => {
         }
       )
     }, [])
-    
+
     var settings = {
         dots: false,
         autoplay: false,
