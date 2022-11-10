@@ -36,7 +36,18 @@ function CourseReviews() {
       }
     )
   }, [])
-    
+
+  // Try modify this instead of the above useEffect
+
+  // useEffect(() => {
+  //   const fetchCourseReviews = async () => {
+  //     const response = await axios.get("http://localhost:4000/CourseData");
+  //     setData(response.data);
+  //     console.log(response.data)
+  //   };
+  //   fetchCourseReviews();
+  // }, []);
+
   const [goToView, setView] = React.useState(false);
 
   if(goToView){
