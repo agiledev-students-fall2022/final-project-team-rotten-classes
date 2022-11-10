@@ -6,7 +6,7 @@ import mock_user from './../../MOCK_DATA_USERS.json';
 function Profile() {
   const [data, setData] = useState({})
   useEffect(()=>{
-    fetch("http://localhost:4000/api/users")
+    fetch("http://localhost:4000/Users")
     .then(res => res.json())
     .then(data => setData(data))
   }, [])
