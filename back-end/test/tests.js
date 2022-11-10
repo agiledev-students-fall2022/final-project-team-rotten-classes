@@ -11,6 +11,18 @@ chai.use(chaiHttp);
 chai.should();
 
 //start unit test for getting course data
+describe('GET CourseRating', ()=>{
+   it('should get all data for course ratings', (done)=>{
+       chai.request(server)
+        .get('/CourseRating')
+        .end((err,res)=>{
+           res.should.have.status(200);
+           expect(res.body).to.be.a('object');
+      });
+        done();
+   });
+})
+
 describe('GET CourseData', ()=>{
    it('should get all class data', (done)=>{
        chai.request(server)
@@ -18,7 +30,6 @@ describe('GET CourseData', ()=>{
         .end((err,res)=>{
            res.should.have.status(200);
            expect(res.body).to.be.a('object');
-          
       });
 
         done();
@@ -27,13 +38,12 @@ describe('GET CourseData', ()=>{
 })
 
 describe('GET /CourseSlider', ()=>{
-   it('should check the type of object', (done)=>{
+   it('should get data necessary for slider mechanism', (done)=>{
        chai.request(server)
         .get('/CourseSlider')
         .end((err,res)=>{
-             res.should.have.status(200) // use should to make BDD-style assertions
-         res.body.should.be.a("array") // our route sends back an object
-         res.body.should.have.property("success", true)
+         res.should.have.status(200);
+         expect(res.body).to.be.a('object');
         });
 
         done();
@@ -42,12 +52,12 @@ describe('GET /CourseSlider', ()=>{
 })
 
 describe('GET /CourseHighestRatedClasses', ()=>{
-   it('should check the type of object', (done)=>{
+   it('should get data necessary for highest rated classes', (done)=>{
        chai.request(server)
         .get('/CourseHighestRatedClasses')
         .end((err,res)=>{
            res.should.have.status(200);
-           expect(res.body).to.be.a('integer');
+           expect(res.body).to.be.a('object');
         });
 
         done();
@@ -56,7 +66,7 @@ describe('GET /CourseHighestRatedClasses', ()=>{
 })
 
 describe('GET /CourseReviewDetailHeader', ()=>{
-   it('should check the type of object', (done)=>{
+   it('should get data necessary for course review header', (done)=>{
        chai.request(server)
         .get('/CourseReviewDetailHeader')
         .end((err,res)=>{
@@ -89,12 +99,12 @@ describe('GET /viewall', ()=>{
 })
 
 describe('GET /image', ()=>{
-   it('should check the type of object', (done)=>{
+   it('should get data for images used', (done)=>{
        chai.request(server)
         .get('/images')
         .end((err,res)=>{
            res.should.have.status(200);
-           expect(res.body).to.be.a('integer');
+           expect(res.body).to.be.a('object');
         });
 
         done();
@@ -107,10 +117,8 @@ describe('GET /image', ()=>{
        chai.request(server)
         .get('/ClassReviews')
         .end((err, res) => {
-         res.should.have.status(200) // use should to make BDD-style assertions
-         res.body.should.be.a("array") // our route sends back an object
-         res.body.should.have.property("success", true) // a way to check the exact value of a property of the response object
-          // resolve the Promise that these tests create so mocha can move on
+            res.should.have.status(200);
+            expect(res.body).to.be.a('object');
         });
 
         done();
