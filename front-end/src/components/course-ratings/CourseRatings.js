@@ -1,5 +1,5 @@
 import './CourseRatings.css'
-import  React from 'react';
+import React, { useState, useEffect } from 'react';
 import RowForViewall from "../highest-rated-classes-row/RowForViewAll";
 import { fontSize } from '@mui/system';
 import img1 from '../../images/ml.jpeg'
@@ -16,25 +16,46 @@ import CourseReviewDetailHeader from '../course-headers/CourseReviewDetailHeader
  */
 
 function CourseRatings() {
+  const[data, setData] = useState([])
+
+  useEffect(() => {
+    fetch("/CourseReviews").then(
+      response => response.json()
+    ).then(
+      data => {
+        setData(data)
+      }
+    )
+  }, [])
+
   const [goToView, setView] = React.useState(false);
 
   if(goToView){
     return <Navigate to="/Viewall"/>;
+
   }
     return (
       <>
        <br></br>
       <CourseReviewDetailHeader />
 
-      <div className = "course-ratings-page">
-        <h1>Under Construction!</h1>
-        <h3>Needs data visualizations we don't yet have the tools for! It'll be here soon!</h3>
-
-        <h2>Rating Distribution</h2>
-        <h2>Would Take It Again:</h2>
-
-      </div>
-      
+      {(typeof data.class_reviews === 'undefined') ? (
+                  <p>Loading</p>
+                ): (
+                    data.class_reviews?.slice(0, 1).map((info, key)=> (
+                      <div className = "course-ratings-page">
+                        <h1>Overall Ratings</h1>
+                        <h2>Overall Score</h2>
+                        <h3>{info[2]}</h3>
+                        <h2>Would Take It Again</h2>
+                        <h3>{info[3]}</h3>
+                        <h2>Difficulty</h2>
+                        <h3>{info[2]}</h3>
+                        <h2>Level of Workload</h2>
+                        <h3>{info[2]}</h3>
+                      </div>
+                ))
+        )}      
       </>
     );
   }

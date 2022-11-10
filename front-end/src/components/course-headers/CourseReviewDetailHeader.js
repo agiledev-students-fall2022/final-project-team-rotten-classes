@@ -52,7 +52,6 @@ function CourseReviewDetailHeader() {
         <div className = "review-rating-button-switch">
           <Link to = "/CourseReviews"><button>Reviews</button></Link>
           <Link to = "/CourseRatings"><button>Ratings</button></Link>
-          <Link to = "/CourseDetails"><button>Details</button></Link>
         </div>
       </>
     );

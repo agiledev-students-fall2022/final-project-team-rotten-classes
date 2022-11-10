@@ -1,16 +1,9 @@
 import './CourseReviews.css'
 import React, { useState, useEffect } from 'react';
-import RowForViewall from "../highest-rated-classes-row/RowForViewAll";
-import { fontSize } from '@mui/system';
-import img1 from '../../images/ml.jpeg'
 import Badge from 'react-bootstrap/Badge';
 import { Navigate, useLocation } from 'react-router-dom';
-import {BrowserRouter as Router, Link} from 'react-router-dom';
-import axios from 'axios';
 import mock from '../../MOCK_DATA.json'
 import CourseReviewDetailHeader from '../course-headers/CourseReviewDetailHeader.js'
-import queryString from 'query-string';
-
 
 /**
  * A React component that represents the Home page of the app.
@@ -25,6 +18,7 @@ function CourseReviews() {
 
   const parsed = queryString.parse(location.search)
   console.log(parsed.key);
+  
   const[data, setData] = useState([])
 
   useEffect(() => {
@@ -42,8 +36,6 @@ function CourseReviews() {
   if(goToView){
     return <Navigate to="/Viewall"/>;
   }
-
-  
     return (
       <>
 
@@ -51,32 +43,16 @@ function CourseReviews() {
       <CourseReviewDetailHeader />
 
       <div className = "reviews-for-course-ratings">
-      {(typeof data.course_review === 'undefined') ? (
+      {(typeof data.class_reviews === 'undefined') ? (
                   <p>Loading</p>
                 ): (
-                    Object.keys.slice(0,1).map((info, key)=> (
+                    data.class_reviews?.slice(0, 4).map((info, key)=> (
                       <div className = "reviews-for-course-ratings">
-                        <img src="https://source.unsplash.com/random" alt='machine learning pic'/>
-                        <h2 key={key}>{info[0]}</h2>
-                        <h3>Professors: {info[3]}</h3>
-                        <Badge onClick={()=>{setView(true)}}>{info[1]}</Badge>
-                        <Badge onClick={()=>{setView(true)}}>{info[2]}</Badge>
+                        <h2>Name: {info[0]}</h2>
+                        <p>Review: {info[1]}</p>
                      </div>
                 ))
             )}
-        <p>
-
-          {mock && mock.map(({first_name, review, id}) =>(
-            <div key = {id} className = "course-reviews-display">
-              <br></br>
-              Name: {first_name}
-              <br></br>
-              Review: {review}
-              <br></br>
-              <br></br>
-            </div>
-          ))}
-        </p>
         </div>
       </>
     );

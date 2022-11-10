@@ -55,7 +55,7 @@ const Row = () => {
                             </Link>
                         </div>
                         <div className="subheading">
-                            <h6 className="rate">{info[3]}%</h6>
+                            <h6 className="rate">{info[4]}%</h6>
                             <h6 className="prof">{info[1]}</h6>
                         </div>
                     </div>
