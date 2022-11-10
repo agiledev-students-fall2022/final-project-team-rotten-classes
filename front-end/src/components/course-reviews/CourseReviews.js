@@ -20,77 +20,77 @@ import queryString from 'query-string';
 
 function CourseReviews() {
 
-  const queryString = require('query-string');
-  const location = useLocation();
+    const queryString = require('query-string');
+    const location = useLocation();
 
-  const parsed = queryString.parse(location.search)
-  console.log(parsed.key);
-  const[data, setData] = useState([])
+    const parsed = queryString.parse(location.search)
+    console.log(parsed.key);
+    const[data, setData] = useState([])
 
-  useEffect(() => {
-    fetch("/CourseReviews").then(
-      response => response.json()
-    ).then(
-      data => {
-        setData(data)
-      }
-    )
-  }, [])
+    useEffect(() => {
+        fetch("/CourseReviews").then(
+            response => response.json()
+        ).then(
+            data => {
+                setData(data)
+            }
+        )
+    }, [])
 
-  // Try modify this instead of the above useEffect
+    // Try modify this instead of the above useEffect
 
-  // useEffect(() => {
-  //   const fetchCourseReviews = async () => {
-  //     const response = await axios.get("http://localhost:4000/CourseData");
-  //     setData(response.data);
-  //     console.log(response.data)
-  //   };
-  //   fetchCourseReviews();
-  // }, []);
+    // useEffect(() => {
+    //   const fetchCourseReviews = async () => {
+    //     const response = await axios.get("http://localhost:4000/CourseData");
+    //     setData(response.data);
+    //     console.log(response.data)
+    //   };
+    //   fetchCourseReviews();
+    // }, []);
 
-  const [goToView, setView] = React.useState(false);
+    const [goToView, setView] = React.useState(false);
 
-  if(goToView){
-    return <Navigate to="/Viewall"/>;
-  }
+    if(goToView){
+        return <Navigate to="/Viewall"/>;
+    }
 
-  
+
     return (
-      <>
+        <>
 
-      <br></br>
-      <CourseReviewDetailHeader />
+            <br></br>
+            <CourseReviewDetailHeader />
 
-      <div className = "reviews-for-course-ratings">
-      {(typeof data.course_review === 'undefined') ? (
-                  <p>Loading</p>
+            <div className = "reviews-for-course-ratings">
+                {(typeof data.course_review === 'undefined') ? (
+                    <p>Loading</p>
                 ): (
                     Object.keys.slice(0,1).map((info, key)=> (
-                      <div className = "reviews-for-course-ratings">
-                        <img src="https://source.unsplash.com/random" alt='machine learning pic'/>
-                        <h2 key={key}>{info[0]}</h2>
-                        <h3>Professors: {info[3]}</h3>
-                        <Badge onClick={()=>{setView(true)}}>{info[1]}</Badge>
-                        <Badge onClick={()=>{setView(true)}}>{info[2]}</Badge>
-                     </div>
-                ))
-            )}
-        <p>
+                        <div className = "reviews-for-course-ratings">
+                            <img src="https://source.unsplash.com/random" alt='machine learning pic'/>
+                            <h2 key={key}>{info[0]}</h2>
+                            <h3>Professors: {info[3]}</h3>
+                            <Badge onClick={()=>{setView(true)}}>{info[1]}</Badge>
+                            <Badge onClick={()=>{setView(true)}}>{info[2]}</Badge>
+                        </div>
+                    ))
+                )}
+                <p>
 
-          {mock && mock.map(({first_name, review, id}) =>(
-            <div key = {id} className = "course-reviews-display">
-              <br></br>
-              Name: {first_name}
-              <br></br>
-              Review: {review}
-              <br></br>
-              <br></br>
+                    {mock && mock.map(({first_name, review, id}) =>(
+                        <div key = {id} className = "course-reviews-display">
+                            <br></br>
+                            Name: {first_name}
+                            <br></br>
+                            Review: {review}
+                            <br></br>
+                            <br></br>
+                        </div>
+                    ))}
+                </p>
             </div>
-          ))}
-        </p>
-        </div>
-      </>
+        </>
     );
-  }
-  
-  export default CourseReviews;
+}
+
+export default CourseReviews;
