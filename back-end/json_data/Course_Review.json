@@ -4,6 +4,7 @@
   "course_id": "CSCI-UA 480-069",
   "course_subject": "Computer Science",
   "course_tags": "Highest Rated",
+  "course_images":"https://picsum.photos/seed/picsum/367/267",
   "class_reviews": [
   	{
   		"reviewer_name": "Sonia Jain",
@@ -44,6 +45,7 @@
   "course_id": "BIOL-UA 3",
   "course_subject": "Biology",
   "course_tags": "Highest Rated",
+  "course_images":"https://picsum.photos/367/267?grayscale",
   "class_reviews": [
   	{
   		"reviewer_name": "Sonia Jain",
@@ -84,6 +86,7 @@
   "course_id": "GERM-UA 1",
   "course_subject": "German",
   "course_tags": "Highest Rated",
+  "course_images":"https://picsum.photos/id/9/367/267",
   "class_reviews": [
   	{
   		"reviewer_name": "Sonia Jain",
@@ -124,6 +127,7 @@
   "course_id": "PHIL-UA 2",
   "course_subject": "Philosophy",
   "course_tags": "Highest Rated",
+  "course_images":"https://picsum.photos/id/11/367/267",
   "class_reviews": [
   	{
   		"reviewer_name": "Sonia Jain",
@@ -164,6 +168,7 @@
   "course_id": "MATH-UA 9",
   "course_subject": "Math",
   "course_tags": "Highest Rated",
+  "course_images":"https://picsum.photos/id/14/367/267",
   "class_reviews": [
   	{
   		"reviewer_name": "Sonia Jain",

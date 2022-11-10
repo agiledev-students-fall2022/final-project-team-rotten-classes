@@ -28,11 +28,12 @@ const Slider = () => {
                   <p>Loading</p>
                 ): (
                     data.class_names?.slice(0,3).map((class_name, index)=> (
+                   
                       <Carousel.Item interval={2000}>
                       <Link to="./../CourseReviews">
                         <img
                           className="d-block w-100"
-                          src="https://source.unsplash.com/random"
+                          src={class_name[2]}
                           alt="First slide"
                         />
                         </Link>

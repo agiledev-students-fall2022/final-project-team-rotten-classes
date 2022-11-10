@@ -51,11 +51,11 @@ const Row = () => {
                         <div className="slick-list">
                             <h5 className="title">{info[0]}</h5>
                             <Link to="./../CourseReviews">
-                                <img src = "https://source.unsplash.com/random"/>
+                                <img src = {info[2]}/>
                             </Link>
                         </div>
                         <div className="subheading">
-                            <h6 className="rate">{info[2]}%</h6>
+                            <h6 className="rate">{info[3]}%</h6>
                             <h6 className="prof">{info[1]}</h6>
                         </div>
                     </div>
