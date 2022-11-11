@@ -11,30 +11,16 @@ chai.use(chaiHttp);
 chai.should();
 
 //start unit test for getting course data
-describe('GET CourseRating', ()=>{
-   it('should get all data for course ratings', (done)=>{
+describe('GET /Users', ()=>{
+   it('should get data for users', (done)=>{
        chai.request(server)
-        .get('/CourseRating')
+        .get('/Users')
         .end((err,res)=>{
            res.should.have.status(200);
            expect(res.body).to.be.a('object');
-      });
+        });
         done();
    });
-})
-
-describe('GET CourseData', ()=>{
-   it('should get all class data', (done)=>{
-       chai.request(server)
-        .get('/CourseData')
-        .end((err,res)=>{
-           res.should.have.status(200);
-           expect(res.body).to.be.a('object');
-      });
-
-        done();
-   });
-
 })
 
 describe('GET /CourseSlider', ()=>{
@@ -51,7 +37,6 @@ describe('GET /CourseSlider', ()=>{
 
 })
 
-
 describe('GET /CourseReviewDetailHeader', ()=>{
    it('should get data necessary for course review header', (done)=>{
        chai.request(server)
@@ -59,25 +44,6 @@ describe('GET /CourseReviewDetailHeader', ()=>{
         .end((err,res)=>{
            res.should.have.status(200);
            expect(res.body).to.be.a('integer');
-        });
-
-        done();
-   });
-
-})
-
-//negative unit test
-describe('GET /viewall', ()=>{
-   it('should check the type of object', (done)=>{
-       chai.request(server)
-        .get('/viewall')
-        .end((err,res)=>{
-           res.should.have.status(200);
-           expect(res.body).to.be.a('integer');
-  
-               
-       
-
         });
 
         done();
@@ -99,6 +65,50 @@ describe('GET /image', ()=>{
 
 })
 
+//negative unit test
+describe('GET /viewall', ()=>{
+   it('should check the type of object', (done)=>{
+       chai.request(server)
+        .get('/viewall')
+        .end((err,res)=>{
+           res.should.have.status(200);
+           expect(res.body).to.be.a('integer');
+        });
+
+        done();
+   });
+
+})
+
+describe('GET /CourseData2', ()=>{
+   it('should get data necessary for course review header', (done)=>{
+       chai.request(server)
+        .get('/CourseData2')
+        .end((err,res)=>{
+           res.should.have.status(200);
+           expect(res.body).to.be.a('integer');
+        });
+
+        done();
+   });
+
+})
+
+
+describe('GET /CourseHighestRatedClasses', ()=>{
+   it('should get data necessary for course review header', (done)=>{
+       chai.request(server)
+        .get('/CourseHighestRatedClasses')
+        .end((err,res)=>{
+           res.should.have.status(200);
+           expect(res.body).to.be.a('integer');
+        });
+
+        done();
+   });
+
+})
+
  describe('GET /ClassReviews', ()=>{
    it('should get the reviews under the course_data JSON file', (done)=>{
        chai.request(server)
@@ -111,16 +121,4 @@ describe('GET /image', ()=>{
         done();
    });
 
-})
-
-describe('GET /Users', ()=>{
-   it('should get data for users', (done)=>{
-       chai.request(server)
-        .get('/Users')
-        .end((err,res)=>{
-           res.should.have.status(200);
-           expect(res.body).to.be.a('object');
-        });
-        done();
-   });
 })
