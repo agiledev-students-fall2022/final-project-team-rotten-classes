@@ -32,7 +32,7 @@ const Slider = () => {
                 ): (
                     data.class_names?.slice(0,3).map((class_name, index)=> (
                    
-                      <Carousel.Item interval={2000}>
+                      <Carousel.Item interval={2000} key={index}>
                       <Link to={'./../CourseReviews?Course=' + class_name[3]}>
                         <img
                           className="d-block w-100"
@@ -42,8 +42,8 @@ const Slider = () => {
                         </Link>
                       <Carousel.Caption>
                       <div className="title">
-                        <h3 key={index}>{class_name[0]}</h3>
-                        <p key={index}>{class_name[1]}</p>
+                        <h3 >{class_name[0]}</h3>
+                        <p >{class_name[1]}</p>
                       </div>
                       </Carousel.Caption>
                     </Carousel.Item>
