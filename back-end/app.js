@@ -49,7 +49,7 @@ app.get("/CourseRating", (req, res, next) => {
 
 app.get("/CourseData", (req, res, next) => {
     axios
-        .get("https://my.api.mockaroo.com/CourseData.json?key=90ef8730")
+        .get("https://my.api.mockaroo.com/CourseData.json?key=f65a0910")
         .then(apiResponse => res.json(apiResponse.data))
         .catch(err => next(err))
 })

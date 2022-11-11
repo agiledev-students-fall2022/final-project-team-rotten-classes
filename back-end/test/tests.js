@@ -1,4 +1,4 @@
-const chai = require('chai')
+const chai = require('chai');
 const {expect, should} = require('chai');
 const {describe, it, after} = require('mocha');
 const chaiHttp = require('chai-http');
@@ -7,7 +7,6 @@ const assert = require("assert");
 const server = require('../app.js');
 
 chai.use(chaiHttp);
-// chai.use(should);
 chai.should();
 
 //start unit test for getting course data
@@ -93,7 +92,6 @@ describe('GET /CourseData2', ()=>{
    });
 
 })
-
 
 describe('GET /CourseHighestRatedClasses', ()=>{
    it('should get data necessary for course review header', (done)=>{

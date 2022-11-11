@@ -44,7 +44,7 @@ const Row = () => {
                   <p>Loading</p>
                 ): (
                     data.class_info?.map((info, index)=> (
-                    <div className="big">
+                    <div className="big" key={index}>
                         <div className="slick-list">
                             <h5 className="title">{info[0]}</h5>
                             <Link to={'./../CourseReviews?Course=' + info[3]}>
