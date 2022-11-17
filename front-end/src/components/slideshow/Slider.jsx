@@ -4,7 +4,6 @@ import { Carousel } from "react-bootstrap";
 import './Slider.css';
 import mock from './../../MOCK_DATA.json';
 
-
 import CourseReviews from './../course-reviews/CourseReviews';
 
 import img1 from './../../images/1.png'
@@ -30,20 +29,20 @@ const Slider = () => {
                {(typeof data.class_names === 'undefined') ? (
                   <p>Loading</p>
                 ): (
-                    data.class_names?.slice(0,3).map((class_name, index)=> (
+                    data.class_names?.slice(0,3).map((course, index)=> (
                    
                       <Carousel.Item interval={2000} key={index}>
-                      <Link to={'./../CourseReviews?Course=' + class_name[3]}>
+                      <Link to={'/Course/' + course.course_id}>
                         <img
                           className="d-block w-100"
-                          src={class_name[2]}
+                          src={course.course_images}
                           alt="First slide"
                         />
                         </Link>
                       <Carousel.Caption>
                       <div className="title">
-                        <h3 >{class_name[0]}</h3>
-                        <p >{class_name[1]}</p>
+                        <h3 >{course.course_name}</h3>
+                        <p >{course.course_subject}</p>
                       </div>
                       </Carousel.Caption>
                     </Carousel.Item>

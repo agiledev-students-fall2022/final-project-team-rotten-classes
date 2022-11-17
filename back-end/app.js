@@ -54,104 +54,17 @@ app.get("/CourseData", (req, res, next) => {
         .catch(err => next(err))
 })
 
- // app.get("/CourseData", function(req, res){
- //    res.send({
- //        course_data
- //    })
- // })
-
  app.get('/CourseSlider', function(req,res){
     //get class name
     let class_names=[];
 
     for(let i =0; i<course_review.length;i++){
-        class_names[i] = [
-            course_review[i].course_name,
-            course_review[i].course_subject,
-            course_review[i].course_images,
-            course_review[i].course_id,
-            course_review[i].key
-        ]
+        class_names[i] = course_review[i]
     }
 
     res.send({
         class_names:class_names
        
-    })
-
-})
-
-
-app.get('/CourseReviewDetailHeader', function(req, res){
-    
-    let class_info = [];
-
-    let rating = 100;
-
-    for(let i =0; i<course_review.length;i++){
-            class_info[i] = [
-                course_review[i].course_name,
-                course_review[i].course_subject,
-                course_review[i].course_tags,
-                course_review[i].professors
-            ]
-    }
-
-    res.send({
-        class_info:class_info
-    })
-
-})
-
-
-app.get('/images', function(req,res){
-
-    let images=[];
-
-    for(let i=0;i<slider_img.length;i++){
-        images[i]=[slider_img[i].download_url];
-    }
-
-    res.send({
-        images:images
-    })
-})
-
-app.get('/viewall', function(req,res){
-
-    let class_info = [];
-    for(let i =0; i<course_review.length;i++){
-            class_info[i] = [
-                course_review[i].course_name,
-                course_review[i].course_subject,
-                course_review[i].course_images,
-                course_review[1].course_id
-            ]
-    }
-
-    res.send({
-        class_info:class_info
-    })
-
-
-})
-
-app.get('/CourseData2', function(req,res){
-    let class_data = [];
-
-    for(let i = 0; i<course_data.length;i++){
-            class_data[i] = [
-                course_review[i].course_name,
-                course_review[i].course_id,
-                course_review[i].course_subject,
-                course_review[i].course_tags,
-                course_review[i].professors,
-                course_review[i].course_images,
-            ]   
-    }
-
-    res.send({
-        class_data:class_data
     })
 
 })
@@ -179,25 +92,22 @@ app.get('/CourseHighestRatedClasses', function(req, res){
 
 
 
-app.get('/CourseReviews', function(req,res){
-    let class_reviews = [];
+app.get('/Course', function(req,res){
+    const courseId = req.query.courseId;
+    let class_reviews = {}
 
-    for(let i = 0; i<course_data.length;i++){
-            class_reviews[i] = [
-                course_data[i].reviewer_name,
-                course_data[i].review,
-                course_data[i].rating,
-                course_data[i].would_take_again,
-                course_data[i].difficulty
-            ]   
+    for(let i = 0; i<course_review.length;i++){
+        if (course_review[i].course_id === courseId) {
+            class_reviews = course_review[i]
+            break;
+        }
     }
 
-    res.send({
-        class_reviews:class_reviews
+    res.json({
+        class_reviews
     })
 
 })
-
 
  // export the express app we created to make it available to other modules
  module.exports = app;

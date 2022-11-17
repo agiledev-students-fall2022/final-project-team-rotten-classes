@@ -15,18 +15,7 @@ import CourseReviewDetailHeader from '../course-headers/CourseReviewDetailHeader
  * @returns The contents of this component, in JSX form.
  */
 
-function CourseRatings() {
-  const[data, setData] = useState([])
-
-  useEffect(() => {
-    fetch("/CourseReviews").then(
-      response => response.json()
-    ).then(
-      data => {
-        setData(data)
-      }
-    )
-  }, [])
+function CourseRatings({ data }) {
 
   const [goToView, setView] = React.useState(false);
 
@@ -37,24 +26,39 @@ function CourseRatings() {
     return (
       <>
        <br></br>
-      <CourseReviewDetailHeader />
-
       {(typeof data.class_reviews === 'undefined') ? (
                   <p>Loading</p>
                 ): (
-                    data.class_reviews?.slice(0, 1).map((info, key)=> (
+                   
                       <div className = "course-ratings-page">
                         <h1>Overall Ratings</h1>
                         <h2>Overall Score</h2>
-                        <h3>{info[2]}</h3>
+                        <h3>
+                          {data.class_reviews.map((info, key)=> {
+                          return info.rating
+                          }).reduce((a,b)=> {
+                            return a+b
+                          })/data.class_reviews.length}
+                        </h3>
                         <h2>Would Take It Again</h2>
-                        <h3>{info[3]}</h3>
+                        <h3>
+                          {data.class_reviews.filter((info, key)=> {
+                            return info.would_take_again === "Y"
+                          }).length/data.class_reviews.length}
+                        </h3>
                         <h2>Difficulty</h2>
-                        <h3>{info[2]}</h3>
+                        <h3>{data.class_reviews.map((info, key)=> {
+                         return info.difficulty
+                        }).reduce((a,b)=> {
+                          return a+b
+                        })/data.class_reviews.length}</h3>
                         <h2>Level of Workload</h2>
-                        <h3>{info[2]}</h3>
+                        <h3>{data.class_reviews.map((info, key)=> {
+                         return info.workload
+                        }).reduce((a,b)=> {
+                          return a+b
+                        })/data.class_reviews.length}</h3>
                       </div>
-                ))
         )}      
       </>
     );

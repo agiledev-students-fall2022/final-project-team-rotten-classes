@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import Home from './routes/home/home.component';
@@ -14,7 +14,7 @@ import SearchPage from "./routes/search-page/search-page.component";
 import ContactUs from "./routes/contact-us/ContactUs";
 import Login from './Login';
 import Profile from './routes/profile-page/profile';
-
+import Course from './components/course/course.component';
 
 function App() {
   const[data, setData] = useState([])
@@ -38,10 +38,10 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Viewall" element={<Viewall />} />
-        <Route path="/CourseRatings" element={<CourseRatings />} />
-        <Route path="/CourseReviews" element={<CourseReviews />} />
+        <Route path="/Course/:courseId" element={<Course />} />
+        {/* <Route path="/CourseRatings" element={<CourseRatings />} />
+        <Route path="/CourseReviews" element={<CourseReviews />} /> */}
         <Route path="/CourseDetails" element={<CourseDetails />} />
-
         <Route path="/AddReview" element={<AddReview />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/search" element={<SearchPage />} />
