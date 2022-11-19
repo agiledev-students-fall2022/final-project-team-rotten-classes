@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
+const mongoose = require('mongoose');
 const {Schema, model} = mongoose;
 
-const classSchema = newSchema({
+const classSchema = new mongoose.Schema({
 	course_name: String,
 	course_id: String,
 	course_subject: String,
@@ -18,5 +19,6 @@ const classSchema = newSchema({
 	}]
 });
 
-const class = model("class", classSchema);
 
+const classDB = mongoose.model("class", classSchema)
+module.exports = classDB

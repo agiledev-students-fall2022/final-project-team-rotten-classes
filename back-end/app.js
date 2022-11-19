@@ -4,11 +4,13 @@ const app = express() // instantiate an Express object
 const bodyParser = require('body-parser');
 const slider_img=require("./list.json");
 
+
 const course_data=require("./json_data/Course_Data.json")
 const course_review=require("./json_data/Course_Review.json")
 
 const cors = require('cors');
 app.use(cors());
+
 
 // import some useful middleware
 const multer = require("multer") // middleware to handle HTTP POST requests with file uploads
@@ -108,6 +110,8 @@ app.get('/Course', function(req,res){
     })
 
 })
+
+
 
  // export the express app we created to make it available to other modules
  module.exports = app;
