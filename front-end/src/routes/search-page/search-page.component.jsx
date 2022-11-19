@@ -2,9 +2,7 @@ import './search-page.styles.css';
 import React, {useContext} from "react";
 import CourseCardList from "../../components/course-card-list/course-card-list.component";
 import {CourseDataContext} from "../../contexts/courseData.context";
-
 import {useState, useEffect} from "react";
-
 
 const SearchPage = () => {
     const {courseDataProcessed} = useContext(CourseDataContext)

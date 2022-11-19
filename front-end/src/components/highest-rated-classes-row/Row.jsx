@@ -1,21 +1,16 @@
 import React, {useState, useEffect, useContext} from 'react';
-import {BrowserRouter as Router, Link} from 'react-router-dom';
-import axios from 'axios';
+import {Link} from 'react-router-dom';
 import './Row.css';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import CourseCardListRow from "../ course-card-list-row/course-card-list-row.component";
 import {CourseDataContext} from "../../contexts/courseData.context";
-import mock from './../../MOCK_DATA.json';
-
 
 const Row = () => {
     const {courseDataProcessed} = useContext(CourseDataContext)
-
-     const[data, setData] = useState([])
+    const[data, setData] = useState([])
     
-     useEffect(() => {
+    useEffect(() => {
        fetch("/CourseHighestRatedClasses").then(
          response => response.json()
        ).then(

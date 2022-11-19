@@ -1,12 +1,6 @@
 import './CourseReviews.css'
-import React, { useState, useEffect } from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
-
-/**
- * A React component that represents the Home page of the app.
- * @param {*} param0 an object holding any props passed to this component from its parent component
- * @returns The contents of this component, in JSX form.
- */
+import React from 'react';
+import { Navigate} from 'react-router-dom';
 
 function CourseReviews({ data }) {
     const [goToView, setView] = React.useState(false);
