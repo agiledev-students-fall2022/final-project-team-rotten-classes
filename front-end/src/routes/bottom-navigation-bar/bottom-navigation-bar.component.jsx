@@ -1,18 +1,14 @@
 import React from "react";
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
-// import {Helmet} from "react-helmet";
 
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import HomeIcon from '@mui/icons-material/Home';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import PersonIcon from '@mui/icons-material/Person';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
-// import NavigatorPane from './Components/NavigatorPane';
-import AddReview from "../add-review/AddReview";
 
 const useStyles = makeStyles({
   root: {
@@ -38,7 +34,6 @@ const BottomNavigationBar = () => {
     const [value, setValue] = React.useState(0);
     return (
         <div>
-            {/* <NavigatorPane></NavigatorPane> */}
             <BottomNavigation
                 value={value}
                 onChange={(event, newValue) => {

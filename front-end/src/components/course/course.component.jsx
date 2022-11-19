@@ -21,7 +21,7 @@ function Course() {
     }, [])
 
     return <div>
-        <br></br>
+        <br />
         <CourseReviewDetailHeader page={page} setPage={setPage} data={courseData} />
         <div>
             {page === 'reviews' && <CourseReviews data={courseData} />}
