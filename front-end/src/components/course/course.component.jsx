@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import CourseReviewDetailHeader from "../course-headers/CourseReviewDetailHeader";
 import CourseReviews from "../course-reviews/CourseReviews";
 import CourseRatings from "../course-ratings/CourseRatings";
+
 function Course() {
     const { courseId } = useParams();
     const [page, setPage] = useState('reviews');
