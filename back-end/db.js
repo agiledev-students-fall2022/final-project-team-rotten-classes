@@ -2,16 +2,18 @@ import mongoose from "mongoose";
 import classDB from "../model/ClassData.js"
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require("mongoose");
-app.use(express.urlencoded({extended: false}))
+//app.use(express.urlencoded({extended: false}))
 app.use(bodyParser.json());
 app.use(express.static('public'));
 const classDB = require("../model/ClassData.js");
 
 const uri = "mongodb+srv://classcritics:classcritics1@coursedata.r0m4k2j.mongodb.net/?retryWrites=true&w=majority";
+
+
 mongoose.connect(uri).catch(err=>(console.log("connection failed"))).then(res=>(console.log("connected to mongoDB")))
 
 
-app.post("/class", (req, res)=>{
+app.post("/ClassData", (req, res)=>{
 
 	const name = req.body.class_reviews.reviewer_name;
     const className = req.body.course_name;
@@ -19,7 +21,7 @@ app.post("/class", (req, res)=>{
 	//const sem =req.body.semester;
 	const rate =req.body.class_reviews.rating;
 	const diff =req.body.class_reviews.difficulty;
-	const work =req.body.phone.class_reviews.workload;
+	const work =req.body.class_reviews.workload;
 
 	const data = {
 		"name":name,
@@ -29,7 +31,7 @@ app.post("/class", (req, res)=>{
 		"difficulty":diff,
 		"workload":work
 	}
-	db.collection('class').insertOne(data,function(err, collection){
+	db.collection('ClassData').insertOne(data,function(err, collection){
         if (err) throw err;
         console.log("Record inserted Successfully");
               
@@ -39,27 +41,13 @@ app.post("/class", (req, res)=>{
 
 
 
-app.get('/class',function(req,res){
+app.get('/review',function(req,res){
 	res.set({
 		'Access-control-Allow-Origin': '*'
 		});
 	return res.redirect('AddReview.js');
 	})
 	  
-
-//const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-
-
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
-
-
-
-
-
 
 
 //New Class Object

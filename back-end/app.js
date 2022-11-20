@@ -2,7 +2,11 @@
 const express = require("express") // CommonJS import style!
 const app = express() // instantiate an Express object
 const bodyParser = require('body-parser');
-const slider_img=require("./list.json");
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const mongoose = require("mongoose");
+app.use(bodyParser.json());
+app.use(express.static('public'));
+const classDB = require("./model/ClassData.js");
 
 
 const course_data=require("./json_data/Course_Data.json")
@@ -18,7 +22,8 @@ const axios = require("axios") // middleware for making requests to APIs
 require("dotenv").config({ silent: true }) // load environmental variables from a hidden file named .env
 const morgan = require("morgan") // middleware for nice logging of incoming HTTP requests
 
-const user = require("./USERS_MOCK_DATA")
+const user = require("./USERS_MOCK_DATA");
+//const { db } = require("./model/ClassData.js");
 app.get('/', (req, res) => res.send('Hello from Classcritic!'))
 app.get('/profile', (req, res) => res.send('Hello from Classcritic Profile!'))
 
@@ -110,6 +115,103 @@ app.get('/Course', function(req,res){
     })
 
 })
+
+//starting connections to MongoDB
+
+const uri = "mongodb+srv://classcritics:classcritics1@coursedata.r0m4k2j.mongodb.net/ClassCritics";
+mongoose.connect(uri, {useNewUrlParser: true}, {useUnifiedTopology:true}).catch(err=>(console.log("connection failed"))).then(res=>(console.log("connected to mongoDB")))
+
+const db = mongoose.connection;
+
+const reviewScheme = new mongoose.Schema({
+
+    class: String,
+	course_id: String,
+	course_subject: String,
+	course_tags: [String],
+	professor: [String],
+	course_images: String,
+	course_reviews: [{
+		name: String,
+        class: String,
+        semester: Number,
+		rating: Number,
+        difficulty: Number,
+		workload: Number,
+        title: String,
+        review: String
+	}]
+	
+});
+
+
+const classData = mongoose.model("classData", reviewScheme)
+
+app.post("/review", (req, res)=>{
+
+    console.log(req.body);
+
+    //schema method
+    let myData= new classData({
+        name:req.body.name,
+        class:req.body.class,
+        professor:req.body.professor,
+        semester:req.body.semester,
+        rating:req.body.course_reviews[0].rating,
+        diff:req.body.course_reviews[0].difficulty,
+       work:req.body.course_reviews[0].workload,
+        title:req.body.title,
+        review:req.body.text
+    });
+      
+    myData.save()
+
+    //end of schema method
+
+    //diff format method
+    //db.collection("classData").insertOne(req.body);
+
+    //end of second method
+
+    res.json({
+    
+        success: true,
+    })
+
+})
+
+app.post("/contactUs", (req, res)=>{
+
+    db.collection("ContactUsData").insertOne(req.body);
+
+    res.json({
+    
+        success: true,
+    })
+
+})
+
+
+
+// //New Class Object
+// const classDB = await classDB.create({
+// 	course_name: "nullas",
+// 	course_id: 'AK011',
+// 	course_subject: 'integer',
+// 	course_tags: ['Highest Rated'],
+// 	professors: ['Emalia Cromar'],
+// 	course_images: 'https://picsum.photos/seed/picsum/367/267',
+// 	class_reviews: [{
+// 		reviewer_name: "Marietta",
+//   		review: "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
+//   		rating: 3,
+//   		would_take_again: "Y",
+//   		workload: 3,
+//   		difficulty: 4
+// 	}]
+// })
+
+// console.log(classDB)
 
 
 
