@@ -41,8 +41,6 @@ function App() {
         <Route path="/Home" element={<Home />} />
         <Route path="/Viewall" element={<Viewall />} />
         <Route path="/Course/:courseId" element={<Course />} />
-        {/* <Route path="/CourseRatings" element={<CourseRatings />} />
-        <Route path="/CourseReviews" element={<CourseReviews />} /> */}
         <Route path="/CourseDetails" element={<CourseDetails />} />
         <Route path="/AddReview" element={<AddReview />} />
         <Route path="/contact" element={<ContactUs />} />

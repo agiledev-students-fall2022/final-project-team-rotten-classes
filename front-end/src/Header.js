@@ -1,10 +1,9 @@
 import './Header.css'
 import logo from './images/logo2.png'
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 
-const Header = props => {
+const Header = () => {
   return (
-       
     <header className="Header-header">
         <a href='/'>
             <img src={logo} alt="Our Logo"/>
