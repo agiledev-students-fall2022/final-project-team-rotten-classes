@@ -19,7 +19,7 @@ const CourseCard = ({course}) => {
         <div className="big" key={key}>
             <div className="slick-list">
                 <h5 className="title">{course_id}</h5>
-                <Link to={`./../CourseReviews?Course=${course_id}`}>
+                <Link to={`./../Course/${course_id}`}>
                     <img alt={`${course_name}`} src={`${course_images}`}/>
                 </Link>
             </div>
