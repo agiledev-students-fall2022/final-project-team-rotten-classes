@@ -15,8 +15,7 @@ function Viewall() {
     return (
       <>
 
-   {/*<Link to="/">Back</Link> */} 
-     {/*<p>Here are all the available classes:</p>*/}
+
 
      <br></br>
 

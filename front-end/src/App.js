@@ -6,6 +6,8 @@ import Header from './Header';
 import Viewall from './Viewall';
 import CourseDetails from './components/course-details/CourseDetails';
 import Footer from './Footer';
+import CourseRatings from './components/course-ratings/CourseRatings';
+import CourseReviews from './components/course-reviews/CourseReviews';
 import BottomNavigationBar from './routes/bottom-navigation-bar/bottom-navigation-bar.component';
 import AddReview from './routes/add-review/AddReview';
 import SearchPage from "./routes/search-page/search-page.component";
@@ -35,8 +37,8 @@ function App() {
    <Router>
       <Routes>
         <Route path="/" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/Home" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/Home" element={<Home />} />
         <Route path="/Viewall" element={<Viewall />} />
         <Route path="/Course/:courseId" element={<Course />} />
         <Route path="/CourseDetails" element={<CourseDetails />} />
