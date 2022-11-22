@@ -13,6 +13,7 @@ import ContactUs from "./routes/contact-us/ContactUs";
 import Profile from './routes/profile-page/profile';
 import Course from './components/course/course.component';
 import SignUp from "./routes/sign-up/sign-up.component";
+import Login from "./routes/login/login.component";
 
 function App() {
   const[data, setData] = useState([])
@@ -34,7 +35,8 @@ function App() {
    <Router>
       <Routes>
         <Route path="/" element={<SignUp />} />
-        <Route path="/Home" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/Home" element={<Home />} />
         <Route path="/Viewall" element={<Viewall />} />
         <Route path="/Course/:courseId" element={<Course />} />
         <Route path="/CourseDetails" element={<CourseDetails />} />
