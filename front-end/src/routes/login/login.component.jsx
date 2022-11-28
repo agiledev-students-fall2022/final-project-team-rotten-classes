@@ -9,6 +9,11 @@ const Login = () => {
         navigate('/Home');
       };
 
+      const navigateSignUp = () => {
+        // 👇️ navigate to /
+        navigate('/');
+    };
+
   return (
     <>
 
@@ -24,6 +29,7 @@ const Login = () => {
               <input type="password" className="form-control" id="password" placeholder="Password"/>
             </div>
             <div className="d-flex flex-row align-items-center justify-content-between">
+                <a className="login-text" onClick={navigateSignUp}>Sign Up</a>
                 <button className="btn btn-primary">Log In</button>
             </div>
           </form>

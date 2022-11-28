@@ -180,6 +180,45 @@ app.post("/review", (req, res)=>{
 
 })
 
+const classSchema = new mongoose.Schema({
+	course_name: String,
+	course_id: String,
+	course_subject: String,
+	course_tags: [String],
+	professors: [String],
+    prerequisites: String,
+    grad_level: String,
+    school: String,
+    description: String,
+    credits: Number,
+	course_images: String,
+    course_rating_overall: Number,
+	course_reviews: [{
+		reviewer_name: String,
+		review: String,
+		rating: Number,
+		would_take_again: String,
+		workload: Number,
+		difficulty: Number
+	}]
+});
+
+const ClassData = mongoose.model("ClassData", classSchema)
+
+app.get('/CourseData2', (req, res) =>{
+    ClassData.find({ })
+        .then((class_names) => {
+            console.log("Data" + class_names),
+            res.json({
+                class_names,
+            })
+            
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+})
+
 app.post("/contactUs", (req, res)=>{
 
     db.collection("ContactUsData").insertOne(req.body);
@@ -190,6 +229,30 @@ app.post("/contactUs", (req, res)=>{
     })
 
 })
+
+//User Data and Authentication
+/*const userSchema = new mongoose.schema({
+    name: String,
+    email: String,
+    password: String,
+    token: String
+})
+
+const user = mongoose.model("user", userSchema)
+
+app.post("/createAccount", (req, res) => {
+    let userData = new user({
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password
+    })
+
+    if(!(name && email && password)){
+        res.status(400).send("Must fill out all fields")
+    }
+
+    encryptEmail = await 
+})*/
 
 
 

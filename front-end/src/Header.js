@@ -5,7 +5,7 @@ import React from 'react';
 const Header = () => {
   return (
     <header className="Header-header">
-        <a href='/'>
+        <a href='/Home'>
             <img src={logo} alt="Our Logo"/>
         </a>
     </header>

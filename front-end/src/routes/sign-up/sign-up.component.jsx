@@ -18,7 +18,7 @@ const SignUp = () => {
 
 <div className="container">
   <div className="row justify-content-center col-md-5 card">
-        <h2 className="card-title text-center">Sign Up Your Account</h2>
+        <h2 className="card-title text-center">Sign Up</h2>
         <div className="card-body py-md-4">
           <form _lpchecked={1}>
             <div className="form-group">
