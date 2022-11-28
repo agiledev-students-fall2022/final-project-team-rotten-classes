@@ -28,7 +28,7 @@ const Slider = () => {
                       <Link to={'/Course/' + course.course_id}>
                         <img
                           className="d-block w-100"
-                          src={course.course_images}
+                          src={course.course_image}
                           alt="First slide"
                         />
                         </Link>

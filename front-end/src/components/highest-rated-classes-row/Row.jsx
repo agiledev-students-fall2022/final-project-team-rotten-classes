@@ -11,7 +11,7 @@ const Row = () => {
     const[data, setData] = useState([])
     
     useEffect(() => {
-       fetch("/CourseHighestRatedClasses").then(
+       fetch("/CourseData2").then(
          response => response.json()
        ).then(
          data => {
@@ -35,20 +35,20 @@ const Row = () => {
 
     return (
         <Slider {...settings} >
-            {(typeof data.class_info === 'undefined') ? (
+            {(typeof data.class_names === 'undefined') ? (
                   <p>Loading</p>
                 ): (
-                    data.class_info?.map((info, index)=> (
+                    data.class_names?.map((info, index)=> (
                     <div className="big" key={index}>
                         <div className="slick-list">
-                            <h5 className="title">{info[0]}</h5>
-                            <Link to={'/Course/' + info[3]}>
-                                <img src = {info[2]}/>
+                            <h5 className="title">{info.course_name}</h5>
+                            <Link to={'/Course/' + info.course_id}>
+                                <img src = {info.course_image}/>
                             </Link>
                         </div>
                         <div className="subheading">
-                            <h6 className="rate">{info[4]}%</h6>
-                            <h6 className="prof">{info[1]}</h6>
+                            <h6 className="rate">{info.course_rating_overall}%</h6>
+                            <h6 className="subject">{info.course_subject}</h6>
                         </div>
                     </div>
                   ))
