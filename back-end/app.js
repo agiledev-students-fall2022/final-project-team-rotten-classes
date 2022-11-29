@@ -6,23 +6,22 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require("mongoose");
 app.use(bodyParser.json());
 app.use(express.static('public'));
+
+// import files
 const classDB = require("./model/ClassData.js");
-
-
 const course_data=require("./json_data/Course_Data.json")
 const course_review=require("./json_data/Course_Review.json")
+const user = require("./USERS_MOCK_DATA");
 
+// import middleware
 const cors = require('cors');
 app.use(cors());
-
-
-// import some useful middleware
-const multer = require("multer") // middleware to handle HTTP POST requests with file uploads
 const axios = require("axios") // middleware for making requests to APIs
-require("dotenv").config({ silent: true }) // load environmental variables from a hidden file named .env
+require("dotenv").config({path: './process.env'}) // load environmental variables from a hidden file named .env
 const morgan = require("morgan") // middleware for nice logging of incoming HTTP requests
+app.use(morgan("dev")) // morgan has a few logging default styles - dev is a nice concise color-coded style
+app.use(bodyParser.json())
 
-const user = require("./USERS_MOCK_DATA");
 //const { db } = require("./model/ClassData.js");
 app.get('/', (req, res) => res.send('Hello from Classcritic!'))
 app.get('/profile', (req, res) => res.send('Hello from Classcritic Profile!'))
@@ -42,11 +41,6 @@ app.get('/Users', (req, res) => {
     );
 });
 
-// use the morgan middleware to log all incoming http requests
-app.use(morgan("dev")) // morgan has a few logging default styles - dev is a nice concise color-coded style
-app.use(bodyParser.json())
-// app.use('/api/course', courseRoutes => {})
-
 app.get("/CourseRating", (req, res, next) => {
     axios
         .get("https://my.api.mockaroo.com/CourseRating.json?key=f65a0910")
@@ -62,18 +56,13 @@ app.get("/CourseData", (req, res, next) => {
 })
 
  app.get('/CourseSlider', function(req,res){
-    //get class name
     let class_names=[];
-
     for(let i =0; i<course_review.length;i++){
         class_names[i] = course_review[i]
     }
-
     res.send({
         class_names:class_names
-       
     })
-
 })
 
 app.get('/CourseHighestRatedClasses', function(req, res){
@@ -97,34 +86,34 @@ app.get('/CourseHighestRatedClasses', function(req, res){
     })
 })
 
-
-
 app.get('/Course', function(req,res){
     const courseId = req.query.courseId;
     let class_reviews = {}
-
     for(let i = 0; i<course_review.length;i++){
         if (course_review[i].course_id === courseId) {
             class_reviews = course_review[i]
             break;
         }
     }
-
     res.json({
         class_reviews
     })
-
 })
 
 //starting connections to MongoDB
+const connectionParams={
+    useNewUrlParser:"true",
+    useUnifiedTopology:"true"
+}
 
-const uri = "mongodb+srv://classcritics:classcritics1@coursedata.r0m4k2j.mongodb.net/ClassCritics";
-mongoose.connect(uri, {useNewUrlParser: true}, {useUnifiedTopology:true}).catch(err=>(console.log("connection failed"))).then(res=>(console.log("connected to mongoDB")))
-
+const connectionURL = "mongodb+srv://classcritics:classcritics1@coursedata.r0m4k2j.mongodb.net/ClassCritics";
+mongoose
+    .connect(connectionURL, connectionParams)
+    .catch(err=>(console.log("connection failed")))
+    .then(res=>(console.log("connected to mongoDB")))
 const db = mongoose.connection;
 
 const reviewScheme = new mongoose.Schema({
-
     class: String,
 	course_id: String,
 	course_subject: String,
@@ -141,16 +130,13 @@ const reviewScheme = new mongoose.Schema({
         title: String,
         review: String
 	}]
-	
 });
 
 
 const classData = mongoose.model("classData", reviewScheme)
 
 app.post("/review", (req, res)=>{
-
     console.log(req.body);
-
     //schema method
     let myData= new classData({
         name:req.body.name,
@@ -163,21 +149,14 @@ app.post("/review", (req, res)=>{
         title:req.body.title,
         review:req.body.text
     });
-      
     myData.save()
-
     //end of schema method
-
     //diff format method
     //db.collection("classData").insertOne(req.body);
-
     //end of second method
-
     res.json({
-    
         success: true,
     })
-
 })
 
 const classSchema = new mongoose.Schema({
@@ -212,7 +191,6 @@ app.get('/CourseData2', (req, res) =>{
             res.json({
                 class_names,
             })
-            
         })
         .catch((error) => {
             console.log(error)
@@ -220,14 +198,10 @@ app.get('/CourseData2', (req, res) =>{
 })
 
 app.post("/contactUs", (req, res)=>{
-
     db.collection("ContactUsData").insertOne(req.body);
-
     res.json({
-    
         success: true,
     })
-
 })
 
 //User Data and Authentication
