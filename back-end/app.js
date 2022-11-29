@@ -106,19 +106,19 @@ app.post("/review",
 body("reviewer_name").isString(),
 body("course_name").isString(),
 body("review").isLength({min:1}),
-body("rating").isNumeric(),
-body("workload").isNumeric(),
-body("difficulty").isNumeric(),
+body('review').not().isEmpty().withMessage('Review must have more than 5 characters'),
+// body("rating").isNumeric(),
+// body("workload").isNumeric(),
+// body("difficulty").isNumeric(),
 async (req, res)=>{
-    // const errors = validationResult(req);
-    // if (!errors.isEmpty()) {
-    //   return res.status(400).json({ errors: errors.array() });
-    // }
+    const errors = validationResult(req);
+
     let myData;
     myData = {
         reviewer_name:req.body.reviewer_name,
         review:req.body.review,
         rating:req.body.rating,
+        would_take_again:req.body.would_take_again,
         workload:req.body.workload,
         difficulty:req.body.difficulty,
     }
@@ -126,6 +126,10 @@ async (req, res)=>{
         course_name:req.body.class,
     }
     console.log(myData)
+
+    if (!errors.isEmpty()) {
+        return res.status(422).jsonp(errors.array());
+      } 
 
    const result = await db.collection("classdatas").updateOne(
     { course_name : myDataName.course_name},
