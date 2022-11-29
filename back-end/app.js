@@ -49,26 +49,7 @@ app.use(courseRouter)
 
 
 
-app.get('/CourseHighestRatedClasses', function(req, res){
-    let class_info = [];
-    let rating = 100;
-    for(let i =0; i<course_review.length;i++){
-        if(course_review[i].course_tags != ""){
-            class_info[i] = [
-                course_review[i].course_name,
-                course_review[i].course_subject,
-                course_review[i].course_images,
-                course_review[i].course_id,
-                rating
-            ]
-        }else{
-            continue;
-        }
-    }
-    res.send({
-        class_info:class_info
-    })
-})
+
 
 app.get('/Course', function(req,res){
     const courseId = req.query.courseId;
