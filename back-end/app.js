@@ -1,6 +1,7 @@
 // import and instantiate express
 const express = require("express") // CommonJS import style!
 const app = express() // instantiate an Express object
+const courseRouter = require("./routes/course.routes");
 const bodyParser = require('body-parser');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require("mongoose");
@@ -43,12 +44,7 @@ app.get('/Users', (req, res) => {
     );
 });
 
-app.get("/CourseRating", (req, res, next) => {
-    axios
-        .get("https://my.api.mockaroo.com/CourseRating.json?key=f65a0910")
-        .then(apiResponse => res.json(apiResponse.data))
-        .catch(err => next(err))
-})
+app.use(courseRouter)
 
 app.get("/CourseData", (req, res, next) => {
     axios
