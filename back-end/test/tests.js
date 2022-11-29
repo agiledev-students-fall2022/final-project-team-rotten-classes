@@ -3,9 +3,7 @@ const {expect, should} = require('chai');
 const {describe, it, after} = require('mocha');
 const chaiHttp = require('chai-http');
 const assert = require("assert");
-
 const server = require('../app.js');
-
 chai.use(chaiHttp);
 chai.should();
 
@@ -33,7 +31,6 @@ describe('GET /CourseSlider', ()=>{
 
         done();
    });
-
 })
 
 describe('GET /CourseReviewDetailHeader', ()=>{
@@ -47,7 +44,6 @@ describe('GET /CourseReviewDetailHeader', ()=>{
 
         done();
    });
-
 })
 
 describe('GET /image', ()=>{
@@ -61,7 +57,6 @@ describe('GET /image', ()=>{
 
         done();
    });
-
 })
 
 //negative unit test
@@ -73,10 +68,8 @@ describe('GET /viewall', ()=>{
            res.should.have.status(200);
            expect(res.body).to.be.a('integer');
         });
-
         done();
    });
-
 })
 
 describe('GET /CourseData2', ()=>{
@@ -87,10 +80,8 @@ describe('GET /CourseData2', ()=>{
            res.should.have.status(200);
            expect(res.body).to.be.a('integer');
         });
-
         done();
    });
-
 })
 
 describe('GET /CourseHighestRatedClasses', ()=>{
@@ -101,10 +92,8 @@ describe('GET /CourseHighestRatedClasses', ()=>{
            res.should.have.status(200);
            expect(res.body).to.be.a('integer');
         });
-
         done();
    });
-
 })
 
  describe('GET /ClassReviews', ()=>{
@@ -115,10 +104,8 @@ describe('GET /CourseHighestRatedClasses', ()=>{
             res.should.have.status(200);
             expect(res.body).to.be.a('object');
         });
-
         done();
    });
-
 })
 
 describe('POST /review', ()=>{
@@ -129,8 +116,6 @@ describe('POST /review', ()=>{
             res.should.have.status(200);
             expect(res.body).to.be.a('object');
         });
-
         done();
    });
-
 })
