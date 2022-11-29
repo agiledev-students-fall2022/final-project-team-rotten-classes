@@ -17,7 +17,7 @@ const user = require("./USERS_MOCK_DATA");
 const cors = require('cors');
 app.use(cors());
 const axios = require("axios") // middleware for making requests to APIs
-require("dotenv").config({path: './process.env'}) // load environmental variables from a hidden file named .env
+require("dotenv").config() // load environmental variables from a hidden file named .env
 const morgan = require("morgan") // middleware for nice logging of incoming HTTP requests
 app.use(morgan("dev")) // morgan has a few logging default styles - dev is a nice concise color-coded style
 app.use(bodyParser.json())
@@ -106,11 +106,10 @@ const connectionParams={
     useUnifiedTopology:"true"
 }
 
-const connectionURL = "mongodb+srv://classcritics:classcritics1@coursedata.r0m4k2j.mongodb.net/ClassCritics";
 mongoose
-    .connect(connectionURL, connectionParams)
-    .catch(err=>(console.log("connection failed")))
+    .connect(process.env.DB_URL, connectionParams)
     .then(res=>(console.log("connected to mongoDB")))
+    .catch(err=>(console.log("connection failed")))
 const db = mongoose.connection;
 
 const reviewScheme = new mongoose.Schema({
