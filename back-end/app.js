@@ -94,7 +94,7 @@ app.get('/CourseData2', (req, res) =>{
         .catch((error) => {
             console.log(error)
         })
-})
+});
 
 
 app.get('/Course2', async function(req,res){
@@ -109,6 +109,7 @@ app.get('/Course2', async function(req,res){
         res.json({
             class_reviews
         })
+})
 
 
 app.post("/review", 
@@ -155,4 +156,4 @@ app.post("/contactUs", (req, res)=>{
     })
 })
 
-  module.exports = app;
+module.exports = app;
