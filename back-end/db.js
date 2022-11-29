@@ -1,5 +1,3 @@
-import mongoose from "mongoose";
-import classDB from "../model/ClassData.js"
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require("mongoose");
 //app.use(express.urlencoded({extended: false}))
