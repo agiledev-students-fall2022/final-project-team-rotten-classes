@@ -45,7 +45,7 @@ const BottomNavigationBar = () => {
                 <BottomNavigationAction component={Link} to="/search" label="Search" icon={<SearchOutlinedIcon />} />
                 <BottomNavigationAction component={Link} to="/AddReview" label="Add" icon={<AddCircleOutlineIcon />} />
                 <BottomNavigationAction component={Link} to="/contact" label="Contact" icon={<HelpOutlineIcon />} />
-                <BottomNavigationAction component={Link} to="/profile" label="Profile" icon={<PersonIcon />} />
+                {/*<BottomNavigationAction component={Link} to="/profile" label="Profile" icon={<PersonIcon />} />*/}
             </BottomNavigation>
         </div>
     )}

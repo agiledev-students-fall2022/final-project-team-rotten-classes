@@ -23,7 +23,6 @@ function App() {
    <Router>
       <Routes>
         <Route path="/" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Viewall" element={<Viewall />} />
         <Route path="/Course/:courseId" element={<Course />} />
@@ -31,7 +30,6 @@ function App() {
         <Route path="/AddReview" element={<AddReview />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/search" element={<SearchPage />} />
-        <Route path="/profile" element={<Profile />} />
       </Routes>
 
       <BottomNavigationBar />
