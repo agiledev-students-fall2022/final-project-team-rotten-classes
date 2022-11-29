@@ -6,12 +6,12 @@ export const CourseDataContext = createContext({
 });
 
 export const CourseDataProvider = ({children}) => {
-  const [courseData, setCourseData] = useState([]);
+  const [courseData, setCourseData] = useState(null);
   const [courseDataProcessed, setCourseDataProcessed] = useState([]);
 
   const processData = async () => {
     if (courseData) {
-      const tempData = await JSON.parse(JSON.stringify(courseData));
+      const tempData = await JSON.parse(JSON.stringify(courseData["class_names"]));
       for (let course of tempData) {
         let rating_total = 0;
         let difficulty_total = 0;
@@ -36,7 +36,7 @@ export const CourseDataProvider = ({children}) => {
 
   useEffect(() => {
     const fetchCourses = async () => {
-      const response = await axios.get("http://localhost:4000/CourseRating");
+      const response = await axios.get("http://localhost:4000/CourseData2");
       setCourseData(response.data);
       console.log(response)
     };
