@@ -8,12 +8,8 @@ const mongoose = require("mongoose");
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-
 // import files
 const classDB = require("./model/ClassData.js");
-
-const course_data=require("./json_data/Course_Data.json")
-const course_review=require("./json_data/Course_Review.json")
 
 const user = require("./USERS_MOCK_DATA");
 
@@ -47,24 +43,6 @@ app.get('/Users', (req, res) => {
 
 app.use(courseRouter)
 
-
-
-
-
-app.get('/Course', function(req,res){
-    const courseId = req.query.courseId;
-    let class_reviews = {}
-    for(let i = 0; i<course_review.length;i++){
-        if (course_review[i].course_id === courseId) {
-            class_reviews = course_review[i]
-            break;
-        }
-    }
-    res.json({
-        class_reviews
-    })
-})
-
 //starting connections to MongoDB
 const connectionParams={
     useNewUrlParser:"true",
@@ -79,9 +57,7 @@ const db = mongoose.connection;
 
 
 app.post("/review", async (req, res)=>{
-
     let myData;
-
     myData = {
         reviewer_name:req.body.reviewer_name,
         review:req.body.review,
@@ -89,19 +65,16 @@ app.post("/review", async (req, res)=>{
         workload:req.body.workload,
         difficulty:req.body.difficulty,
     }
-
     myDataName = {
         course_name:req.body.class,
-    }   
-
+    }
     console.log(myData)
 
    const result = await db.collection("ClassData").updateOne(
     { course_name : myDataName.course_name},
     { $push : { 'class_reviews' : myData }}, 
     {upsert:true})
-   
-   
+
     console.log(result);
 
     res.json({
@@ -148,7 +121,6 @@ app.get('/CourseData2', (req, res) =>{
 })
 
 app.post("/contactUs", (req, res)=>{
-
     db.collection("ContactUsData").insertOne(req.body);
     res.json({
         success: true,
@@ -200,8 +172,5 @@ app.post("/createAccount", (req, res) => {
 // })
 
 // console.log(classDB)
-
-
-
 //  // export the express app we created to make it available to other modules
   module.exports = app;
