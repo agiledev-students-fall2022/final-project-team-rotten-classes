@@ -17,7 +17,7 @@ function CourseReviewDetailHeader({ page, setPage, data }) {
                   console.log(data.class_reviews),
                   <p>Loading</p>
                 ): (
-                  data[0]?.class_reviews.map((course)=> (
+                 
                     console.log("hey"),
                     <div className = "course-page-subheader-data">
                       <img src={data[0].course_image} alt='machine learning pic'/>
@@ -26,12 +26,13 @@ function CourseReviewDetailHeader({ page, setPage, data }) {
                       <Badge onClick={()=>{setView(true)}}>{data[0].course_subject}</Badge>
                     </div>
                     
-                ))
+                
               )}
         </div>
         <div className = "review-rating-button-switch">
           <button onClick={() => setPage("reviews")}>Reviews</button>
           <button onClick={() => setPage("ratings")}>Ratings</button>
+          <button onClick={() => setPage("details")}>Details</button>
         </div>
       </>
     );

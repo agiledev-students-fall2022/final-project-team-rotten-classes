@@ -1,7 +1,14 @@
-.course-rating-display{
+.details-for-course-ratings{
     flex-direction: column;
 }
 
-.course-rating-display h2{
+.details-for-course-ratings h2{
     color: white;
+    text-align: left;
+    margin-left: 3vh;
+}
+
+.details-for-course-ratings p{
+    text-align: left;
+    margin-left: 3.5vh;
 }

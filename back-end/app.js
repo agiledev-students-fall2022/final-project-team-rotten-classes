@@ -10,8 +10,6 @@ app.use(express.static('public'));
 const { body, validationResult } = require('express-validator');
 
 // import files
-const classDB = require("./model/ClassData.js");
-
 const user = require("./USERS_MOCK_DATA");
 
 // import middleware
@@ -56,9 +54,6 @@ mongoose
     .catch(err=>(console.log("connection failed")))
 const db = mongoose.connection;
 
-
-
-
 const classSchema = new mongoose.Schema({
 	course_name: String,
 	course_id: String,
@@ -94,30 +89,27 @@ app.get('/CourseData2', (req, res) =>{
         .catch((error) => {
             console.log(error)
         })
-})
-
+});
 
 app.get('/Course2', async function(req,res){
     const courseId = req.query.courseId;
-
     const course_id = courseId
-
     console.log(course_id)
-
     const class_reviews = await ClassData.find({course_id: course_id})
         console.log(class_reviews)
         res.json({
             class_reviews
         })
-
+})
 
 app.post("/review", 
-
+body("reviewer_name").isString(),
 body("course_name").isString(),
 body("review").isLength({min:1}),
-
+body("rating").isNumeric(),
+body("workload").isNumeric(),
+body("difficulty").isNumeric(),
 async (req, res)=>{
-
     // const errors = validationResult(req);
     // if (!errors.isEmpty()) {
     //   return res.status(400).json({ errors: errors.array() });
@@ -145,14 +137,17 @@ async (req, res)=>{
     res.json({
         success: true,
     })
-
 })
 
-app.post("/contactUs", (req, res)=>{
+app.post("/contactUs",
+body("name").isString(),
+body("email").isString(),
+body("feedback").isString(),
+(req, res)=>{
     db.collection("ContactUsData").insertOne(req.body);
     res.json({
         success: true,
     })
 })
 
-  module.exports = app;
+module.exports = app;

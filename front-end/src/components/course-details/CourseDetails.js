@@ -1,31 +1,40 @@
 import './CourseDetails.css'
-import  React from 'react';
-import { Navigate } from 'react-router-dom';
-import mock from '../../MOCK_DATA.json'
-import CourseReviewDetailHeader from '../course-headers/CourseReviewDetailHeader.js'
+import React from 'react';
+import { Navigate} from 'react-router-dom';
 
-function CourseDetails() {
-  const [goToView, setView] = React.useState(false);
+function CourseDetails({ data }) {
+    const [goToView, setView] = React.useState(false);
 
-  if(goToView){
-    return <Navigate to="/Viewall"/>;
-  }
+    if(goToView){
+        return <Navigate to="/Viewall"/>;
+    }
     return (
-      <>
-      <br />
-      <CourseReviewDetailHeader />
-      <div className = "course-page-header">
-        <div className = "course-rating-display">
-          <h2>Overall Rating</h2>
-          <p>{mock[0].rating1}</p>
-          <h2>Difficulty</h2>
-          <p>{mock[0].rating2}</p>
-          <h2>Level of Workload</h2>
-          <p>{mock[0].workload}</p>
+        <>
+
+      <div className = "details-for-course-ratings">
+      {(typeof data[0]?.class_reviews === 'undefined') ? (
+                  <p>Loading</p>
+                ): (
+                  data[0]?.class_reviews.map((info, key)=> (
+                      <div className = "details-for-course-ratings">
+                        <h2>Course Id</h2>
+                        <p>{data[0].course_id}</p>
+                        <h2>Professors</h2>
+                        <p>{data[0].professors}</p>
+                        <h2>Prerequisites</h2>
+                        <p>{data[0].prerequisites}</p>
+                        <h2>Graduation Level</h2>
+                        <p>{data[0].grad_level}</p>
+                        <h2>School</h2>
+                        <p>{data[0].school}</p>
+                        <h2>Number of Credits</h2>
+                        <p>{data[0].credits}</p>
+                     </div>
+                ))
+            )}
         </div>
-      </div>
       </>
     );
-  }
-  
-  export default CourseDetails;
+}
+
+export default CourseDetails;
