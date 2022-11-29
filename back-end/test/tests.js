@@ -120,3 +120,17 @@ describe('GET /CourseHighestRatedClasses', ()=>{
    });
 
 })
+
+describe('POST /review', ()=>{
+   it('should post a review object to mongoDB when form is submitted', (done)=>{
+       chai.request(server)
+        .post('/review')
+        .end((err, res) => {
+            res.should.have.status(200);
+            expect(res.body).to.be.a('object');
+        });
+
+        done();
+   });
+
+})
