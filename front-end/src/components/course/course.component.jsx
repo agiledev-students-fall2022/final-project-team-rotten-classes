@@ -10,11 +10,10 @@ function Course() {
     const [courseData, setCourseData] = useState({});
 
     useEffect(() => {
-        fetch("/Course?courseId="+courseId).then(
+        fetch("/Course2?courseId=" + courseId).then(
             response => response.json()
         ).then(
             data => {
-                console.log("data", data)
                 setCourseData(data.class_reviews)
             }
         )

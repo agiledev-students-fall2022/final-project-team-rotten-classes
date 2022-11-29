@@ -87,7 +87,6 @@ const ClassData = mongoose.model("ClassData", classSchema)
 app.get('/CourseData2', (req, res) =>{
     ClassData.find({ })
         .then((class_names) => {
-            console.log("Data" + class_names),
             res.json({
                 class_names,
             })
@@ -96,6 +95,21 @@ app.get('/CourseData2', (req, res) =>{
             console.log(error)
         })
 })
+
+
+app.get('/Course2', async function(req,res){
+    const courseId = req.query.courseId;
+
+    const course_id = courseId
+
+    console.log(course_id)
+
+    const class_reviews = await ClassData.find({course_id: course_id})
+        console.log(class_reviews)
+        res.json({
+            class_reviews
+        })
+
 
 app.post("/review", 
 
@@ -131,6 +145,7 @@ async (req, res)=>{
     res.json({
         success: true,
     })
+
 })
 
 app.post("/contactUs", (req, res)=>{
@@ -140,50 +155,4 @@ app.post("/contactUs", (req, res)=>{
     })
 })
 
-//User Data and Authentication
-/*const userSchema = new mongoose.schema({
-    name: String,
-    email: String,
-    password: String,
-    token: String
-})
-
-const user = mongoose.model("user", userSchema)
-
-app.post("/createAccount", (req, res) => {
-    let userData = new user({
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password
-    })
-
-    if(!(name && email && password)){
-        res.status(400).send("Must fill out all fields")
-    }
-
-    encryptEmail = await 
-})*/
-
-
-
-// //New Class Object
-// const classDB = await classDB.create({
-// 	course_name: "nullas",
-// 	course_id: 'AK011',
-// 	course_subject: 'integer',
-// 	course_tags: ['Highest Rated'],
-// 	professors: ['Emalia Cromar'],
-// 	course_images: 'https://picsum.photos/seed/picsum/367/267',
-// 	class_reviews: [{
-// 		reviewer_name: "Marietta",
-//   		review: "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
-//   		rating: 3,
-//   		would_take_again: "Y",
-//   		workload: 3,
-//   		difficulty: 4
-// 	}]
-// })
-
-// console.log(classDB)
-//  // export the express app we created to make it available to other modules
   module.exports = app;
