@@ -22,8 +22,8 @@ function App() {
     <Header />
    <Router>
       <Routes>
-        <Route path="/" element={<SignUp />} />
-        <Route path="/Home" element={<Home />} />
+        {/*<Route path="/" element={<SignUp />} />*/}
+        <Route path="/" element={<Home />} />
         <Route path="/Viewall" element={<Viewall />} />
         <Route path="/Course/:courseId" element={<Course />} />
         <Route path="/CourseDetails" element={<CourseDetails />} />
