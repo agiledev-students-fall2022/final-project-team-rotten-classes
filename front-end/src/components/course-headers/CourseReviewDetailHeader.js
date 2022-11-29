@@ -32,6 +32,7 @@ function CourseReviewDetailHeader({ page, setPage, data }) {
         <div className = "review-rating-button-switch">
           <button onClick={() => setPage("reviews")}>Reviews</button>
           <button onClick={() => setPage("ratings")}>Ratings</button>
+          <button onClick={() => setPage("details")}>Details</button>
         </div>
       </>
     );
