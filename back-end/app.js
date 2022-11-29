@@ -208,7 +208,6 @@ const ClassData = mongoose.model("ClassData", classSchema)
 app.get('/CourseData2', (req, res) =>{
     ClassData.find({ })
         .then((class_names) => {
-            console.log("Data" + class_names),
             res.json({
                 class_names,
             })
@@ -218,6 +217,29 @@ app.get('/CourseData2', (req, res) =>{
             console.log(error)
         })
 })
+
+app.get('/Course2', async function(req,res){
+    const courseId = req.query.courseId;
+
+    const course_id = courseId
+
+    console.log(course_id)
+
+    if(!courseId) {
+        const class_reviews = await ClassData.find({})
+        res.json({
+            class_reviews
+        })
+    }else{
+        const class_reviews = await ClassData.find({course_id: course_id})
+        console.log(class_reviews)
+        res.json({
+            class_reviews
+        })
+    }
+
+})
+
 
 app.post("/contactUs", (req, res)=>{
 

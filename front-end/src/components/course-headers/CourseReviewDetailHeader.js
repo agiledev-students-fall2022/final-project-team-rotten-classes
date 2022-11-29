@@ -4,10 +4,6 @@ import Badge from 'react-bootstrap/Badge';
 import { Navigate, useLocation } from 'react-router-dom';
 
 function CourseReviewDetailHeader({ page, setPage, data }) {
-  const queryString = require('query-string');
-  const location = useLocation();
-  const parsed = queryString.parse(location.search)
-  console.log(parsed)
 
   const [goToView, setView] = React.useState(false);
 
@@ -18,6 +14,7 @@ function CourseReviewDetailHeader({ page, setPage, data }) {
       <>
         <div className = "course-page-subheader">
            {(typeof data.class_reviews === 'undefined') ? (
+                  console.log(data[0]),
                   <p>Loading</p>
                 ): (
                       <div className = "course-page-subheader-data">

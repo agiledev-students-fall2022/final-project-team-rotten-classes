@@ -6,8 +6,6 @@ import Header from './Header';
 import Viewall from './Viewall';
 import CourseDetails from './components/course-details/CourseDetails';
 import Footer from './Footer';
-import CourseRatings from './components/course-ratings/CourseRatings';
-import CourseReviews from './components/course-reviews/CourseReviews';
 import BottomNavigationBar from './routes/bottom-navigation-bar/bottom-navigation-bar.component';
 import AddReview from './routes/add-review/AddReview';
 import SearchPage from "./routes/search-page/search-page.component";
@@ -18,18 +16,6 @@ import SignUp from "./routes/sign-up/sign-up.component";
 import Login from "./routes/login/login.component";
 
 function App() {
-  const[data, setData] = useState([])
-
-  useEffect(() => {
-    fetch("/CourseSlider").then(
-      response => response.json()
-    ).then(
-      data => {
-        setData(data)
-      }
-    )
-  }, [])
-
   return (
     <div className="App"> 
 
