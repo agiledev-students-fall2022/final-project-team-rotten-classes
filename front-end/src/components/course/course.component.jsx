@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import CourseReviewDetailHeader from "../course-headers/CourseReviewDetailHeader";
 import CourseReviews from "../course-reviews/CourseReviews";
 import CourseRatings from "../course-ratings/CourseRatings";
+
 function Course() {
     const { courseId } = useParams();
     const [page, setPage] = useState('reviews');
@@ -20,7 +21,7 @@ function Course() {
     }, [])
 
     return <div>
-        <br></br>
+        <br />
         <CourseReviewDetailHeader page={page} setPage={setPage} data={courseData} />
         <div>
             {page === 'reviews' && <CourseReviews data={courseData} />}

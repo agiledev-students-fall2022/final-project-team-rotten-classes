@@ -1,21 +1,18 @@
+.Header-header {
+  flex-direction: column;
+  min-height: 10vh;
+  font-size: calc(10px + 1vmin);
+  color: white;
+  background-color: #250741;
+}
 
-  .Header-header {
-    /* background-color: #250741; */
-    flex-direction: column;
-    min-height: 10vh;
-    font-size: calc(10px + 1vmin);
-    color: white;
-    background-color: #250741;
-  }
+.logo {
+  display: inline-block;
+}
 
-  .logo {
-    display: inline-block;
-
-  }  
-
-  .Header-header img {
-    padding: 1rem;
-    max-width: 150px;
-    max-height: 150px;
-    vertical-align: middle;
-  }
+.Header-header img {
+  padding: 1rem;
+  max-width: 150px;
+  max-height: 150px;
+  vertical-align: middle;
+}

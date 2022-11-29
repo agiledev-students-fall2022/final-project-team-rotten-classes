@@ -9,7 +9,6 @@ import { Button } from 'react-bootstrap';
 import { Navigate } from 'react-router-dom';
 
 function Home() {
-
   const [goToView, setView] = React.useState(false);
 
   if(goToView){

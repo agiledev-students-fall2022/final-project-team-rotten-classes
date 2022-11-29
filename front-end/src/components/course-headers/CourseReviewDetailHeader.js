@@ -1,14 +1,7 @@
 import './CourseReviewDetailHeader.css'
-import React, {useEffect, useState} from 'react';
-import RowForViewAll from "../highest-rated-classes-row/RowForViewAll";
-import { fontSize } from '@mui/system';
-import img1 from '../../images/ml.jpeg'
+import React from 'react';
 import Badge from 'react-bootstrap/Badge';
 import { Navigate, useLocation } from 'react-router-dom';
-import {BrowserRouter as Router, Link} from 'react-router-dom';
-import mock from '../../MOCK_DATA.json'
-import { valHooks } from 'jquery';
-import { Routes, Route, useParams } from 'react-router-dom';
 
 function CourseReviewDetailHeader({ page, setPage, data }) {
   const queryString = require('query-string');

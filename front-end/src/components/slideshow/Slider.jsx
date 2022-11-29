@@ -1,20 +1,13 @@
-import {BrowserRouter as Router, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
 import { Carousel } from "react-bootstrap";
 import './Slider.css';
-import mock from './../../MOCK_DATA.json';
-
-import CourseReviews from './../course-reviews/CourseReviews';
-
-import img1 from './../../images/1.png'
-import img2 from './../../images/2.png'
-import img3 from './../../images/3.png'
 
 const Slider = () => {
     const[data, setData] = useState([])
 
     useEffect(() => {
-      fetch("/CourseSlider").then(
+      fetch("/CourseData2").then(
         response => response.json()
       ).then(
         data => {
@@ -35,7 +28,7 @@ const Slider = () => {
                       <Link to={'/Course/' + course.course_id}>
                         <img
                           className="d-block w-100"
-                          src={course.course_images}
+                          src={course.course_image}
                           alt="First slide"
                         />
                         </Link>
