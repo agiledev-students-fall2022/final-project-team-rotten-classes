@@ -7,6 +7,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require("mongoose");
 app.use(bodyParser.json());
 app.use(express.static('public'));
+const { body, validationResult } = require('express-validator');
 
 // import files
 const classDB = require("./model/ClassData.js");
@@ -56,31 +57,7 @@ mongoose
 const db = mongoose.connection;
 
 
-app.post("/review", async (req, res)=>{
-    let myData;
-    myData = {
-        reviewer_name:req.body.reviewer_name,
-        review:req.body.review,
-        rating:req.body.rating,
-        workload:req.body.workload,
-        difficulty:req.body.difficulty,
-    }
-    myDataName = {
-        course_name:req.body.class,
-    }
-    console.log(myData)
 
-   const result = await db.collection("ClassData").updateOne(
-    { course_name : myDataName.course_name},
-    { $push : { 'class_reviews' : myData }}, 
-    {upsert:true})
-
-    console.log(result);
-
-    res.json({
-        success: true,
-    })
-})
 
 const classSchema = new mongoose.Schema({
 	course_name: String,
@@ -119,6 +96,7 @@ app.get('/CourseData2', (req, res) =>{
         })
 })
 
+
 app.get('/Course2', async function(req,res){
     const courseId = req.query.courseId;
 
@@ -131,6 +109,42 @@ app.get('/Course2', async function(req,res){
         res.json({
             class_reviews
         })
+
+
+app.post("/review", 
+
+body("course_name").isString(),
+body("review").isLength({min:1}),
+
+async (req, res)=>{
+
+    // const errors = validationResult(req);
+    // if (!errors.isEmpty()) {
+    //   return res.status(400).json({ errors: errors.array() });
+    // }
+    let myData;
+    myData = {
+        reviewer_name:req.body.reviewer_name,
+        review:req.body.review,
+        rating:req.body.rating,
+        workload:req.body.workload,
+        difficulty:req.body.difficulty,
+    }
+    myDataName = {
+        course_name:req.body.class,
+    }
+    console.log(myData)
+
+   const result = await db.collection("classdatas").updateOne(
+    { course_name : myDataName.course_name},
+    { $push : { 'class_reviews' : myData }}, 
+    {upsert:true})
+
+    console.log(result);
+
+    res.json({
+        success: true,
+    })
 
 })
 
