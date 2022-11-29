@@ -9,15 +9,17 @@ function AddReview(){
     e.preventDefault() 
     const data = new FormData(e.currentTarget);
     const postData = { 
-      name: data.get('name'),
+      
+      reviewer_name: data.get('name'),
+      review: data.get('text'),
+      rating: data.get('rating'),
+      workload: data.get('workload'),
+      difficulty: data.get('difficulty'),
       class: data.get('class'), 
       professor: data.get('professor'),
       semester: data.get('semester'),
-      rating: data.get('contact'),
-      difficulty: data.get('contact1'),
-      workload: data.get('contact2'),
       title: data.get('title'),
-      review: data.get('text'),
+      
       
     }
     console.log("postData: " + postData) 
@@ -33,7 +35,7 @@ function AddReview(){
     <div className='addreview-container'>
       <div><h1 className='addreview-heading'>Submit your Review</h1></div>
       <br />
-      <form className='addreview-form-container' action="/class" method="POST" onSubmit={handleSubmit} >
+      <form className='addreview-form-container' action="/review" method="POST" onSubmit={handleSubmit}>
         <input name="name" type="text" className="feedback-input" placeholder="Name" />
         {/* <input name="email" type="text" className="feedback-input" placeholder="Email" /> */}
         <input name="class" type="text" className="feedback-input" placeholder="Class" />

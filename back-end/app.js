@@ -1,28 +1,27 @@
 // import and instantiate express
 const express = require("express") // CommonJS import style!
 const app = express() // instantiate an Express object
+const courseRouter = require("./routes/course.routes");
 const bodyParser = require('body-parser');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require("mongoose");
 app.use(bodyParser.json());
 app.use(express.static('public'));
+
+// import files
 const classDB = require("./model/ClassData.js");
 
+const user = require("./USERS_MOCK_DATA");
 
-const course_data=require("./json_data/Course_Data.json")
-const course_review=require("./json_data/Course_Review.json")
-
+// import middleware
 const cors = require('cors');
 app.use(cors());
-
-
-// import some useful middleware
-const multer = require("multer") // middleware to handle HTTP POST requests with file uploads
 const axios = require("axios") // middleware for making requests to APIs
-require("dotenv").config({ silent: true }) // load environmental variables from a hidden file named .env
+require("dotenv").config() // load environmental variables from a hidden file named .env
 const morgan = require("morgan") // middleware for nice logging of incoming HTTP requests
+app.use(morgan("dev")) // morgan has a few logging default styles - dev is a nice concise color-coded style
+app.use(bodyParser.json())
 
-const user = require("./USERS_MOCK_DATA");
 //const { db } = require("./model/ClassData.js");
 app.get('/', (req, res) => res.send('Hello from Classcritic!'))
 app.get('/profile', (req, res) => res.send('Hello from Classcritic Profile!'))
@@ -42,142 +41,45 @@ app.get('/Users', (req, res) => {
     );
 });
 
-// use the morgan middleware to log all incoming http requests
-app.use(morgan("dev")) // morgan has a few logging default styles - dev is a nice concise color-coded style
-app.use(bodyParser.json())
-// app.use('/api/course', courseRoutes => {})
-
-app.get("/CourseRating", (req, res, next) => {
-    axios
-        .get("https://my.api.mockaroo.com/CourseRating.json?key=f65a0910")
-        .then(apiResponse => res.json(apiResponse.data))
-        .catch(err => next(err))
-})
-
-app.get("/CourseData", (req, res, next) => {
-    axios
-        .get("https://my.api.mockaroo.com/CourseData.json?key=f65a0910")
-        .then(apiResponse => res.json(apiResponse.data))
-        .catch(err => next(err))
-})
-
- app.get('/CourseSlider', function(req,res){
-    //get class name
-    let class_names=[];
-
-    for(let i =0; i<course_review.length;i++){
-        class_names[i] = course_review[i]
-    }
-
-    res.send({
-        class_names:class_names
-       
-    })
-
-})
-
-app.get('/CourseHighestRatedClasses', function(req, res){
-    let class_info = [];
-    let rating = 100;
-    for(let i =0; i<course_review.length;i++){
-        if(course_review[i].course_tags != ""){
-            class_info[i] = [
-                course_review[i].course_name,
-                course_review[i].course_subject,
-                course_review[i].course_images,
-                course_review[i].course_id,
-                rating
-            ]
-        }else{
-            continue;
-        }
-    }
-    res.send({
-        class_info:class_info
-    })
-})
-
-
-
-app.get('/Course', function(req,res){
-    const courseId = req.query.courseId;
-    let class_reviews = {}
-
-    for(let i = 0; i<course_review.length;i++){
-        if (course_review[i].course_id === courseId) {
-            class_reviews = course_review[i]
-            break;
-        }
-    }
-
-    res.json({
-        class_reviews
-    })
-
-})
+app.use(courseRouter)
 
 //starting connections to MongoDB
+const connectionParams={
+    useNewUrlParser:"true",
+    useUnifiedTopology:"true"
+}
 
-const uri = "mongodb+srv://classcritics:classcritics1@coursedata.r0m4k2j.mongodb.net/ClassCritics";
-mongoose.connect(uri, {useNewUrlParser: true}, {useUnifiedTopology:true}).catch(err=>(console.log("connection failed"))).then(res=>(console.log("connected to mongoDB")))
-
+mongoose
+    .connect(process.env.DB_URL, connectionParams)
+    .then(res=>(console.log("connected to mongoDB")))
+    .catch(err=>(console.log("connection failed")))
 const db = mongoose.connection;
 
-const reviewScheme = new mongoose.Schema({
 
-    class: String,
-	course_id: String,
-	course_subject: String,
-	course_tags: [String],
-	professor: [String],
-	course_images: String,
-	course_reviews: [{
-		name: String,
-        class: String,
-        semester: Number,
-		rating: Number,
-        difficulty: Number,
-		workload: Number,
-        title: String,
-        review: String
-	}]
-	
-});
+app.post("/review", async (req, res)=>{
+    let myData;
+    myData = {
+        reviewer_name:req.body.reviewer_name,
+        review:req.body.review,
+        rating:req.body.rating,
+        workload:req.body.workload,
+        difficulty:req.body.difficulty,
+    }
+    myDataName = {
+        course_name:req.body.class,
+    }
+    console.log(myData)
 
+   const result = await db.collection("ClassData").updateOne(
+    { course_name : myDataName.course_name},
+    { $push : { 'class_reviews' : myData }}, 
+    {upsert:true})
 
-const classData = mongoose.model("classData", reviewScheme)
-
-app.post("/review", (req, res)=>{
-
-    console.log(req.body);
-
-    //schema method
-    let myData= new classData({
-        name:req.body.name,
-        class:req.body.class,
-        professor:req.body.professor,
-        semester:req.body.semester,
-        rating:req.body.course_reviews[0].rating,
-        diff:req.body.course_reviews[0].difficulty,
-       work:req.body.course_reviews[0].workload,
-        title:req.body.title,
-        review:req.body.text
-    });
-      
-    myData.save()
-
-    //end of schema method
-
-    //diff format method
-    //db.collection("classData").insertOne(req.body);
-
-    //end of second method
+    console.log(result);
 
     res.json({
-    
         success: true,
     })
-
 })
 
 const classSchema = new mongoose.Schema({
@@ -211,7 +113,6 @@ app.get('/CourseData2', (req, res) =>{
             res.json({
                 class_names,
             })
-            
         })
         .catch((error) => {
             console.log(error)
@@ -242,14 +143,10 @@ app.get('/Course2', async function(req,res){
 
 
 app.post("/contactUs", (req, res)=>{
-
     db.collection("ContactUsData").insertOne(req.body);
-
     res.json({
-    
         success: true,
     })
-
 })
 
 //User Data and Authentication
@@ -297,8 +194,5 @@ app.post("/createAccount", (req, res) => {
 // })
 
 // console.log(classDB)
-
-
-
- // export the express app we created to make it available to other modules
- module.exports = app;
+//  // export the express app we created to make it available to other modules
+  module.exports = app;
