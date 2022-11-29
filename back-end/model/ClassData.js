@@ -10,10 +10,12 @@ const classSchema = new mongoose.Schema({
 	professors: [String],
 	course_images: String,
 	course_reviews: [{
+		title: String,
 		reviewer_name: String,
 		review: String,
 		rating: Number,
-		would_take_again: String,
+		semester: Number,
+		// would_take_again: String,
 		workload: Number,
 		difficulty: Number
 	}]
