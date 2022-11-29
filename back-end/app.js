@@ -113,10 +113,12 @@ app.get('/Course2', async function(req,res){
 
 
 app.post("/review", 
-
+body("reviewer_name").isString(),
 body("course_name").isString(),
 body("review").isLength({min:1}),
-
+body("rating").isNumeric(),
+body("workload").isNumeric(),
+body("difficulty").isNumeric(),
 async (req, res)=>{
 
     // const errors = validationResult(req);
@@ -149,7 +151,11 @@ async (req, res)=>{
 
 })
 
-app.post("/contactUs", (req, res)=>{
+app.post("/contactUs",
+body("name").isString(),
+body("email").isString(),
+body("feedback").isString(),
+(req, res)=>{
     db.collection("ContactUsData").insertOne(req.body);
     res.json({
         success: true,
