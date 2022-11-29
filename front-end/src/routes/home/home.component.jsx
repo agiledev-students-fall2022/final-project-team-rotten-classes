@@ -19,7 +19,6 @@ function Home() {
     <>
       <Slider />
       <br/>
-      <SubjectButtons />
       <br/>
       <div className="heading-highest-rated">
         <h6 className="head1">HIGHEST RATED CLASSES <Badge bg="danger">ALL</Badge></h6>
