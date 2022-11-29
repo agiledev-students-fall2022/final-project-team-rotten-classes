@@ -7,8 +7,10 @@ const mongoose = require("mongoose");
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
+
 // import files
 const classDB = require("./model/ClassData.js");
+
 const course_data=require("./json_data/Course_Data.json")
 const course_review=require("./json_data/Course_Review.json")
 const user = require("./USERS_MOCK_DATA");
@@ -112,47 +114,33 @@ mongoose
     .catch(err=>(console.log("connection failed")))
 const db = mongoose.connection;
 
-const reviewScheme = new mongoose.Schema({
-    class: String,
-	course_id: String,
-	course_subject: String,
-	course_tags: [String],
-	professor: [String],
-	course_images: String,
-	course_reviews: [{
-		name: String,
-        class: String,
-        semester: Number,
-		rating: Number,
-        difficulty: Number,
-		workload: Number,
-        title: String,
-        review: String
-	}]
-});
 
+app.post("/review", async (req, res)=>{
 
-const classData = mongoose.model("classData", reviewScheme)
+    let myData;
 
-app.post("/review", (req, res)=>{
-    console.log(req.body);
-    //schema method
-    let myData= new classData({
-        name:req.body.name,
-        class:req.body.class,
-        professor:req.body.professor,
-        semester:req.body.semester,
-        rating:req.body.course_reviews[0].rating,
-        diff:req.body.course_reviews[0].difficulty,
-       work:req.body.course_reviews[0].workload,
-        title:req.body.title,
-        review:req.body.text
-    });
-    myData.save()
-    //end of schema method
-    //diff format method
-    //db.collection("classData").insertOne(req.body);
-    //end of second method
+    myData = {
+        reviewer_name:req.body.reviewer_name,
+        review:req.body.review,
+        rating:req.body.rating,
+        workload:req.body.workload,
+        difficulty:req.body.difficulty,
+    }
+
+    myDataName = {
+        course_name:req.body.class,
+    }   
+
+    console.log(myData)
+
+   const result = await db.collection("ClassData").updateOne(
+    { course_name : myDataName.course_name},
+    { $push : { 'class_reviews' : myData }}, 
+    {upsert:true})
+   
+   
+    console.log(result);
+
     res.json({
         success: true,
     })
@@ -197,6 +185,7 @@ app.get('/CourseData2', (req, res) =>{
 })
 
 app.post("/contactUs", (req, res)=>{
+
     db.collection("ContactUsData").insertOne(req.body);
     res.json({
         success: true,
@@ -251,5 +240,5 @@ app.post("/createAccount", (req, res) => {
 
 
 
- // export the express app we created to make it available to other modules
- module.exports = app;
+//  // export the express app we created to make it available to other modules
+  module.exports = app;
