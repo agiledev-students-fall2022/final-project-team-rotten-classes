@@ -14,6 +14,7 @@ const classDB = require("./model/ClassData.js");
 
 const course_data=require("./json_data/Course_Data.json")
 const course_review=require("./json_data/Course_Review.json")
+
 const user = require("./USERS_MOCK_DATA");
 
 // import middleware
@@ -46,22 +47,7 @@ app.get('/Users', (req, res) => {
 
 app.use(courseRouter)
 
-app.get("/CourseData", (req, res, next) => {
-    axios
-        .get("https://my.api.mockaroo.com/CourseData.json?key=f65a0910")
-        .then(apiResponse => res.json(apiResponse.data))
-        .catch(err => next(err))
-})
 
- app.get('/CourseSlider', function(req,res){
-    let class_names=[];
-    for(let i =0; i<course_review.length;i++){
-        class_names[i] = course_review[i]
-    }
-    res.send({
-        class_names:class_names
-    })
-})
 
 app.get('/CourseHighestRatedClasses', function(req, res){
     let class_info = [];
