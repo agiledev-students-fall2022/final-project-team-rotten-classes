@@ -34,14 +34,14 @@ export const CourseDataProvider = ({children}) => {
     }
   };
 
-  useEffect(() => {
+  /*useEffect(() => {
     const fetchCourses = async () => {
       const response = await axios.get("http://localhost:4000/CourseRating");
       setCourseData(response.data);
       console.log(response)
     };
     fetchCourses();
-  }, []);
+  }, []);*/
 
   useEffect(() => {
     processData();

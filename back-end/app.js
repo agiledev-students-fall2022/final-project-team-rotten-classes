@@ -126,18 +126,11 @@ app.get('/Course2', async function(req,res){
 
     console.log(course_id)
 
-    if(!courseId) {
-        const class_reviews = await ClassData.find({})
-        res.json({
-            class_reviews
-        })
-    }else{
-        const class_reviews = await ClassData.find({course_id: course_id})
+    const class_reviews = await ClassData.find({course_id: course_id})
         console.log(class_reviews)
         res.json({
             class_reviews
         })
-    }
 
 })
 

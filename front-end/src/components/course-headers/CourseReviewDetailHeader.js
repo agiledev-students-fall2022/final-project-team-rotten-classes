@@ -13,18 +13,21 @@ function CourseReviewDetailHeader({ page, setPage, data }) {
     return (
       <>
         <div className = "course-page-subheader">
-           {(typeof data.class_reviews === 'undefined') ? (
-                  console.log(data[0]),
+           {(typeof data[0]?.class_reviews === 'undefined') ? (
+                  console.log(data.class_reviews),
                   <p>Loading</p>
                 ): (
-                      <div className = "course-page-subheader-data">
-                        <img src="https://source.unsplash.com/random" alt='machine learning pic'/>
-                        <h2>{data.course_name}</h2>
-                        <h3>Professors: {data.professors}</h3>
-                        <Badge onClick={()=>{setView(true)}}>{data.course_tags}</Badge>
-                        <Badge onClick={()=>{setView(true)}}>{data.course_subject}</Badge>
-                     </div>
-            )}
+                  data[0]?.class_reviews.map((course)=> (
+                    console.log("hey"),
+                    <div className = "course-page-subheader-data">
+                      <img src={data[0].course_image} alt='machine learning pic'/>
+                      <h2>{data[0].course_name}</h2>
+                      <Badge onClick={()=>{setView(true)}}>{data[0].course_tags}</Badge>
+                      <Badge onClick={()=>{setView(true)}}>{data[0].course_subject}</Badge>
+                    </div>
+                    
+                ))
+              )}
         </div>
         <div className = "review-rating-button-switch">
           <button onClick={() => setPage("reviews")}>Reviews</button>
