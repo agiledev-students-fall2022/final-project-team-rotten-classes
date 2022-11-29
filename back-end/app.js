@@ -127,9 +127,9 @@ async (req, res)=>{
     }
     console.log(myData)
 
-    if (!errors.isEmpty()) {
-        return res.status(422).jsonp(errors.array());
-      } 
+    // if (!errors.isEmpty()) {
+    //     return res.status(422).jsonp(errors.array());
+    //   } 
 
    const result = await db.collection("classdatas").updateOne(
     { course_name : myDataName.course_name},
