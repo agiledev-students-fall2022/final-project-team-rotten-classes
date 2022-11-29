@@ -13,7 +13,7 @@ function CourseReviewDetailHeader({ page, setPage, data }) {
     return (
       <>
         <div className = "course-page-subheader">
-           {(typeof data.class_reviews === 'undefined') ? (
+           {(typeof data[0].class_reviews === 'undefined') ? (
                   console.log(data[0]),
                   <p>Loading</p>
                 ): (
