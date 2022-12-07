@@ -1,4 +1,3 @@
-// import and instantiate express
 const express = require("express") // CommonJS import style!
 const app = express() // instantiate an Express object
 const courseRouter = require("./routes/course.routes");
@@ -9,9 +8,6 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 const { body, validationResult } = require('express-validator');
 
-// import files
-const user = require("./USERS_MOCK_DATA");
-
 // import middleware
 const cors = require('cors');
 app.use(cors());
@@ -20,26 +16,6 @@ require("dotenv").config() // load environmental variables from a hidden file na
 const morgan = require("morgan") // middleware for nice logging of incoming HTTP requests
 app.use(morgan("dev")) // morgan has a few logging default styles - dev is a nice concise color-coded style
 app.use(bodyParser.json())
-
-//const { db } = require("./model/ClassData.js");
-app.get('/', (req, res) => res.send('Hello from Classcritic!'))
-app.get('/profile', (req, res) => res.send('Hello from Classcritic Profile!'))
-
-// user data to display on profile screen (front-end)
-app.get('/Users', (req, res) => {
-    res.json({
-        id: 1,
-        dp: "https://pbs.twimg.com/profile_images/1520724563876888577/qkJG25yC_400x400.jpg",
-        name: "Danny Hunter",
-        year: "Sophomore",
-        university: "New York University",
-        school: "College of Arts & Science",
-        major: "Computer Science",
-        bio: "I am an NYU student and a good data and software researcher. I believe in the great power of technology."
-    }
-    );
-});
-
 app.use(courseRouter)
 
 //starting connections to MongoDB
@@ -103,16 +79,13 @@ app.get('/Course2', async function(req,res){
 })
 
 app.post("/review", 
-body("reviewer_name").isString(),
-body("course_name").isString(),
-body("review").isLength({min:1}),
-body('review').not().isEmpty().withMessage('Review must have more than 5 characters'),
-// body("rating").isNumeric(),
-// body("workload").isNumeric(),
-// body("difficulty").isNumeric(),
+    body("reviewer_name").isString(),
+    body("course_name").isString(),
+    body("review").isLength({min:1}),
+    body('review').not().isEmpty().withMessage('Review must have more than 5 characters'),
+
 async (req, res)=>{
     const errors = validationResult(req);
-
     let myData;
     myData = {
         reviewer_name:req.body.reviewer_name,
@@ -126,11 +99,6 @@ async (req, res)=>{
         course_name:req.body.class,
     }
     console.log(myData)
-
-    // if (!errors.isEmpty()) {
-    //     return res.status(422).jsonp(errors.array());
-    //   } 
-
    const result = await db.collection("classdatas").updateOne(
     { course_name : myDataName.course_name},
     { $push : { 'class_reviews' : myData }}, 
@@ -144,14 +112,14 @@ async (req, res)=>{
 })
 
 app.post("/contactUs",
-body("name").isString(),
-body("email").isString(),
-body("feedback").isString(),
-(req, res)=>{
-    db.collection("ContactUsData").insertOne(req.body);
-    res.json({
-        success: true,
+    body("name").isString(),
+    body("email").isString(),
+    body("feedback").isString(),
+    (req, res)=>{
+        db.collection("ContactUsData").insertOne(req.body);
+        res.json({
+            success: true,
+        })
     })
-})
 
 module.exports = app;

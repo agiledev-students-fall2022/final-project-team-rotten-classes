@@ -7,19 +7,6 @@ const server = require('../app.js');
 chai.use(chaiHttp);
 chai.should();
 
-//start unit test for getting course data
-describe('GET /Users', ()=>{
-   it('should get data for users', (done)=>{
-       chai.request(server)
-        .get('/Users')
-        .end((err,res)=>{
-           res.should.have.status(200);
-           expect(res.body).to.be.a('object');
-        });
-        done();
-   });
-})
-
 //using this
 describe('POST /ContactUs', ()=>{
    it('Should post the review information from the form to the data base', (done)=>{
@@ -33,8 +20,6 @@ describe('POST /ContactUs', ()=>{
    });
 })
 
-
-
 //using this
 describe('GET /CourseData2', ()=>{
    it('should get data necessary for course review header', (done)=>{
@@ -47,8 +32,6 @@ describe('GET /CourseData2', ()=>{
         done();
    });
 })
-
-
 
 //using this
 describe('GET /Course2', ()=>{
