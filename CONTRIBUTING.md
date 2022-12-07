@@ -60,12 +60,24 @@ Based on the class website, the standup schedules is listed as below:
 
 * 10/13/2022
 * 10/20/2022
-* 11/01/2022
-* 11/03/2022
+* 10/22/2022
+* 10/25/2022
+* 10/28/2022
+* 10/30/2022
+* 11/02/2022
+* 11/04/2022
+* 11/06/2022
 * 11/08/2022
+* 11/11/2022
+* 11/13/2022
 * 11/15/2022
-* 11/17/2022
+* 11/18/2022
+* 11/20/2022
 * 11/22/2022
+* 11/27/2022
+* 12/04/2022
+* 12/06/2022
+* 12/07/2022
 
 Further time schedule will be discussed in Discord channel.
 
@@ -114,16 +126,3 @@ If we follow our team norms, we should be in for a successful semester and fun s
 
 * DO NOT contribute sensitive information such as passwords into the repository. If you are unsure about what information is sensitive, please consult our team members.
 * .gitignore file should be updated accordingly.
-
-## Project Instructions
-
-### Setting Up
-
-GitHub repository will provide the latest tested version of our project. To set up a project on the computer, you need to:
-
-1. Click here to install [VSCode](https://code.visualstudio.com/).
-2. Clone the [repository](https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes.git) into your VSCode project.
-
-### Building And Testing
-
-Further information will be updated once the project reaches this stage.
