@@ -18,7 +18,7 @@ function AddReview(){
       title: data.get('title'),
     }
     console.log("postData: " + postData)
-    const postURL = "http://localhost:4000/review"
+    const postURL = "/review"
     const res = await axios.post(postURL, postData) 
     console.log(res)
   }
