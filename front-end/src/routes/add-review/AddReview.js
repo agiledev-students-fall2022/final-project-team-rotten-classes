@@ -19,7 +19,7 @@ function AddReview(){
       title: data.get('title'),
     }
     console.log("postData: " + postData)
-    const postURL = "api/review"
+    const postURL = "https://hammerhead-app-skzsp.ondigitalocean.app/api/review"
     const res = await axios.post(postURL, postData) 
     console.log(res)
   }
