@@ -19,12 +19,10 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Set up NodeJS environment
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          # Reads the node version from the .nvmrc file itself 
-          node-version-file: '.nvmrc'
-          # The node version can be hard-coded 
-          # node-version: 14
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
         
       # Consider this as an add on to optimize the execution of actions
       - name: Cache node modules
