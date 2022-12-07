@@ -26,7 +26,7 @@ const ContactUs = () => {
         
             }
             console.log("postData: " + postData)
-            const postURL = "/contactUs"
+            const postURL = "/api/contactUs"
             const res = await axios.post(postURL, postData) 
             console.log(res)
     }

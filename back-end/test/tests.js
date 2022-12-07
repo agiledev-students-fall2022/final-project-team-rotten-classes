@@ -8,7 +8,7 @@ chai.use(chaiHttp);
 chai.should();
 
 //using this
-describe('POST /ContactUs', ()=>{
+describe('POST /api/contactUs', ()=>{
    it('Should post the review information from the form to the data base', (done)=>{
        chai.request(server)
         .post('/contactUs')
@@ -21,7 +21,7 @@ describe('POST /ContactUs', ()=>{
 })
 
 //using this
-describe('GET /CourseData2', ()=>{
+describe('GET /api/CourseData', ()=>{
    it('should get data necessary for course review header', (done)=>{
        chai.request(server)
         .get('/CourseData2')
@@ -34,7 +34,7 @@ describe('GET /CourseData2', ()=>{
 })
 
 //using this
-describe('GET /Course2', ()=>{
+describe('GET /api/Course', ()=>{
    it('Should fetch the review data of each class from the data base to the backend', (done)=>{
        chai.request(server)
         .get('/contactUs')
@@ -46,7 +46,7 @@ describe('GET /Course2', ()=>{
    });
 })
 
-describe('POST /review', ()=>{
+describe('POST /api/review', ()=>{
    it('should post a review object to mongoDB when form is submitted', (done)=>{
        chai.request(server)
         .post('/review')

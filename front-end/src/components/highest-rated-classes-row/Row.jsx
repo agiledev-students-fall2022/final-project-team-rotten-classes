@@ -9,7 +9,7 @@ const Row = () => {
     const[data, setData] = useState([])
     
     useEffect(() => {
-       fetch("/CourseData2").then(
+       fetch("/CourseData").then(
          response => response.json()
        ).then(
          data => {

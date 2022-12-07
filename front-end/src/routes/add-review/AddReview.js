@@ -27,7 +27,7 @@ function AddReview(){
     <div className='addreview-container'>
       <div><h1 className='addreview-heading'>Submit your Review</h1></div>
       <br />
-      <form className='addreview-form-container' action="/review" method="POST" onSubmit={handleSubmit}>
+      <form className='addreview-form-container' action="/api/review" method="POST" onSubmit={handleSubmit}>
         <input name="name" type="text" className="feedback-input" placeholder="Name" />
         <input name="class" type="text" className="feedback-input" placeholder="Class" />
         <input name="professor" type="text" className="feedback-input" placeholder="Professor" />

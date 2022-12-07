@@ -55,7 +55,7 @@ const classSchema = new mongoose.Schema({
 
 const ClassData = mongoose.model("ClassData", classSchema)
 
-app.get('/CourseData2', (req, res) =>{
+app.get('/api/CourseData', (req, res) =>{
     ClassData.find({ })
         .then((class_names) => {
             res.json({
@@ -67,7 +67,7 @@ app.get('/CourseData2', (req, res) =>{
         })
 });
 
-app.get('/Course2', async function(req,res){
+app.get('/api/Course', async function(req,res){
     const courseId = req.query.courseId;
     const course_id = courseId
     console.log(course_id)
@@ -78,7 +78,7 @@ app.get('/Course2', async function(req,res){
         })
 })
 
-app.post("/review", 
+app.post("/api/review",
     body("reviewer_name").isString(),
     body("course_name").isString(),
     body("review").isLength({min:1}),
@@ -111,7 +111,7 @@ async (req, res)=>{
     })
 })
 
-app.post("/contactUs",
+app.post("/api/contactUs",
     body("name").isString(),
     body("email").isString(),
     body("feedback").isString(),
