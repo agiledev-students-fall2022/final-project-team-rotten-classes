@@ -55,7 +55,7 @@ const classSchema = new mongoose.Schema({
 
 const ClassData = mongoose.model("ClassData", classSchema)
 
-app.get('/api/CourseData', (req, res) =>{
+app.get('/api/CourseData2', (req, res) =>{
     ClassData.find({ })
         .then((class_names) => {
             res.json({
@@ -67,7 +67,7 @@ app.get('/api/CourseData', (req, res) =>{
         })
 });
 
-app.get('/api/Course', async function(req,res){
+app.get('/api/Course2', async function(req,res){
     const courseId = req.query.courseId;
     const course_id = courseId
     console.log(course_id)

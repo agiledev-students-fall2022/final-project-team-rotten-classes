@@ -36,7 +36,7 @@ export const CourseDataProvider = ({children}) => {
 
   useEffect(() => {
     const fetchCourses = async () => {
-      const response = await axios.get("/CourseData");
+      const response = await axios.get("/api/CourseData2");
       setCourseData(response.data);
       console.log(response)
     };

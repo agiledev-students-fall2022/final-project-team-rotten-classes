@@ -11,7 +11,7 @@ function Course() {
     const [courseData, setCourseData] = useState({});
 
     useEffect(() => {
-        fetch("/Course?courseId=" + courseId).then(
+        fetch("/api/Course2?courseId=" + courseId).then(
             response => response.json()
         ).then(
             data => {

@@ -21,10 +21,10 @@ describe('POST /api/contactUs', ()=>{
 })
 
 //using this
-describe('GET /api/CourseData', ()=>{
+describe('GET /api/CourseData2', ()=>{
    it('should get data necessary for course review header', (done)=>{
        chai.request(server)
-        .get('/CourseData2')
+        .get('/api/CourseData2')
         .end((err,res)=>{
            res.should.have.status(200);
            expect(res.body).to.be.a('object');
@@ -34,7 +34,7 @@ describe('GET /api/CourseData', ()=>{
 })
 
 //using this
-describe('GET /api/Course', ()=>{
+describe('GET /api/Course2', ()=>{
    it('Should fetch the review data of each class from the data base to the backend', (done)=>{
        chai.request(server)
         .get('/contactUs')
@@ -49,7 +49,7 @@ describe('GET /api/Course', ()=>{
 describe('POST /api/review', ()=>{
    it('should post a review object to mongoDB when form is submitted', (done)=>{
        chai.request(server)
-        .post('/review')
+        .post('/api/review')
         .end((err, res) => {
             res.should.have.status(200);
             expect(res.body.reviewer_name).to.be.a('string');
