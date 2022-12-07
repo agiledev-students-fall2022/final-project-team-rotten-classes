@@ -16,7 +16,7 @@ function AddReview(){
       would_take_again:data.get('would_take'),
       professor: data.get('professor'),
       semester: data.get('semester'),
-      title: data.get('title'),
+      // title: data.get('title'),
     }
     console.log("postData: " + postData)
     const postURL = "https://hammerhead-app-skzsp.ondigitalocean.app/api/review"
@@ -77,7 +77,7 @@ function AddReview(){
           <input type="radio" id="contactChoice3" name="workload" defaultValue="5" />
           <label htmlFor="contactChoice3">5</label>
         </div>
-        <input name="title" type="text" className="feedback-input" placeholder="Title" required/>
+        {/* <input name="title" type="text" className="feedback-input" placeholder="Title" required/> */}
         <textarea name="text" className="feedback-input" placeholder="Comment" defaultValue={""}/>
         <input type="submit" defaultValue="SUBMIT" />
       </form>
