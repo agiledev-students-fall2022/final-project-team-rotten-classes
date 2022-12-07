@@ -14,9 +14,7 @@ jobs:
     # Defines the type of runner the job runs on
     runs-on: ubuntu-latest
     
-    steps:
-      cd front-end
-      
+    steps:      
       - name: Checkout to the repository
         uses: actions/checkout@v2
         
