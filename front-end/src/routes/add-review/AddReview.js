@@ -13,6 +13,7 @@ function AddReview(){
       workload: data.get('workload'),
       difficulty: data.get('difficulty'),
       class: data.get('class'), 
+      would_take_again:data.get('would_take'),
       professor: data.get('professor'),
       semester: data.get('semester'),
       title: data.get('title'),
@@ -42,6 +43,13 @@ function AddReview(){
           <label htmlFor="contactChoice3">Good</label>
           <input type="radio" id="contactChoice3" name="rating" defaultValue="Awesome" />
           <label htmlFor="contactChoice3">Awesome</label>
+        </div>
+        <h6>Would Take Again</h6>
+        <div>
+        <input type="radio" id="would_take" name="would_take" defaultValue="Y" />
+        <label htmlFor="would_take">Y</label>
+        <input type="radio" id="would_take" name="would_take" defaultValue="N" />
+        <label htmlFor="would_take2">N</label>
         </div>
         <h6>Level of Difficulty</h6>
         <div>
