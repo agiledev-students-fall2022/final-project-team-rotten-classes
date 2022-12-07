@@ -18,7 +18,7 @@ function AddReview(){
       title: data.get('title'),
     }
     console.log("postData: " + postData)
-    const postURL = "/review"
+    const postURL = "api/review"
     const res = await axios.post(postURL, postData) 
     console.log(res)
   }
