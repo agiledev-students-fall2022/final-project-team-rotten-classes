@@ -151,7 +151,12 @@ GitHub repository will provide the latest tested version of our project. To set 
 
 ### Database Connection
 
-
+- Navigate to the **back-end** file using `cd back-end`.
+- Create an `.env` file
+- Inside the `.env` file, create DB_USERNAME="credential", DB_PASSWORD="credential", DB_URL="credential".
+- The credential will be given in our discord channel.
 
 ### Deployment
 
+- Project Public Link: http://161.35.101.19/
+- Happy Coding!
