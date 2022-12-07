@@ -40,7 +40,6 @@ const SearchPage = () => {
         setSortBy(event.target.value)
     };
 
-
     return (
         <div className="search-page">
             <div className="search-box">

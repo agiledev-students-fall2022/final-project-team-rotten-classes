@@ -12,9 +12,7 @@ const Slider = () => {
       ).then(
         data => {
           setData(data)
-        }
-      )
-    }, [])
+        })}, [])
 
     return (
         <>
@@ -23,7 +21,6 @@ const Slider = () => {
                   <p>Loading</p>
                 ): (
                     data.class_names?.slice(0,3).map((course, index)=> (
-                   
                       <Carousel.Item interval={2000} key={index}>
                       <Link to={'/Course/' + course.course_id}>
                         <img

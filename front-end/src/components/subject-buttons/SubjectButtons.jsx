@@ -1,7 +1,6 @@
 import React from "react";
 import './SubjectButtons.css';
 import { Navigate } from "react-router-dom";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -23,10 +22,8 @@ if(goToView){
         adaptiveHeight: true,
         autoplaySpeed: 2000
     };
-    
       return (
         <>
-
 <Slider {...settings} >
 <button onClick={()=>{setView(true)}} type="button" className="btn btn-primary text-nowrap">Computer Science</button>
 <button onClick={()=>{setView(true)}} type="button" className="btn btn-warning">Biology</button>
@@ -34,9 +31,7 @@ if(goToView){
 <button onClick={()=>{setView(true)}} type="button" className="btn btn-secondary text-nowrap">Philosophy</button>
 <button onClick={()=>{setView(true)}} type="button" className="btn btn-danger text-nowrap">Mathematics</button>
 <button onClick={()=>{setView(true)}} type="button" className="btn btn-info text-nowrap">Business Studies</button>
-
     </Slider>
-
         </>
       )}
   

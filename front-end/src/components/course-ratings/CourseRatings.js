@@ -14,7 +14,6 @@ function CourseRatings({ data }) {
       {(typeof data[0]?.class_reviews === 'undefined') ? (
                   <p>Loading</p>
                 ): (
-                   
                       <div className = "course-ratings-page">
                         <h1>Overall Ratings</h1>
                         <h2>Overall Score</h2>

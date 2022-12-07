@@ -3,7 +3,6 @@ import  React from 'react';
 import Slider from '../../components/slideshow/Slider'
 import Row from '../../components/highest-rated-classes-row/Row'
 import BottomNavigationBar from "../bottom-navigation-bar/bottom-navigation-bar.component";
-import SubjectButtons from '../../components/subject-buttons/SubjectButtons'
 import Badge from 'react-bootstrap/Badge';
 import { Button } from 'react-bootstrap';
 import { Navigate } from 'react-router-dom';

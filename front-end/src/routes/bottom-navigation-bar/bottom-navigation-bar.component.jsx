@@ -1,11 +1,9 @@
 import React from "react";
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import HomeIcon from '@mui/icons-material/Home';
-import PersonIcon from '@mui/icons-material/Person';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
@@ -22,11 +20,9 @@ const useStyles = makeStyles({
         minWidth: "auto",
         padding: "6px 0",
         color: "white",
-      },
-    },
+      },},
     "& .Mui-selected": {
       "@media (max-width: 800px)": {
-        // color: "red",
       }}}});
 
 const BottomNavigationBar = () => {
@@ -45,7 +41,6 @@ const BottomNavigationBar = () => {
                 <BottomNavigationAction component={Link} to="/search" label="Search" icon={<SearchOutlinedIcon />} />
                 <BottomNavigationAction component={Link} to="/AddReview" label="Add" icon={<AddCircleOutlineIcon />} />
                 <BottomNavigationAction component={Link} to="/contact" label="Contact" icon={<HelpOutlineIcon />} />
-                {/*<BottomNavigationAction component={Link} to="/profile" label="Profile" icon={<PersonIcon />} />*/}
             </BottomNavigation>
         </div>
     )}

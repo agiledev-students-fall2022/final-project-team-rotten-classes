@@ -1,15 +1,12 @@
 import './AddReview.css'
 import React, { useState }  from 'react'
-import { Link } from 'react-router-dom'
 import axios from 'axios';
 
 function AddReview(){
-
   const handleSubmit= async (e) =>{
     e.preventDefault() 
     const data = new FormData(e.currentTarget);
-    const postData = { 
-      
+    const postData = {
       reviewer_name: data.get('name'),
       review: data.get('text'),
       rating: data.get('rating'),
@@ -19,16 +16,11 @@ function AddReview(){
       professor: data.get('professor'),
       semester: data.get('semester'),
       title: data.get('title'),
-      
-      
     }
-    console.log("postData: " + postData) 
-  
+    console.log("postData: " + postData)
     const postURL = "http://localhost:4000/review"
     const res = await axios.post(postURL, postData) 
-    console.log(res) 
-
-    // onSubmit={handleSubmit}
+    console.log(res)
   }
 
   return (
@@ -37,7 +29,6 @@ function AddReview(){
       <br />
       <form className='addreview-form-container' action="/review" method="POST" onSubmit={handleSubmit}>
         <input name="name" type="text" className="feedback-input" placeholder="Name" />
-        {/* <input name="email" type="text" className="feedback-input" placeholder="Email" /> */}
         <input name="class" type="text" className="feedback-input" placeholder="Class" />
         <input name="professor" type="text" className="feedback-input" placeholder="Professor" />
         <input name="semester" type="text" className="feedback-input" placeholder="Semester" />

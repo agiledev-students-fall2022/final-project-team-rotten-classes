@@ -1,6 +1,6 @@
 import './CourseDetails.css'
 import React from 'react';
-import { Navigate} from 'react-router-dom';
+import {Navigate} from 'react-router-dom';
 
 function CourseDetails({ data }) {
     const [goToView, setView] = React.useState(false);
@@ -10,7 +10,6 @@ function CourseDetails({ data }) {
     }
     return (
         <>
-
       <div className = "details-for-course-ratings">
       {(typeof data[0]?.class_reviews === 'undefined') ? (
                   <p>Loading</p>

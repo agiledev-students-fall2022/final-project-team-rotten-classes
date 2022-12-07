@@ -17,7 +17,6 @@ const ContactUs = () => {
         setTimeout(() => {
             setSubmitting(false);
             }, 3000)
-
             event.preventDefault() 
             const data = new FormData(event.currentTarget);
             const postData = { 
@@ -26,13 +25,10 @@ const ContactUs = () => {
               messaage: data.get('message'),
         
             }
-            console.log("postData: " + postData) 
-          
+            console.log("postData: " + postData)
             const postURL = "http://localhost:4000/contactUs"
             const res = await axios.post(postURL, postData) 
-            console.log(res) 
-
-          
+            console.log(res)
     }
 
     return (

@@ -47,7 +47,6 @@ export const CourseDataProvider = ({children}) => {
     processData();
   }, [courseData]);
 
-
   const value = {
     courseDataProcessed
   };

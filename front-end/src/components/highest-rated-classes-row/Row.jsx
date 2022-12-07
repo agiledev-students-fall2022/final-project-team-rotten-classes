@@ -4,10 +4,8 @@ import './Row.css';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {CourseDataContext} from "../../contexts/courseData.context";
 
 const Row = () => {
-    const {courseDataProcessed} = useContext(CourseDataContext)
     const[data, setData] = useState([])
     
     useEffect(() => {
@@ -16,9 +14,7 @@ const Row = () => {
        ).then(
          data => {
            setData(data)
-         }
-       )
-     }, [])
+         })}, [])
 
     const settings = {
         dots: false,
@@ -32,7 +28,6 @@ const Row = () => {
         autoplaySpeed: 2000
     };
 
-
     return (
         <Slider {...settings} >
             {(typeof data.class_names === 'undefined') ? (
@@ -43,7 +38,7 @@ const Row = () => {
                         <div className="slick-list">
                             <h5 className="title">{info.course_name}</h5>
                             <Link to={'/Course/' + info.course_id}>
-                                <img src = {info.course_image}/>
+                                <img src = {info.course_image} alt='course image'/>
                             </Link>
                         </div>
                         <div className="subheading">

@@ -1,16 +1,14 @@
 import './CourseReviews.css'
 import React from 'react';
-import { Navigate} from 'react-router-dom';
+import {Navigate} from 'react-router-dom';
 
 function CourseReviews({ data }) {
     const [goToView, setView] = React.useState(false);
-
     if(goToView){
         return <Navigate to="/Viewall"/>;
     }
     return (
         <>
-
       <div className = "reviews-for-course-ratings">
       {(typeof data[0]?.class_reviews === 'undefined') ? (
                   <p>Loading</p>
