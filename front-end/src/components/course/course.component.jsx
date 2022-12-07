@@ -11,7 +11,7 @@ function Course() {
     const [courseData, setCourseData] = useState({});
 
     useEffect(() => {
-        fetch("/api/Course2?courseId=" + courseId).then(
+        fetch("https://hammerhead-app-skzsp.ondigitalocean.app/api/Course2?courseId=" + courseId).then(
             response => response.json()
         ).then(
             data => {

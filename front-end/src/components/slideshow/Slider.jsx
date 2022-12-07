@@ -7,7 +7,7 @@ const Slider = () => {
     const[data, setData] = useState([])
 
     useEffect(() => {
-      fetch("/api/CourseData2").then(
+      fetch("https://hammerhead-app-skzsp.ondigitalocean.app/api/CourseData2").then(
         response => response.json()
       ).then(
         data => {
