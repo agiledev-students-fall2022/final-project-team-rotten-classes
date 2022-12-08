@@ -101,6 +101,17 @@ async (req, res)=>{
         workload:req.body.workload,
         difficulty:req.body.difficulty,
     }
+    const avg = db.collection("classdatas").aggregate(
+        [
+           { $group:
+            {
+                _id: "$course_name",
+                course_rating_overall: {$avg: {'class_reviews' : review}}
+            }
+            }
+        ]
+    )
+
     myDataName = {
         course_name:req.body.class,
     }

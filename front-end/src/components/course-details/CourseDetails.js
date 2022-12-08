@@ -3,7 +3,7 @@ import React from 'react';
 import {Navigate} from 'react-router-dom';
 
 function CourseDetails({ data }) {
-    const [goToView, setView] = React.useState(false);
+    const [goToView] = React.useState(false);
 
     if(goToView){
         return <Navigate to="/Viewall"/>;

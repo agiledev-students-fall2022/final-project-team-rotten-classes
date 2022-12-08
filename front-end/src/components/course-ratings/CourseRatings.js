@@ -1,11 +1,10 @@
 import './CourseRatings.css'
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 
 function CourseRatings({ data }) {
-  const [goToView, setView] = React.useState(false);
+  const [goToView] = React.useState(false);
 
   if(goToView){
     return <Navigate to="/Viewall"/>;
@@ -19,24 +18,6 @@ function CourseRatings({ data }) {
  
     return (
       <>
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart
-              width={500}
-              height={300}
-              data={data}
-              margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
-              }}
-          >
-            
-          </BarChart>
-
-        </ResponsiveContainer>
-
-
       {(typeof data[0]?.class_reviews === 'undefined') ? (
                   <p>Loading</p>
                 ): (

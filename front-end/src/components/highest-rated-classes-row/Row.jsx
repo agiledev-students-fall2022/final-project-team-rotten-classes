@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import './Row.css';
 import Slider from "react-slick";
@@ -38,7 +38,7 @@ const Row = () => {
                         <div className="slick-list">
                             <h5 className="title">{info.course_name}</h5>
                             <Link to={'/Course/' + info.course_id}>
-                                <img src = {info.course_image} alt='course image'/>
+                                <img src = {info.course_image} alt='course'/>
                             </Link>
                         </div>
                         <div className="subheading">

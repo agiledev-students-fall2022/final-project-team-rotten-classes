@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 import React from "react";
 
 const CourseCard = ({course}) => {
-    const {key, course_id, course_name, course_image} = course;
+    const {course_id, course_name, course_image} = course;
     return (
         <div className="big">
             <div className="slick-list">

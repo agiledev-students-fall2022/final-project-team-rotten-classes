@@ -1,10 +1,10 @@
 import './CourseReviewDetailHeader.css'
 import React from 'react';
 import Badge from 'react-bootstrap/Badge';
-import { Navigate, useLocation } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 function CourseReviewDetailHeader({ page, setPage, data }) {
-  const [goToView, setView] = React.useState(false);
+  const [goToView] = React.useState(false);
 
   if(goToView){
     return <Navigate to="/Viewall"/>;

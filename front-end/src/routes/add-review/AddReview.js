@@ -1,5 +1,5 @@
 import './AddReview.css'
-import React, { useState }  from 'react'
+import React  from 'react'
 import axios from 'axios';
 function AddReview(){
   const handleSubmit= async (e) =>{
@@ -52,14 +52,16 @@ function AddReview(){
         <input name="semester" type="text" className="feedback-input" placeholder="Semester" />
         <h6>Rate the Class</h6>
         <div>
-          <input type="radio" id="contactChoice1" name="rating" defaultValue="Awful" />
-          <label htmlFor="contactChoice1">Awful</label>
-          <input type="radio" id="contactChoice2" name="rating" defaultValue="OK" />
-          <label htmlFor="contactChoice2">OK</label>
-          <input type="radio" id="contactChoice3" name="rating" defaultValue="Good" />
-          <label htmlFor="contactChoice3">Good</label>
-          <input type="radio" id="contactChoice3" name="rating" defaultValue="Awesome" />
-          <label htmlFor="contactChoice3">Awesome</label>
+          <input type="radio" id="contactChoice1" name="rating" defaultValue={1} />
+          <label htmlFor="contactChoice1">1</label>
+          <input type="radio" id="contactChoice2" name="rating" defaultValue={2} />
+          <label htmlFor="contactChoice2">2</label>
+          <input type="radio" id="contactChoice3" name="rating" defaultValue={3} />
+          <label htmlFor="contactChoice3">3</label>
+          <input type="radio" id="contactChoice3" name="rating" defaultValue={4} />
+          <label htmlFor="contactChoice3">4</label>
+          <input type="radio" id="contactChoice3" name="rating" defaultValue={5} />
+          <label htmlFor="contactChoice3">5</label>
         </div>
         <h6>Would Take Again</h6>
         <div>
