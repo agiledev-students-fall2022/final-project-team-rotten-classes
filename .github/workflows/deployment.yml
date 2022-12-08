@@ -10,8 +10,9 @@ jobs:
     environment: production
     steps:
       - name: Deploy Node.js app
-      - uses: jjst/action-digitalocean-deploy-app@v2
-      - uses: actions/checkout@v1
+        uses: jjst/action-digitalocean-deploy-app@v2
+      - name: checkout
+        uses: actions/checkout@v1
         with:
           app_name: ClassCriticApp
           app-id: 161.35.101.19
