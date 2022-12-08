@@ -17,8 +17,8 @@ jobs:
         key: ${{secrets.SSH_KEY}}
         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
-        scripts: |
-          mkdir deployment
-          cd deployment
-          git clone https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes.git
-          echo 'Deployment successful to Digital Ocean'
+
+
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm test
