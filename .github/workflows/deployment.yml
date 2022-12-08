@@ -13,6 +13,6 @@ jobs:
       uses: jjst/action-digitalocean-deploy-app@v2
       with:
         app_name: ClassCriticApp
-        app-id: app-deployment
+        app-id: "ClassCriticApp"
         key: ${{secrets.SSH_KEY}}
         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
