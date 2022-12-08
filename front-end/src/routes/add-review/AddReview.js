@@ -1,13 +1,10 @@
 import './AddReview.css'
 import React, { useState }  from 'react'
 import axios from 'axios';
-
 function AddReview(){
   const handleSubmit= async (e) =>{
     e.preventDefault() 
 
-    
-   
   const data = new FormData(e.currentTarget);
 
   if(data.get('text').length == 0 || data.get('difficulty')==null || data.get('rating')==null || data.get('workload')==null || data.get('would_take')==null || data.get('class').length==0){
@@ -17,7 +14,7 @@ function AddReview(){
     console.log(data.get('rating'))
     console.log(data.get('workload'))
     console.log(data.get('would_take'))
-    
+
 
   }
   else{
@@ -34,13 +31,14 @@ function AddReview(){
       // title: data.get('title'),
     }
 
+
     console.log("postData: " + postData)
     const postURL = "https://hammerhead-app-skzsp.ondigitalocean.app/api/review";
     const res = await axios.post(postURL, postData) 
     console.log(res)
-    
+
   }
-  
+
   }
 
   return (
@@ -55,15 +53,13 @@ function AddReview(){
         <h6>Rate the Class</h6>
         <div>
           <input type="radio" id="contactChoice1" name="rating" defaultValue="Awful" />
-          <label htmlFor="contactChoice1">1</label>
+          <label htmlFor="contactChoice1">Awful</label>
           <input type="radio" id="contactChoice2" name="rating" defaultValue="OK" />
-          <label htmlFor="contactChoice2">2</label>
+          <label htmlFor="contactChoice2">OK</label>
           <input type="radio" id="contactChoice3" name="rating" defaultValue="Good" />
-          <label htmlFor="contactChoice3">3</label>
+          <label htmlFor="contactChoice3">Good</label>
           <input type="radio" id="contactChoice3" name="rating" defaultValue="Awesome" />
-          <label htmlFor="contactChoice3">4</label>
-          <input type="radio" id="contactChoice3" name="rating" defaultValue="Awesome" />
-          <label htmlFor="contactChoice3">5</label>
+          <label htmlFor="contactChoice3">Awesome</label>
         </div>
         <h6>Would Take Again</h6>
         <div>
@@ -105,5 +101,4 @@ function AddReview(){
     </div>
   );
 }
-
 export default AddReview;

@@ -7,7 +7,6 @@ const mongoose = require("mongoose");
 app.use(bodyParser.json());
 app.use(express.static('public'));
 const { body, validationResult } = require('express-validator');
-
 // import middleware
 const cors = require('cors');
 app.use(cors());
@@ -17,19 +16,16 @@ const morgan = require("morgan") // middleware for nice logging of incoming HTTP
 app.use(morgan("dev")) // morgan has a few logging default styles - dev is a nice concise color-coded style
 app.use(bodyParser.json())
 app.use(courseRouter)
-
 //starting connections to MongoDB
 const connectionParams={
     useNewUrlParser:"true",
     useUnifiedTopology:"true"
 }
-
 mongoose
     .connect(process.env.DB_URL, connectionParams)
     .then(res=>(console.log("connected to mongoDB")))
     .catch(err=>(console.log("connection failed")))
 const db = mongoose.connection;
-
 const classSchema = new mongoose.Schema({
 	course_name: String,
 	course_id: String,
@@ -89,13 +85,11 @@ app.get('/api/Course2', async function(req,res){
             class_reviews
         })
 })
-
 app.post("/api/review",
     body("reviewer_name").isString(),
     body("course_name").isString(),
     body("review").isLength({min:1}),
     body('review').not().isEmpty().withMessage('Review must have more than 5 characters'),
-
 async (req, res)=>{
     const errors = validationResult(req);
     let myData;
@@ -107,35 +101,19 @@ async (req, res)=>{
         workload:req.body.workload,
         difficulty:req.body.difficulty,
     }
-
     myDataName = {
         course_name:req.body.class,
     }
     console.log(myData)
-    const avg = db.collection("classdatas").aggregate(
-        [
-           { $group:
-            {
-                _id: "$course_name",
-                course_rating_overall: {$avg: {'class_reviews' : rating}}
-            }
-            }
-        ]
-    )
-
    const result = await db.collection("classdatas").updateOne(
     { course_name : myDataName.course_name},
-    { $push: {course_rating_overall}},
     { $push : { 'class_reviews' : myData }}, 
     {upsert:true})
-
     console.log(result);
-
     res.json({
         success: true,
     })
 })
-
 app.post("/api/contactUs",
     body("name").isString(),
     body("email").isString(),
@@ -146,5 +124,4 @@ app.post("/api/contactUs",
             success: true,
         })
     })
-
 module.exports = app;
