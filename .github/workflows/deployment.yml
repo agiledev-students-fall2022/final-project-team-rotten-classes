@@ -12,7 +12,8 @@ jobs:
     - name: Deploy Node.js app
       uses: jjst/action-digitalocean-deploy-app@v2
       with:
-        spec: ${{secrets.SSH_KEY}}
+        app_name: ClassCriticApp
+        key: ${{secrets.SSH_KEY}}
         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
         app-id: "ClassCriticApp"
 
