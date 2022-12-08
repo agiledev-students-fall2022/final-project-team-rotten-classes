@@ -15,7 +15,6 @@ jobs:
         app_name: ClassCriticApp
         key: ${{secrets.SSH_KEY}}
         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-        app-id: "ClassCriticApp"
 
         scripts: |
           mkdir deployment
