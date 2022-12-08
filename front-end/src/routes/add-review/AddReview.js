@@ -5,7 +5,22 @@ import axios from 'axios';
 function AddReview(){
   const handleSubmit= async (e) =>{
     e.preventDefault() 
-    const data = new FormData(e.currentTarget);
+
+    
+   
+  const data = new FormData(e.currentTarget);
+
+  if(data.get('text').length == 0 || data.get('difficulty')==null || data.get('rating')==null || data.get('workload')==null || data.get('would_take')==null || data.get('class').length==0){
+    console.log("error");
+    console.log(data.get('text').length)
+    console.log(data.get('difficulty'))
+    console.log(data.get('rating'))
+    console.log(data.get('workload'))
+    console.log(data.get('would_take'))
+    
+
+  }
+  else{
     const postData = {
       reviewer_name: data.get('name'),
       review: data.get('text'),
@@ -16,12 +31,16 @@ function AddReview(){
       would_take_again:data.get('would_take'),
       professor: data.get('professor'),
       semester: data.get('semester'),
-      title: data.get('title'),
+      // title: data.get('title'),
     }
+
     console.log("postData: " + postData)
-    const postURL = "https://hammerhead-app-skzsp.ondigitalocean.app/api/review"
+    const postURL = "https://hammerhead-app-skzsp.ondigitalocean.app/api/review";
     const res = await axios.post(postURL, postData) 
     console.log(res)
+    
+  }
+  
   }
 
   return (
@@ -55,15 +74,15 @@ function AddReview(){
         </div>
         <h6>Level of Difficulty</h6>
         <div>
-          <input type="radio" id="contactChoice1" name="difficulty" defaultValue="1" />
+          <input type="radio" id="contactChoice1" name="difficulty" defaultValue={1} />
           <label htmlFor="contactChoice1">1</label>
-          <input type="radio" id="contactChoice2" name="difficulty" defaultValue="2" />
+          <input type="radio" id="contactChoice2" name="difficulty" defaultValue={2} />
           <label htmlFor="contactChoice2">2</label>
-          <input type="radio" id="contactChoice3" name="difficulty" defaultValue="3" />
+          <input type="radio" id="contactChoice3" name="difficulty" defaultValue={3} />
           <label htmlFor="contactChoice3">3</label>
-          <input type="radio" id="contactChoice3" name="difficulty" defaultValue="4" />
+          <input type="radio" id="contactChoice3" name="difficulty" defaultValue={4} />
           <label htmlFor="contactChoice3">4</label>
-          <input type="radio" id="contactChoice3" name="difficulty" defaultValue="5" />
+          <input type="radio" id="contactChoice3" name="difficulty" defaultValue={5} />
           <label htmlFor="contactChoice3">5</label>
         </div>
         <h6>Level of Workload</h6>
@@ -79,8 +98,8 @@ function AddReview(){
           <input type="radio" id="contactChoice3" name="workload" defaultValue="5" />
           <label htmlFor="contactChoice3">5</label>
         </div>
-        <input name="title" type="text" className="feedback-input" placeholder="Title" required/>
-        <textarea name="text" className="feedback-input" placeholder="Comment" defaultValue={""}/>
+        {/* <input name="title" type="text" className="feedback-input" placeholder="Title" required/> */}
+        <textarea name="text" className="feedback-input" placeholder="Comment" defaultValue={''}/>
         <input type="submit" defaultValue="SUBMIT" />
       </form>
     </div>

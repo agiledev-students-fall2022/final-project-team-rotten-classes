@@ -11,14 +11,7 @@ jobs:
 
     steps:
     - name: Deploy Node.js app
-      uses: appleboy/ssh-action@v0.1.2
+      uses: jjst/action-digitalocean-deploy-app@v2
       with:
-        host: ${{secrets.SSH_HOST}}
-        key: ${{secrets.SSH_KEY}}
-        username: ${{secrets.SSH_USERNAME}}
-
-        script: |
-          mkdir test
-          cd test
-          git clone https://github.com/agiledev-students-fall2022/final-project-team-rotten-classes.git
-          echo "Deployed successfully"
+        token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+        app-id: "ClassCriticApp"

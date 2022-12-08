@@ -26,7 +26,7 @@ const ContactUs = () => {
         
             }
             console.log("postData: " + postData)
-            const postURL = "https://hammerhead-app-skzsp.ondigitalocean.app/api/contactUs"
+            const postURL = "https://hammerhead-app-skzsp.ondigitalocean.app/api/contactus";
             const res = await axios.post(postURL, postData) 
             console.log(res)
     }
