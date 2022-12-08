@@ -2,8 +2,7 @@ name: Deployment
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "master" ]
 
 jobs:
   deployment:
