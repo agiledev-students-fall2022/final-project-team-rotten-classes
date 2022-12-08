@@ -9,10 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-    - name: Deploy Node.js app
-      uses: jjst/action-digitalocean-deploy-app@v2
-      with:
-        app_name: ClassCriticApp
-        app-id: 161.35.101.19
-        key: ${{secrets.SSH_KEY}}
-        token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - name: Deploy Node.js app
+      - uses: jjst/action-digitalocean-deploy-app@v2
+      - uses: actions/checkout@v1
+        with:
+          app_name: ClassCriticApp
+          app-id: 161.35.101.19
+          key: ${{secrets.SSH_KEY}}
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
