@@ -14,6 +14,7 @@ function AddReview(){
     console.log(data.get('rating'))
     console.log(data.get('workload'))
     console.log(data.get('would_take'))
+    alert("Please fill in all fields");
 
 
   }
