@@ -1,0 +1,68 @@
+.addreview-heading{
+    color: white;
+}
+
+h6{
+    font-size: 18px !important;
+    color: gray;
+}
+
+form { min-width:400px; margin:20px; font-size: 18px;}
+
+.addreview-form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.addreview-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedback-input {
+  color:white;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid #61dafb;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.feedback-input:focus { border:2px solid #61dafb; }
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+label{
+    color: gray;
+    margin-left: 4px;
+    margin-right: 16px;
+    margin-bottom: 15px;
+}
+
+[type="submit"] {
+  width: 100%;
+  background:#61dafb;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background:#61dafb; }

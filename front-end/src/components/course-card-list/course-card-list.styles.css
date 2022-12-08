@@ -1,0 +1,5 @@
+.course-card-list {
+  margin: 1rem auto;
+  display: grid;
+  grid-gap: 20px;
+}

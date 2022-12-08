@@ -1,0 +1,82 @@
+.course-page-subheader{
+    border-radius: 5px;
+    padding: 2%;
+    justify-content: center;
+    padding-right: 11vh;
+    height: 25vh;
+    margin: 2vh;
+    flex-direction: column;
+    background-color: #aca2de;
+}
+
+.course-page-subheader img{
+    float: left;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    margin-right: 3vh;
+}
+
+.course-page-subheader h2{
+    padding-left: 3%;
+    color: rgb(64, 64, 64);
+    text-align: left;
+}
+
+.course-page-subheader .course-page-subheader-data{
+    padding-left: 3%;
+    color: white;
+    text-align: left;
+}
+
+
+.course-page-subheader h3{
+    font-size: 20px;
+    color: white;
+}
+
+.review-rating-button-switch{
+    padding: 3%;
+}
+
+.review-rating-button-switch button{
+    width: 200px;
+    background-color: #F6FF54;
+    border-radius: 5px;
+}
+
+.review-rating-button-switch button:hover{
+    background-color: #b3bb25;
+}
+
+.review-rating-button-switch button:active{
+    background-color: #7D05DF;
+}
+
+.reviews-for-course{
+    margin-left: 2vh;
+    margin-right: 5vh;
+    text-align: left;
+}
+
+.reviews-for-course .reviews-for-courses{
+    background-color: #7c569b;
+    border-radius: 10px;
+    padding-bottom: 3vh;
+}
+
+.reviews-for-course .reviews-for-courses h2{
+    margin: 2vh;
+    padding-top: 1vh;
+}
+
+.reviews-for-course .reviews-for-courses h3{
+    margin-left: 3vh;
+    padding-top: 1vh;
+    font-size: 15px;
+}
+
+.reviews-for-course .reviews-for-courses p{
+    margin-left: 3vh;
+    padding-top: 1vh;
+}
