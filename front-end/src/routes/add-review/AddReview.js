@@ -36,13 +36,15 @@ function AddReview(){
         <h6>Rate the Class</h6>
         <div>
           <input type="radio" id="contactChoice1" name="rating" defaultValue="Awful" />
-          <label htmlFor="contactChoice1">Awful</label>
+          <label htmlFor="contactChoice1">1</label>
           <input type="radio" id="contactChoice2" name="rating" defaultValue="OK" />
-          <label htmlFor="contactChoice2">OK</label>
+          <label htmlFor="contactChoice2">2</label>
           <input type="radio" id="contactChoice3" name="rating" defaultValue="Good" />
-          <label htmlFor="contactChoice3">Good</label>
+          <label htmlFor="contactChoice3">3</label>
           <input type="radio" id="contactChoice3" name="rating" defaultValue="Awesome" />
-          <label htmlFor="contactChoice3">Awesome</label>
+          <label htmlFor="contactChoice3">4</label>
+          <input type="radio" id="contactChoice3" name="rating" defaultValue="Awesome" />
+          <label htmlFor="contactChoice3">5</label>
         </div>
         <h6>Would Take Again</h6>
         <div>

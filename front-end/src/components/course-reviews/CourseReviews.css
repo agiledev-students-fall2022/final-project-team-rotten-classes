@@ -7,24 +7,31 @@
     padding: 3vh;
 }
 /* Course Review Styling Starts Here */
-.reviews-for-course-ratings{
+.reviews-for-course{
+    margin-left: 2vh;
+    margin-right: 5vh;
+    text-align: left;
+}
+
+.reviews-for-course .reviews-for-courses{
     background-color: #7c569b;
     border-radius: 10px;
-    color: black;
-    flex-direction: column;
+    padding-bottom: 3vh;
 }
 
-.reviews-for-course-ratings h2{
-    color: white;
+.reviews-for-course .reviews-for-courses h2{
+    margin: 2vh;
+    padding-top: 1vh;
 }
 
-.reviews-for-course-ratings h3{
-    font-size: 30px;
+.reviews-for-course .reviews-for-courses h3{
+    margin-left: 3vh;
+    padding-top: 1vh;
+    font-size: 15px;
 }
 
-.reviews-for-course-ratings p{
-    color:black;
-    font-size: 20px;
-    padding-bottom: 5vh;
+.reviews-for-course .reviews-for-courses p{
+    margin-left: 3vh;
+    padding-top: 1vh;
 }
 

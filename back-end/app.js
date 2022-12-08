@@ -55,6 +55,13 @@ const classSchema = new mongoose.Schema({
 
 const ClassData = mongoose.model("ClassData", classSchema)
 
+app.get('/api/HighestRated', async function (req, res){
+    let highestrated = await ClassData.find({course_rating_overall: {$gte: 95}})
+    res.json({
+        highestrated
+    })
+});
+
 app.get('/api/CourseData2', (req, res) =>{
     ClassData.find({ })
         .then((class_names) => {
@@ -95,10 +102,22 @@ async (req, res)=>{
         workload:req.body.workload,
         difficulty:req.body.difficulty,
     }
+
     myDataName = {
         course_name:req.body.class,
     }
     console.log(myData)
+    const avg = db.collection("classdatas").aggregate(
+        [
+           { $group:
+            {
+                _id: "$course_name",
+                course_rating_overall: {$avg: {'class_reviews' : review}}
+            }
+            }
+        ]
+    )
+
    const result = await db.collection("classdatas").updateOne(
     { course_name : myDataName.course_name},
     { $push : { 'class_reviews' : myData }}, 

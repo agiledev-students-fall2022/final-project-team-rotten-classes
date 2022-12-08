@@ -14,7 +14,7 @@ function CourseDetails({ data }) {
       {(typeof data[0]?.class_reviews === 'undefined') ? (
                   <p>Loading</p>
                 ): (
-                  data[0]?.class_reviews.map((info, key)=> (
+                  data[0]?.class_reviews.slice(0,1).map((info, key)=> (
                       <div className = "details-for-course-ratings">
                         <h2>Course Id</h2>
                         <p>{data[0].course_id}</p>

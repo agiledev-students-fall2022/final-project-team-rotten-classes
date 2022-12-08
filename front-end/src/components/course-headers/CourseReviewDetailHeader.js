@@ -19,8 +19,8 @@ function CourseReviewDetailHeader({ page, setPage, data }) {
                     <div className = "course-page-subheader-data">
                       <img src={data[0].course_image} alt='machine learning pic'/>
                       <h2>{data[0].course_name}</h2>
-                      <Badge onClick={()=>{setView(true)}}>{data[0].course_tags}</Badge>
-                      <Badge onClick={()=>{setView(true)}}>{data[0].course_subject}</Badge>
+                      <Badge>{data[0].course_tags}</Badge>
+                      <Badge>{data[0].course_subject}</Badge>
                     </div>
               )}
         </div>

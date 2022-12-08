@@ -9,14 +9,15 @@ function CourseReviews({ data }) {
     }
     return (
         <>
-      <div className = "reviews-for-course-ratings">
-      {(typeof data[0]?.class_reviews === 'undefined') ? (
+              <div className = "reviews-for-course">
+              {(typeof data[0]?.class_reviews === 'undefined') ? (
                   <p>Loading</p>
                 ): (
                   data[0]?.class_reviews.map((info, key)=> (
-                      <div className = "reviews-for-course-ratings">
-                        <h2>Name: {info.reviewer_name}</h2>
-                        <p>Review: {info.review}</p>
+                      <div className = "reviews-for-courses">
+                        <h2>{info.reviewer_name}</h2>
+                        <h3>Rating: {info.rating} Would Take Again: {info.would_take_again} Worload: {info.workload} Difficulty: {info.difficulty}</h3>
+                        <p>{info.review}</p>
                      </div>
                 ))
             )}
