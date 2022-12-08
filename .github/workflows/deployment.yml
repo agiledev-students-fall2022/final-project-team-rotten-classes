@@ -12,9 +12,7 @@ jobs:
     - name: Deploy Node.js app
       uses: jjst/action-digitalocean-deploy-app@v2
       with:
-        host: ${{secrets.SSH_HOST}}
-        key: ${{secrets.SSH_KEY}}
-        username: ${{ secrets.SSH_USERNAME }}
+        spec: ${{secrets.SSH_KEY}}
         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
         app-id: "ClassCriticApp"
 
