@@ -9,7 +9,7 @@ const Row = () => {
     const[data, setData] = useState([])
     
     useEffect(() => {
-       fetch("https://hammerhead-app-skzsp.ondigitalocean.app/api/CourseData2").then(
+       fetch("https://hammerhead-app-skzsp.ondigitalocean.app/api/HighestRated").then(
          response => response.json()
        ).then(
          data => {
